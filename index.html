@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Change a starting note, lower one string, and read the Sanskrit behind the two grāmas. An early Indian music learning bench with explicit modern pitch assumptions." />
+    <meta name="theme-color" content="#173d50" />
+    <title>Grāma — change one string</title>
+    <link rel="icon" href="/grama/favicon.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="/grama/assets/main-BDUA8IuM.js"></script>
+    <link rel="stylesheet" crossorigin href="/grama/assets/main-BNACetDe.css">
+  </head>
+  <body>
+    <a class="skip" href="#bench">Skip to the bench</a>
+    <header class="mast"><a class="brand" href="./">Grāma <span lang="sa">ग्राम</span></a><nav aria-label="Main"><a href="#bench">Bench</a><a href="#reading">Sanskrit</a><a href="#save">Save</a></nav></header>
+    <main>
+      <section class="opening" aria-labelledby="title">
+        <h1 id="title">Change the first note.<br />Then change one string.</h1>
+        <div><p>Early Indian music theory distinguishes a new order of notes from a change in their tuning. Try both, using the two <span lang="sa-Latn">grāmas</span> in the <cite lang="sa-Latn">Nāṭyaśāstra</cite>.</p><p>Seven notes. Twenty-two counted intervals. Lower just Pa and two adjacent groups exchange a count.</p></div>
+      </section>
+      <section id="bench" aria-labelledby="bench-title">
+        <div class="section-intro"><h2 id="bench-title">Keep the notes. Change the order.</h2><p>Choose where the ascent begins. Sa keeps its pitch; notes that cross the octave double theirs.</p></div>
+        <div class="controls">
+          <label>Begin the ascent at <select id="start"></select></label>
+          <fieldset><legend>Tuning</legend><label><input type="radio" name="grama" value="sadja" checked /> Ṣaḍja-grāma</label><label><input type="radio" name="grama" value="madhyama" /> Madhyama-grāma: lower Pa</label></fieldset>
+        </div>
+        <p id="order-description" class="order"></p>
+        <div class="bench-figure"><div id="count-figure"></div><p class="figure-caption">Counts, not pitch distances. Each cell is one counted śruti; equal widths do not imply equal sounds. Numbers sit in the gaps they count. Six named notes stay fixed. Pa moves in plum.</p></div>
+        <div class="listening"><button id="hear-scale" type="button">Hear the ascent</button><button id="hear-pa" type="button">Hear Pa before / after</button><button id="hear-context" type="button">Hear Ma–Pa–Dha</button><button id="stop" type="button">Stop sound</button><p id="sound-status" role="status">Sine tones under the pitch assumption below. No sound plays until you ask.</p></div>
+        <div class="lesson-result" id="retune-result" aria-live="polite"></div>
+      </section>
+      <section id="pitch" aria-labelledby="pitch-title">
+        <div class="section-intro"><h2 id="pitch-title">A count is not yet a frequency.</h2><p>The count row alone leaves the tuning undetermined. Compare two explicit modern assumptions; neither is a reconstruction of the whole ancient theory.</p></div>
+        <div class="controls"><label>Assume these pitches <select id="model"><option value="ratios">Modern ratio example</option><option value="equal">22 equal divisions (counterexample)</option></select></label><label>Reference Sa, Hz <input id="base" type="number" min="110" max="440" step="1" value="220" /></label><button id="apply-base" type="button">Set Sa</button></div>
+        <p id="model-description"></p>
+        <div class="bench-figure"><div id="pitch-figure"></div><p class="figure-caption">Pitch distance in cents: the upper row is ṣaḍja-grāma, the lower madhyama-grāma. An octave is 1,200 cents. Only Pa changes.</p></div>
+        <p id="lowering-comparison" class="key-fact"></p>
+        <!-- biome-ignore lint/a11y/noNoninteractiveTabindex: keyboard users need to scroll the exact table on narrow screens. -->
+        <section id="comparison" class="table-scroll" tabindex="0" aria-label="Exact comparison of the two tunings; scroll horizontally if needed"></section>
+        <details><summary>What do the two pitch assumptions mean?</summary><p>The ratio example assigns 9/8 to a whole four-count gap, 10/9 to three, and 16/15 to two. It does not assign pitches to every internal count cell. Their seven gaps multiply to exactly 2, an octave. It is a calculation chosen for this lesson, not a ratio table quoted from Bharata.</p><p>The equal-division counterexample instead assigns 1,200/22 cents to every count. It preserves this count row while giving different pitches. It shows why the number 22 alone does not establish equal temperament. It is not offered as an ancient tuning or as satisfying the text’s additional consonance requirements.</p><p>The longer two-vīṇā experiment has textual difficulties. We keep to the named count rows and the single Pa operation; we do not claim either sound model resolves that experiment. <a href="#sources">Inspect the evidence</a>.</p></details>
+      </section>
+      <section id="reading" aria-labelledby="reading-title">
+        <div class="section-intro"><h2 id="reading-title">Read the operation.</h2><p>Sanskrit, a Roman reading (IAST), and new English. Begin with the instruction to lower Pa, then follow the counts in the two arrangements.</p></div>
+        <label class="reading-picker">Passage <select id="passage"></select></label>
+        <div class="reading-layout"><article id="passage-text"></article><aside class="source-view" aria-labelledby="page-title"><h3 id="page-title">Printed evidence</h3><label>Source page <select id="source-page"></select></label><a id="scan-link" href="sources/grosset-28.jpg" target="_blank" rel="noreferrer"><img id="scan" src="sources/grosset-28.jpg" alt="Grosset 1888, printed p.28: two grāmas, counts and lowering Pa" /></a><p id="scan-caption"></p><p>Open the full image to enlarge it. Facsimiles are saved offline with the lesson.</p></aside></div>
+        <div id="sources"><details><summary>Edition, transcription and uncertainty</summary><p>We read chapter 28 of the <cite>Nāṭyaśāstra</cite>, attributed to Bharata, through Joanny Grosset’s 1888 Sanskrit edition and French translation. The work is composite and transmitted in differing manuscripts; this lesson assigns no exact date to the passage.</p><p>Grosset’s Sanskrit is normalized to IAST; the Devanagari here renders that chosen reading. Full printed pages retain his apparatus. The count verses also appear in Śivadatta and Parab’s 1894 edition at different verse numbers. The final half-verse definition of mūrchanā comes from that edition.</p><p>Grosset p.21 says brackets mark doubtful passages. He brackets the longer two-vīṇā demonstration on pp.28–29; note 36 on p.86 calls his interpretation approximate. Our brief instruction and count rows remain distinguishable from that unresolved demonstration.</p><p><a href="https://archive.org/details/dli.ministry.04243">1888 scanned volume</a> · <a href="https://archive.org/details/Mus-SourceTexts">1894 scanned edition</a> · <a href="https://github.com/antonsoo/grama/blob/main/docs/source-and-model.md">Source and model notes</a> · <a href="sources/manifest.json">Page identities</a></p></details></div>
+      </section>
+      <section id="save" aria-labelledby="save-title">
+        <div class="section-intro"><h2 id="save-title">Keep the comparison.</h2><p>Save the chosen starting note, tuning and pitch assumption. The illustrated reading includes all passages, source pages, fonts and a listening example in one file.</p></div>
+        <div class="save-actions"><button id="save-reading" type="button">Save illustrated reading</button><button id="save-json" type="button">Save comparison JSON</button><button id="save-csv" type="button">Save both pitch rows (CSV)</button><button id="save-svg" type="button">Save count diagram (SVG)</button><button id="save-wav" type="button">Save listening comparison (WAV)</button><button id="share" type="button">Copy comparison link</button><label class="file-label">Reopen comparison JSON <input id="open-json" type="file" accept="application/json,.json" /></label></div>
+        <p id="file-status" role="status">The saved reading works as a local file. The WAV is synthetic sine audio of Ma–Pa–Dha before and after lowering Pa.</p>
+      </section>
+    </main>
+    <footer><p id="offline-status" role="status">Checking the offline edition…</p><p><a href="https://github.com/antonsoo/grama">Source code</a> · <a href="https://antonsoo.github.io/officina/">More learning tools</a> · MIT code; source editions public domain; fonts OFL.</p></footer>
+    <noscript>This interactive bench needs JavaScript. The repository includes a complete script-free saved reading and full source scans.</noscript>
+  </body>
+</html>

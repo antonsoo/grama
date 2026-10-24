@@ -1,0 +1,128 @@
+{
+  "note": "Full pages rendered from public-domain printed editions. Physical PDF numbering is one based and is not a constant offset in the 1894 file.",
+  "editions": [
+    {
+      "id": "grosset1888",
+      "title": "Contribution à l’étude de la musique hindoue",
+      "author": "Joanny Grosset",
+      "date": 1888,
+      "container": "Mélanges de philologie indo-européenne, Bibliothèque de la Faculté des lettres de Lyon VI",
+      "publisher": "Ernest Leroux, Paris",
+      "scan": "https://archive.org/details/dli.ministry.04243",
+      "pdf": "https://archive.org/download/dli.ministry.04243/20900.158%2520A%252081.pdf",
+      "pdfSha256": "1eb7997ccdeb25bcd92a1269ece6ef634502f2276b46eb78a8a2da1a53465872"
+    },
+    {
+      "id": "natya1894",
+      "title": "The Nāṭyaśāstra of Bharata Muni",
+      "editors": "Śivadatta and Kāśīnāth Pāṇḍuraṅg Parab",
+      "date": 1894,
+      "series": "Kāvyamālā 42",
+      "publisher": "Tukārām Jāvajī, Nirṇaya-Sāgara Press, Bombay",
+      "scan": "https://archive.org/details/Mus-SourceTexts",
+      "pdf": "https://archive.org/download/Mus-SourceTexts/TxtSkt-nATyaSAstra-BharataMuni-Kavyamala-1894-0030.pdf",
+      "pdfSha256": "fef81ac25b0e8edc8d205acac54c1857489154c43b6877583c128ab8348deef5"
+    }
+  ],
+  "pages": [
+    {
+      "file": "sources/grosset-title.jpg",
+      "edition": "grosset1888",
+      "printed": 1,
+      "pdfPage": 163,
+      "caption": "Title of Grosset’s contribution",
+      "sha256": "f900e5c8c737b1ac3e99af0fb83e161ebb2a7781e48ed94ee7298f0f4c9a1bb3",
+      "bytes": 100346
+    },
+    {
+      "file": "sources/grosset-21.jpg",
+      "edition": "grosset1888",
+      "printed": 21,
+      "pdfPage": 183,
+      "caption": "Editorial brackets explained",
+      "sha256": "79f6b71fbce81f18d63d663ce10883a2a17cc15fe2adb76b824acf426148a309",
+      "bytes": 377148
+    },
+    {
+      "file": "sources/grosset-28.jpg",
+      "edition": "grosset1888",
+      "printed": 28,
+      "pdfPage": 190,
+      "caption": "Two grāmas, counts and lowering Pa",
+      "sha256": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3",
+      "bytes": 431366
+    },
+    {
+      "file": "sources/grosset-29.jpg",
+      "edition": "grosset1888",
+      "printed": 29,
+      "pdfPage": 191,
+      "caption": "Counts attached to each named note",
+      "sha256": "a60790bddea16456a75196c9274597a67b5e43531a65a843748d5397dc513ebe",
+      "bytes": 432007
+    },
+    {
+      "file": "sources/grosset-57.jpg",
+      "edition": "grosset1888",
+      "printed": 57,
+      "pdfPage": 219,
+      "caption": "French translation of counts and lowering",
+      "sha256": "f39f7e571c06cb95e15a92b069ce0be095553a37629f875a9d26d8914df18ae6",
+      "bytes": 284343
+    },
+    {
+      "file": "sources/grosset-58.jpg",
+      "edition": "grosset1888",
+      "printed": 58,
+      "pdfPage": 220,
+      "caption": "Count diagrams and mūrchanās",
+      "sha256": "bdcc873c7a56e364bcf38c5a36f39ac1c43ed2f6e68ef164b524f006cc9eacb4",
+      "bytes": 244755
+    },
+    {
+      "file": "sources/grosset-85.jpg",
+      "edition": "grosset1888",
+      "printed": 85,
+      "pdfPage": 247,
+      "caption": "Commentary on the two grāmas",
+      "sha256": "a6c7d6ce73e1d116ae8b20483c5522dfee2b51e16ba9adec19dce6ecff180a3a",
+      "bytes": 436186
+    },
+    {
+      "file": "sources/grosset-86.jpg",
+      "edition": "grosset1888",
+      "printed": 86,
+      "pdfPage": 248,
+      "caption": "Doubt about the two-vīṇā demonstration",
+      "sha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+      "bytes": 443621
+    },
+    {
+      "file": "sources/natya-title.jpg",
+      "edition": "natya1894",
+      "printed": "title",
+      "pdfPage": 1,
+      "caption": "1894 edition title",
+      "sha256": "ae16a256bf21bd9f3e7ed7d7212cb3e1d318de5b25dda14a571b348d2c0648d5",
+      "bytes": 122885
+    },
+    {
+      "file": "sources/natya-301.jpg",
+      "edition": "natya1894",
+      "printed": 301,
+      "pdfPage": 304,
+      "caption": "Chapter opening and end of the two-vīṇā passage",
+      "sha256": "bea36ffde05b6a9f6205fd92811a7ab988e7cc272e96f93fce33dfecb5d12fda",
+      "bytes": 469463
+    },
+    {
+      "file": "sources/natya-302.jpg",
+      "edition": "natya1894",
+      "printed": 302,
+      "pdfPage": 305,
+      "caption": "Ṣaḍja count verses and definition of mūrchanā",
+      "sha256": "a87eddc7178a7226cedb70135e1bdf8bda3ace323e301849928693640a48aae8",
+      "bytes": 410056
+    }
+  ]
+}
