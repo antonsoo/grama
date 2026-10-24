@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-24T20:43:00Z",
+  "checkedAt": "2026-10-24T20:42:37.935474+00:00",
   "scope": "Fresh HTTPS clone of public source revision 433620732c1f4fef46947d38cdf677a821cd0102. Actual Node 24.22.0 npm ci/check, including eight tests. Its 24 built files match the reviewed local build.",
   "sourceRevision": "433620732c1f4fef46947d38cdf677a821cd0102",
   "identicalFiles": 24,
@@ -28,5 +28,6 @@
     "sources/grosset-title.jpg": "f900e5c8c737b1ac3e99af0fb83e161ebb2a7781e48ed94ee7298f0f4c9a1bb3",
     "assets/main-BNACetDe.css": "59058adf94711939f91077de7d5a67a98e655453f28916b4882b888c1ca22a7f",
     "assets/main-BDUA8IuM.js": "d4c94a9769f85dedc2b4f77a760b7d4d070b6e4c010a5782df65936627a7812c"
-  }
+  },
+  "timestampScope": "Receipt written after the fresh public installation and the repeated build-identity comparison."
 }
