@@ -1,0 +1,17 @@
+# Grama: count-row experiment; modern pitch assumption, not an ancient performance reconstruction
+# model=equal; Sa=220 Hz; start=Re
+grama,note,incoming_count,frequency_hz,cents_from_Sa,exact_ratio_if_assumed
+sadja,Sa,4,220.00000000,0.00000000,
+sadja,Re,3,241.80886896,163.63636364,
+sadja,Ga,2,257.53638124,272.72727273,
+sadja,Ma,4,292.12674216,490.90909091,
+sadja,Pa,4,331.36302170,709.09090909,
+sadja,Dha,3,364.21144315,872.72727273,
+sadja,Ni,2,387.90015220,981.81818182,
+madhyama,Sa,4,220.00000000,0.00000000,
+madhyama,Re,3,241.80886896,163.63636364,
+madhyama,Ga,2,257.53638124,272.72727273,
+madhyama,Ma,4,292.12674216,490.90909091,
+madhyama,Pa,3,321.08562325,654.54545455,
+madhyama,Dha,4,364.21144315,872.72727273,
+madhyama,Ni,2,387.90015220,981.81818182,

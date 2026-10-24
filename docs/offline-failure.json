@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-24T20:33:02.888Z",
+  "workerSha256": "0ca50c4d5edea51a9ad84f4802767be557859b66ef85a62e86ec85e6c537a65f",
+  "scope": "Local initial offline installs; held and substituted source bytes, followed by successful recovery. Separate corrupt-source export rejection.",
+  "cases": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "fault": "held",
+      "falseReadyWhilePendingOrFailed": false,
+      "recoveredAfter": "release source response",
+      "corruptSourceExportBlocked": true,
+      "offlineReadingAfterRestoration": true
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "fault": "substituted",
+      "falseReadyWhilePendingOrFailed": false,
+      "recoveredAfter": "reload after correcting source bytes",
+      "corruptSourceExportBlocked": true,
+      "offlineReadingAfterRestoration": true
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "fault": "held",
+      "falseReadyWhilePendingOrFailed": false,
+      "recoveredAfter": "release source response",
+      "corruptSourceExportBlocked": true,
+      "offlineReadingAfterRestoration": true
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "fault": "substituted",
+      "falseReadyWhilePendingOrFailed": false,
+      "recoveredAfter": "reload after correcting source bytes",
+      "corruptSourceExportBlocked": true,
+      "offlineReadingAfterRestoration": true
+    }
+  ]
+}

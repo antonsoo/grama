@@ -1,0 +1,9 @@
+{
+  "format": "grama-comparison-v1",
+  "pose": {
+    "grama": "madhyama",
+    "model": "equal",
+    "start": 1,
+    "base": 220
+  }
+}

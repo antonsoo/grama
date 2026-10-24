@@ -1,0 +1,35 @@
+{
+  "note": "Native browser outputs from the local production review. The illustrated reading captures madhyama/Re/equal/220 at Save; controls change immediately afterward. PDF is Chromium print output, not physically printed.",
+  "files": [
+    {
+      "file": "examples/grama-comparison.json",
+      "bytes": 134,
+      "sha256": "a577ff4cd30a06a75b070b2dea09f23f6459098680fcb29227be26385d08c7ae"
+    },
+    {
+      "file": "examples/grama-counts.svg",
+      "bytes": 9074,
+      "sha256": "e37fa6a8d54711aef8d68e943b26bae0b24da96141439f37ab7a96c6da13d88d"
+    },
+    {
+      "file": "examples/grama-illustrated-reading.html",
+      "bytes": 7920894,
+      "sha256": "203d22bbd790ba341a1ece4efe89cb152dfa014abca413e227c36cde267149f7"
+    },
+    {
+      "file": "examples/grama-illustrated-reading.pdf",
+      "bytes": 4483496,
+      "sha256": "7e03d55be4492307db56757e5938f6c00cb4df3807bb7ba4730a6f98b77f4e90"
+    },
+    {
+      "file": "examples/grama-modern-comparison.wav",
+      "bytes": 407528,
+      "sha256": "ad7c9d6eab24d1b5f3011705f7adcdd088971b6da5a8ffb038d020f74ec7fb56"
+    },
+    {
+      "file": "examples/grama-pitch-comparison.csv",
+      "bytes": 760,
+      "sha256": "1f11fe1fad237996c43fc7663c8299ddecccbede337d8f49b49ecf90d7af2ff8"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-24T20:37:48.272Z",
+  "scope": "Actual documented npm run dev from the isolated Node 24.22.0 npm ci checkout; offline installation intentionally unavailable in development.",
+  "configurations": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "developmentQuickstart": true,
+      "nativeDownload": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "developmentQuickstart": true,
+      "nativeDownload": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "developmentQuickstart": true,
+      "nativeDownload": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "developmentQuickstart": true,
+      "nativeDownload": true,
+      "pageErrors": []
+    }
+  ]
+}
