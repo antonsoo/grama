@@ -1,0 +1,50 @@
+{
+  "name": "@antonsoloviev/grama",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Change a starting note, lower one string, and read the Sanskrit behind the two gramas.",
+  "type": "module",
+  "author": "Anton Soloviev <anton@praviel.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonsoo/grama.git"
+  },
+  "homepage": "https://antonsoo.github.io/grama/",
+  "keywords": [
+    "natya-shastra",
+    "sanskrit",
+    "music-theory",
+    "tuning",
+    "sruti",
+    "grama",
+    "history-of-music"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4394 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4394 --strictPort",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build",
+    "verify:oracle": "node --import tsx scripts/model-cases.ts | python3 scripts/model-oracle.py",
+    "test:browser": "node scripts/browser-review.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@biomejs/biome": "2.6.2",
+    "@types/node": "24.19.2",
+    "playwright": "1.63.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
