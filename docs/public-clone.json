@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-24T20:43:00Z",
+  "scope": "Fresh HTTPS clone of public source revision 433620732c1f4fef46947d38cdf677a821cd0102. Actual Node 24.22.0 npm ci/check, including eight tests. Its 24 built files match the reviewed local build.",
+  "sourceRevision": "433620732c1f4fef46947d38cdf677a821cd0102",
+  "identicalFiles": 24,
+  "files": {
+    "sw.js": "0ca50c4d5edea51a9ad84f4802767be557859b66ef85a62e86ec85e6c537a65f",
+    "favicon.svg": "ae9db7c7e064d96c879f4b8126682659dc0aaa81442dcb6c27c61917052ea144",
+    "index.html": "68a5657acdddeedb7b9301c0df559396e83a8629c067bf83db931771f8bdec63",
+    "fonts/NotoSerif-Regular.ttf": "5473d2e43bdd018ee124a4addba8091fd0a29894b121cbb741023af6549662b6",
+    "fonts/NotoSerifDevanagari-OFL.txt": "a216f6f8d85c7228093e0ee5e258d9d377e6671f68acb4db1930b29583d0f331",
+    "fonts/NotoSerif-OFL.txt": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+    "fonts/NotoSerifDevanagari.ttf": "1191e07bfeb062d80e252eb85b0eafdfbda1e350707a2a60628668e8f677dbbb",
+    "fonts/IBMPlexSans-SemiBold.woff2": "f78048030eab62e860efa39a0df79e2e5581bf122eb95b9bc42c0b8a4988d205",
+    "fonts/IBMPlexSans-Regular.woff2": "ba711a3085ff9f27440b6b9c4550cfc47c97bf36591d5da958b975bb3add8c1a",
+    "fonts/IBMPlex-OFL.txt": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+    "sources/natya-title.jpg": "ae16a256bf21bd9f3e7ed7d7212cb3e1d318de5b25dda14a571b348d2c0648d5",
+    "sources/natya-301.jpg": "bea36ffde05b6a9f6205fd92811a7ab988e7cc272e96f93fce33dfecb5d12fda",
+    "sources/grosset-86.jpg": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+    "sources/grosset-57.jpg": "f39f7e571c06cb95e15a92b069ce0be095553a37629f875a9d26d8914df18ae6",
+    "sources/manifest.json": "dde86483b9804537b31624c0fac2cf20bf5a956b5a50dea7fb585b5771a188fb",
+    "sources/grosset-28.jpg": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3",
+    "sources/grosset-21.jpg": "79f6b71fbce81f18d63d663ce10883a2a17cc15fe2adb76b824acf426148a309",
+    "sources/natya-302.jpg": "a87eddc7178a7226cedb70135e1bdf8bda3ace323e301849928693640a48aae8",
+    "sources/grosset-58.jpg": "bdcc873c7a56e364bcf38c5a36f39ac1c43ed2f6e68ef164b524f006cc9eacb4",
+    "sources/grosset-85.jpg": "a6c7d6ce73e1d116ae8b20483c5522dfee2b51e16ba9adec19dce6ecff180a3a",
+    "sources/grosset-29.jpg": "a60790bddea16456a75196c9274597a67b5e43531a65a843748d5397dc513ebe",
+    "sources/grosset-title.jpg": "f900e5c8c737b1ac3e99af0fb83e161ebb2a7781e48ed94ee7298f0f4c9a1bb3",
+    "assets/main-BNACetDe.css": "59058adf94711939f91077de7d5a67a98e655453f28916b4882b888c1ca22a7f",
+    "assets/main-BDUA8IuM.js": "d4c94a9769f85dedc2b4f77a760b7d4d070b6e4c010a5782df65936627a7812c"
+  }
+}

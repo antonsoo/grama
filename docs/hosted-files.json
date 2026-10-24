@@ -1,0 +1,244 @@
+{
+  "checkedAt": "2026-10-24T20:40:23.322Z",
+  "scope": "Canonical HTTPS URLs without query cache-busting; every current build file plus directory index before and after. Extra historical hashed assets are outside this inventory.",
+  "base": "https://antonsoo.github.io/grama/",
+  "sourceRevision": "433620732c1f4fef46947d38cdf677a821cd0102",
+  "pagesRevision": "1707a61acd0362f33f6c1d47541d1247a3f57926",
+  "directoryBefore": {
+    "file": "",
+    "bytes": 8981,
+    "sha256": "68a5657acdddeedb7b9301c0df559396e83a8629c067bf83db931771f8bdec63",
+    "status": 200,
+    "actualBytes": 8981,
+    "actualSha256": "68a5657acdddeedb7b9301c0df559396e83a8629c067bf83db931771f8bdec63",
+    "matches": true
+  },
+  "directoryAfter": {
+    "file": "",
+    "bytes": 8981,
+    "sha256": "68a5657acdddeedb7b9301c0df559396e83a8629c067bf83db931771f8bdec63",
+    "status": 200,
+    "actualBytes": 8981,
+    "actualSha256": "68a5657acdddeedb7b9301c0df559396e83a8629c067bf83db931771f8bdec63",
+    "matches": true
+  },
+  "files": [
+    {
+      "file": "assets/main-BDUA8IuM.js",
+      "bytes": 43347,
+      "sha256": "d4c94a9769f85dedc2b4f77a760b7d4d070b6e4c010a5782df65936627a7812c",
+      "status": 200,
+      "actualBytes": 43347,
+      "actualSha256": "d4c94a9769f85dedc2b4f77a760b7d4d070b6e4c010a5782df65936627a7812c",
+      "matches": true
+    },
+    {
+      "file": "assets/main-BNACetDe.css",
+      "bytes": 7254,
+      "sha256": "59058adf94711939f91077de7d5a67a98e655453f28916b4882b888c1ca22a7f",
+      "status": 200,
+      "actualBytes": 7254,
+      "actualSha256": "59058adf94711939f91077de7d5a67a98e655453f28916b4882b888c1ca22a7f",
+      "matches": true
+    },
+    {
+      "file": "favicon.svg",
+      "bytes": 352,
+      "sha256": "ae9db7c7e064d96c879f4b8126682659dc0aaa81442dcb6c27c61917052ea144",
+      "status": 200,
+      "actualBytes": 352,
+      "actualSha256": "ae9db7c7e064d96c879f4b8126682659dc0aaa81442dcb6c27c61917052ea144",
+      "matches": true
+    },
+    {
+      "file": "fonts/IBMPlex-OFL.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "status": 200,
+      "actualBytes": 4456,
+      "actualSha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "matches": true
+    },
+    {
+      "file": "fonts/IBMPlexSans-Regular.woff2",
+      "bytes": 63020,
+      "sha256": "ba711a3085ff9f27440b6b9c4550cfc47c97bf36591d5da958b975bb3add8c1a",
+      "status": 200,
+      "actualBytes": 63020,
+      "actualSha256": "ba711a3085ff9f27440b6b9c4550cfc47c97bf36591d5da958b975bb3add8c1a",
+      "matches": true
+    },
+    {
+      "file": "fonts/IBMPlexSans-SemiBold.woff2",
+      "bytes": 67060,
+      "sha256": "f78048030eab62e860efa39a0df79e2e5581bf122eb95b9bc42c0b8a4988d205",
+      "status": 200,
+      "actualBytes": 67060,
+      "actualSha256": "f78048030eab62e860efa39a0df79e2e5581bf122eb95b9bc42c0b8a4988d205",
+      "matches": true
+    },
+    {
+      "file": "fonts/NotoSerif-OFL.txt",
+      "bytes": 4396,
+      "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+      "status": 200,
+      "actualBytes": 4396,
+      "actualSha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+      "matches": true
+    },
+    {
+      "file": "fonts/NotoSerif-Regular.ttf",
+      "bytes": 444064,
+      "sha256": "5473d2e43bdd018ee124a4addba8091fd0a29894b121cbb741023af6549662b6",
+      "status": 200,
+      "actualBytes": 444064,
+      "actualSha256": "5473d2e43bdd018ee124a4addba8091fd0a29894b121cbb741023af6549662b6",
+      "matches": true
+    },
+    {
+      "file": "fonts/NotoSerifDevanagari-OFL.txt",
+      "bytes": 4386,
+      "sha256": "a216f6f8d85c7228093e0ee5e258d9d377e6671f68acb4db1930b29583d0f331",
+      "status": 200,
+      "actualBytes": 4386,
+      "actualSha256": "a216f6f8d85c7228093e0ee5e258d9d377e6671f68acb4db1930b29583d0f331",
+      "matches": true
+    },
+    {
+      "file": "fonts/NotoSerifDevanagari.ttf",
+      "bytes": 757692,
+      "sha256": "1191e07bfeb062d80e252eb85b0eafdfbda1e350707a2a60628668e8f677dbbb",
+      "status": 200,
+      "actualBytes": 757692,
+      "actualSha256": "1191e07bfeb062d80e252eb85b0eafdfbda1e350707a2a60628668e8f677dbbb",
+      "matches": true
+    },
+    {
+      "file": "index.html",
+      "bytes": 8981,
+      "sha256": "68a5657acdddeedb7b9301c0df559396e83a8629c067bf83db931771f8bdec63",
+      "status": 200,
+      "actualBytes": 8981,
+      "actualSha256": "68a5657acdddeedb7b9301c0df559396e83a8629c067bf83db931771f8bdec63",
+      "matches": true
+    },
+    {
+      "file": "sources/grosset-21.jpg",
+      "bytes": 377148,
+      "sha256": "79f6b71fbce81f18d63d663ce10883a2a17cc15fe2adb76b824acf426148a309",
+      "status": 200,
+      "actualBytes": 377148,
+      "actualSha256": "79f6b71fbce81f18d63d663ce10883a2a17cc15fe2adb76b824acf426148a309",
+      "matches": true
+    },
+    {
+      "file": "sources/grosset-28.jpg",
+      "bytes": 431366,
+      "sha256": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3",
+      "status": 200,
+      "actualBytes": 431366,
+      "actualSha256": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3",
+      "matches": true
+    },
+    {
+      "file": "sources/grosset-29.jpg",
+      "bytes": 432007,
+      "sha256": "a60790bddea16456a75196c9274597a67b5e43531a65a843748d5397dc513ebe",
+      "status": 200,
+      "actualBytes": 432007,
+      "actualSha256": "a60790bddea16456a75196c9274597a67b5e43531a65a843748d5397dc513ebe",
+      "matches": true
+    },
+    {
+      "file": "sources/grosset-57.jpg",
+      "bytes": 284343,
+      "sha256": "f39f7e571c06cb95e15a92b069ce0be095553a37629f875a9d26d8914df18ae6",
+      "status": 200,
+      "actualBytes": 284343,
+      "actualSha256": "f39f7e571c06cb95e15a92b069ce0be095553a37629f875a9d26d8914df18ae6",
+      "matches": true
+    },
+    {
+      "file": "sources/grosset-58.jpg",
+      "bytes": 244755,
+      "sha256": "bdcc873c7a56e364bcf38c5a36f39ac1c43ed2f6e68ef164b524f006cc9eacb4",
+      "status": 200,
+      "actualBytes": 244755,
+      "actualSha256": "bdcc873c7a56e364bcf38c5a36f39ac1c43ed2f6e68ef164b524f006cc9eacb4",
+      "matches": true
+    },
+    {
+      "file": "sources/grosset-85.jpg",
+      "bytes": 436186,
+      "sha256": "a6c7d6ce73e1d116ae8b20483c5522dfee2b51e16ba9adec19dce6ecff180a3a",
+      "status": 200,
+      "actualBytes": 436186,
+      "actualSha256": "a6c7d6ce73e1d116ae8b20483c5522dfee2b51e16ba9adec19dce6ecff180a3a",
+      "matches": true
+    },
+    {
+      "file": "sources/grosset-86.jpg",
+      "bytes": 443621,
+      "sha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+      "status": 200,
+      "actualBytes": 443621,
+      "actualSha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+      "matches": true
+    },
+    {
+      "file": "sources/grosset-title.jpg",
+      "bytes": 100346,
+      "sha256": "f900e5c8c737b1ac3e99af0fb83e161ebb2a7781e48ed94ee7298f0f4c9a1bb3",
+      "status": 200,
+      "actualBytes": 100346,
+      "actualSha256": "f900e5c8c737b1ac3e99af0fb83e161ebb2a7781e48ed94ee7298f0f4c9a1bb3",
+      "matches": true
+    },
+    {
+      "file": "sources/manifest.json",
+      "bytes": 4507,
+      "sha256": "dde86483b9804537b31624c0fac2cf20bf5a956b5a50dea7fb585b5771a188fb",
+      "status": 200,
+      "actualBytes": 4507,
+      "actualSha256": "dde86483b9804537b31624c0fac2cf20bf5a956b5a50dea7fb585b5771a188fb",
+      "matches": true
+    },
+    {
+      "file": "sources/natya-301.jpg",
+      "bytes": 469463,
+      "sha256": "bea36ffde05b6a9f6205fd92811a7ab988e7cc272e96f93fce33dfecb5d12fda",
+      "status": 200,
+      "actualBytes": 469463,
+      "actualSha256": "bea36ffde05b6a9f6205fd92811a7ab988e7cc272e96f93fce33dfecb5d12fda",
+      "matches": true
+    },
+    {
+      "file": "sources/natya-302.jpg",
+      "bytes": 410056,
+      "sha256": "a87eddc7178a7226cedb70135e1bdf8bda3ace323e301849928693640a48aae8",
+      "status": 200,
+      "actualBytes": 410056,
+      "actualSha256": "a87eddc7178a7226cedb70135e1bdf8bda3ace323e301849928693640a48aae8",
+      "matches": true
+    },
+    {
+      "file": "sources/natya-title.jpg",
+      "bytes": 122885,
+      "sha256": "ae16a256bf21bd9f3e7ed7d7212cb3e1d318de5b25dda14a571b348d2c0648d5",
+      "status": 200,
+      "actualBytes": 122885,
+      "actualSha256": "ae16a256bf21bd9f3e7ed7d7212cb3e1d318de5b25dda14a571b348d2c0648d5",
+      "matches": true
+    },
+    {
+      "file": "sw.js",
+      "bytes": 5220,
+      "sha256": "0ca50c4d5edea51a9ad84f4802767be557859b66ef85a62e86ec85e6c537a65f",
+      "status": 200,
+      "actualBytes": 5220,
+      "actualSha256": "0ca50c4d5edea51a9ad84f4802767be557859b66ef85a62e86ec85e6c537a65f",
+      "matches": true
+    }
+  ],
+  "mismatches": []
+}

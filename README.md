@@ -3,6 +3,7 @@
 Change a starting note, lower one string, and read the Sanskrit behind the two grāmas.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-176477)](LICENSE)
+[![Open the bench](https://img.shields.io/badge/open-the_bench-176477)](https://antonsoo.github.io/grama/)
 
 ![Two count arrangements: Pa moves while six other named notes stay fixed](docs/assets/bench.png)
 
@@ -12,8 +13,9 @@ lower Pa by one śruti. Its two adjacent interval groups exchange a count,
 from 4–3 to 3–4. Grāma lets you distinguish those actions, read their Sanskrit
 instructions, and inspect what the count twenty-two does and does not tell us.
 
-This is a local source edition until its separate publication record is added.
-The intended public route is `https://antonsoo.github.io/grama/`.
+**[Open the bench](https://antonsoo.github.io/grama/)** ·
+[Source repository](https://github.com/antonsoo/grama) ·
+[Publication evidence](docs/publication.md).
 
 ## Try the bench
 
