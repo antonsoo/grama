@@ -1,0 +1,48 @@
+name: Pages
+
+# Builds the site and publishes it to the gh-pages branch; GitHub Pages serves that
+# branch directly (Settings -> Pages -> "Deploy from a branch": gh-pages, /).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          # cache-dependency-path: web/package-lock.json   # if the app lives in a subdirectory
+
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Publish to gh-pages
+        run: |
+          git fetch origin gh-pages
+          pages_dir="$RUNNER_TEMP/grama-pages"
+          git worktree add --detach "$pages_dir" origin/gh-pages
+          cp -R dist/. "$pages_dir/"
+          touch "$pages_dir/.nojekyll"
+          git -C "$pages_dir" config user.name "github-actions[bot]"
+          git -C "$pages_dir" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C "$pages_dir" add -A
+          if ! git -C "$pages_dir" diff --cached --quiet; then
+            git -C "$pages_dir" commit -m "deploy: ${GITHUB_SHA::7}"
+            git -C "$pages_dir" push origin HEAD:gh-pages
+          fi
+          # Retain earlier hashed assets for readers whose old entry page is cached.

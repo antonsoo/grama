@@ -139,7 +139,7 @@ function render() {
   element("model-description").textContent =
     pose.model === "ratios"
       ? "Chosen for this lesson: a four-count gap = 9/8, three = 10/9, two = 16/15. The seven gaps multiply to exactly 2 (an octave). These ratios are an extra assumption, not a table quoted from the Sanskrit."
-      : "A deliberate counterexample: every count = 1,200/22 cents. The same seven count groups close at an octave, but give different pitches. This illustrates the count row alone; it does not satisfy all other ancient tuning requirements.";
+      : "A deliberate counterexample: every count = 1,200/22 cents. The same seven count groups close at an octave, but give different pitches. It illustrates the count row alone, without establishing how an ancient instrument was tuned.";
   element("lowering-comparison").textContent =
     `One counted śruti lowers Pa by ${lowering(pose.model).toFixed(3)} cents here. The ${pose.model === "ratios" ? "equal-division counterexample gives 54.545" : "ratio example gives 21.506"} cents for the same count change.`;
   element("comparison").innerHTML = comparisonTable(pose);

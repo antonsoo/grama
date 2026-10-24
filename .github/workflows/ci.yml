@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run verify:oracle
+      - run: npx playwright install --with-deps chromium firefox
+      - run: npm run test:browser -- /tmp/grama-browser-review
+      - run: python3 scripts/wav-oracle.py /tmp/grama-browser-review/chromium-1440
+      - run: node scripts/offline-failure.mjs /tmp/grama-offline-failure
