@@ -4,7 +4,7 @@
   "private": true,
   "description": "Change a starting note, lower one string, and read the Sanskrit behind the two gramas.",
   "type": "module",
-  "author": "Anton Soloviev <anton@praviel.com>",
+  "author": "Anthony Mercer <anthony@praviel.com>",
   "license": "MIT",
   "repository": {
     "type": "git",

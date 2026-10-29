@@ -145,6 +145,6 @@ local, public and CI verification remain separate claims.
 ## Contributing and license
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Code and new educational content are
-MIT, Copyright (c) 2026 Anton Soloviev. Printed source editions are public domain;
+MIT, Copyright (c) 2026 Anthony Mercer. Printed source editions are public domain;
 fonts are under their bundled OFL licenses. No telemetry or hosted runtime
 services are used.
