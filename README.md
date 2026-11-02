@@ -2,7 +2,7 @@
 
 Change a starting note, lower one string, and read the Sanskrit behind the two grāmas.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-176477)](LICENSE)
+[![License: PolyForm Noncommercial](https://img.shields.io/badge/license-PolyForm%20Noncommercial-176477)](LICENSE)
 [![Open the bench](https://img.shields.io/badge/open-the_bench-176477)](https://antonsoo.github.io/grama/)
 
 ![Two count arrangements: Pa moves while six other named notes stay fixed](docs/assets/bench.png)
@@ -144,7 +144,9 @@ local, public and CI verification remain separate claims.
 
 ## Contributing and license
 
+New versions are released under the [PolyForm Noncommercial License 1.0.0](LICENSE). It is free for any noncommercial purpose, including personal study, teaching and research, and for use by charities, schools, universities, research organizations and government institutions. Commercial use needs written permission from Anthony Mercer (anthony@praviel.com). Versions up to commit [`87073c6`](https://github.com/antonsoo/grama/tree/87073c6) (2026-11-01) were released under the MIT License, and copies of those versions keep it.
+
 See [CONTRIBUTING.md](CONTRIBUTING.md). Code and new educational content are
-MIT, Copyright (c) 2026 Anthony Mercer. Printed source editions are public domain;
+PolyForm Noncommercial, Copyright (c) 2026 Anthony Mercer. Printed source editions are public domain;
 fonts are under their bundled OFL licenses. No telemetry or hosted runtime
 services are used.
