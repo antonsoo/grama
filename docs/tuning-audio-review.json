@@ -1,0 +1,29 @@
+{
+  "method": "Positive zero crossings in native downloaded 16-bit PCM; literal ratio and cent pitch tables",
+  "results": [
+    {
+      "configuration": "chromium-1440",
+      "measuredTones": 12,
+      "maxAbsoluteErrorHz": 5.0255742110039137e-5,
+      "frames": 432621
+    },
+    {
+      "configuration": "chromium-375",
+      "measuredTones": 12,
+      "maxAbsoluteErrorHz": 5.0255742110039137e-5,
+      "frames": 432621
+    },
+    {
+      "configuration": "firefox-1440",
+      "measuredTones": 12,
+      "maxAbsoluteErrorHz": 5.0255742110039137e-5,
+      "frames": 432621
+    },
+    {
+      "configuration": "firefox-375",
+      "measuredTones": 12,
+      "maxAbsoluteErrorHz": 5.0255742110039137e-5,
+      "frames": 432621
+    }
+  ]
+}

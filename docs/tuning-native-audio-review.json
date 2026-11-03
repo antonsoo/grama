@@ -1,0 +1,29 @@
+{
+  "scope": "Native audio element metadata decoding from the saved local HTML, including the WAV RIFF copyright chunk; no physical listening claim",
+  "results": [
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "duration": 9.81,
+      "error": null
+    },
+    {
+      "browser": "chromium",
+      "width": 375,
+      "duration": 9.81,
+      "error": null
+    },
+    {
+      "browser": "firefox",
+      "width": 1440,
+      "duration": 9.81,
+      "error": null
+    },
+    {
+      "browser": "firefox",
+      "width": 375,
+      "duration": 9.81,
+      "error": null
+    }
+  ]
+}

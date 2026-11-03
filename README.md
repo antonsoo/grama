@@ -81,6 +81,10 @@ audio, all eight Sanskrit passages, eleven source images and fonts. It works as
 a local file. Both pages share an integrity-checked offline edition with explicit
 check/repair controls; repairs preserve the current experiment.
 
+[Editable witness](examples/tuning-family.json) ·
+[Both witnesses as CSV](examples/tuning-family.csv) ·
+[Both listening examples](examples/tuning-family.wav).
+
 ![The whole-gap controls on a phone, with the fourth/fifth lock](docs/assets/tuning-controls-mobile.png)
 
 ## A count is not yet a tuning

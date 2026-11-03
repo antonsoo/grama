@@ -106,6 +106,7 @@ for (const [name, type] of [
         context = await browser.newContext({
           viewport: { width, height: 1000 },
           acceptDownloads: true,
+          reducedMotion: "reduce",
         });
       await context.addInitScript(() => {
         window.audioReview = { started: [], stopped: 0, defer: false, release: null };
@@ -413,6 +414,7 @@ for (const [name, type] of [
           browser: name,
           version: browser.version(),
           width,
+          reducedMotion: true,
           lockedGapChangedWithPureFourthFifth: true,
           failedCandidateRetained: true,
           keyboardOperated: true,

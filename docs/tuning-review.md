@@ -175,3 +175,38 @@ Build command: `npm run build`; output: `dist/`. Browsers are exercised against
 that output, independently of Vite development behavior. Source, local build,
 local HTTP delivery, physical output, public delivery and CI remain separate
 claims.
+
+The final code snapshot is `c076afb`. A fresh `git archive` of that revision,
+followed by `npm ci`, passed the commands above. The working build matched
+the archive build for all 28 files. Both pages also loaded under the documented
+`npm run dev` command. The final evidence-only commit leaves those build inputs
+unchanged. Retained receipts:
+- [Clean-install and build boundary](tuning-clean-review.json).
+- [New workshop: operated browsers, native files, all 28 served-file hashes](tuning-browser-review.json).
+- [Independent whole-gap arithmetic](tuning-model-review.json).
+- [Measured downloaded audio](tuning-audio-review.json) and [native local-file audio decoding](tuning-native-audio-review.json).
+- [Original bench browser regression](tuning-bench-regression.json) and [measured audio](tuning-bench-audio-review.json).
+- [Initial offline-install fault/recovery cases](tuning-offline-failure.json).
+
+![The two witnesses in the production pitch instrument](assets/tuning-instrument-desktop.png)
+
+The desktop and phone screenshots were inspected for layout, labels, contrast
+and overflow. Captures use reduced motion so animated scrolling cannot record
+the previous section. The phone pitch labels alternate rows to remain readable; the
+frequency table scrolls inside its own keyboard-accessible region. The saved
+HTML's large diagram can also scroll inside its own region on a phone.
+
+[Editable example](../examples/tuning-family.json) ·
+[CSV](../examples/tuning-family.csv) · [WAV](../examples/tuning-family.wav).
+These files are actual browser downloads from the reviewed production build.
+The complete reading is produced by the Save button; it is not duplicated in
+the source tree because it embeds the already-retained images and fonts.
+
+Suggested repository description: "Explore ancient Indian count rows, build alternative tunings, and read Sanskrit beside primary scans."
+Suggested topics: `sanskrit`, `indian-music`, `music-theory`, `web-audio`,
+`history-of-music`, `education`, `offline-first`.
+
+One supplemental Firefox capture attempt ended with its download target closing.
+The fresh-install review and a subsequent complete four-configuration capture
+run both succeeded. The retained browser receipt describes the successful
+final capture run; the clean-install receipt records the earlier fresh archive.

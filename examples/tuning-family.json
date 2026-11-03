@@ -1,0 +1,16 @@
+{
+  "format": "grama-tuning-family-v1",
+  "notice": "Copyright (c) 2026 Anthony Mercer. PolyForm-Noncommercial-1.0.0. Modern teaching model, not an ancient performance reconstruction.",
+  "state": {
+    "current": {
+      "four": 230,
+      "two": 90
+    },
+    "reference": {
+      "four": 203.91000173077484,
+      "two": 111.73128526977774
+    },
+    "base": 220,
+    "locked": false
+  }
+}

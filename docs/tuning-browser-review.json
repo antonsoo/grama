@@ -1,0 +1,253 @@
+{
+  "checkedAt": "2026-11-03T05:07:30.305Z",
+  "scope": "Local production; actual native files and audio nodes; origin disabled for offline reload. No publication claim.",
+  "workerSha256": "b82e69a0d62a4dcb2582a20b1d8c058c6d4e70ad0b2eda9f3facb7b50b31f590",
+  "configurations": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "reducedMotion": true,
+      "lockedGapChangedWithPureFourthFifth": true,
+      "failedCandidateRetained": true,
+      "keyboardOperated": true,
+      "pinnedWitnessIndependent": true,
+      "delayedResumeCancelled": true,
+      "livePcmMatchesNativeWav": true,
+      "wavSha256": "f424b695ce18762c8e89317e10514be6cc2142e99c22aa821c30c488cb64faf9",
+      "readingSha256": "e4db399a20ea869a585b4ffc20c17dcb87fb6159ef11b8c42db23deda0e3d0ad",
+      "allElevenEmbeddedSourceHashes": true,
+      "portableRemoteRequests": [],
+      "corruptSourceExportRejected": true,
+      "corruptCacheReadinessRejected": true,
+      "missingWorkshopPageRepaired": true,
+      "offlineRepairFailurePreservesTuning": true,
+      "crossTabRepair": true,
+      "offlineOriginDisabled": true,
+      "offlineReadingByteIdentical": true,
+      "axeViolations": 0,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "reducedMotion": true,
+      "lockedGapChangedWithPureFourthFifth": true,
+      "failedCandidateRetained": true,
+      "keyboardOperated": true,
+      "pinnedWitnessIndependent": true,
+      "delayedResumeCancelled": true,
+      "livePcmMatchesNativeWav": true,
+      "wavSha256": "f424b695ce18762c8e89317e10514be6cc2142e99c22aa821c30c488cb64faf9",
+      "readingSha256": "e4db399a20ea869a585b4ffc20c17dcb87fb6159ef11b8c42db23deda0e3d0ad",
+      "allElevenEmbeddedSourceHashes": true,
+      "portableRemoteRequests": [],
+      "corruptSourceExportRejected": true,
+      "corruptCacheReadinessRejected": true,
+      "missingWorkshopPageRepaired": true,
+      "offlineRepairFailurePreservesTuning": true,
+      "crossTabRepair": true,
+      "offlineOriginDisabled": true,
+      "offlineReadingByteIdentical": true,
+      "axeViolations": 0,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "reducedMotion": true,
+      "lockedGapChangedWithPureFourthFifth": true,
+      "failedCandidateRetained": true,
+      "keyboardOperated": true,
+      "pinnedWitnessIndependent": true,
+      "delayedResumeCancelled": true,
+      "livePcmMatchesNativeWav": true,
+      "wavSha256": "f424b695ce18762c8e89317e10514be6cc2142e99c22aa821c30c488cb64faf9",
+      "readingSha256": "e4db399a20ea869a585b4ffc20c17dcb87fb6159ef11b8c42db23deda0e3d0ad",
+      "allElevenEmbeddedSourceHashes": true,
+      "portableRemoteRequests": [],
+      "corruptSourceExportRejected": true,
+      "corruptCacheReadinessRejected": true,
+      "missingWorkshopPageRepaired": true,
+      "offlineRepairFailurePreservesTuning": true,
+      "crossTabRepair": true,
+      "offlineOriginDisabled": true,
+      "offlineReadingByteIdentical": true,
+      "axeViolations": 0,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "reducedMotion": true,
+      "lockedGapChangedWithPureFourthFifth": true,
+      "failedCandidateRetained": true,
+      "keyboardOperated": true,
+      "pinnedWitnessIndependent": true,
+      "delayedResumeCancelled": true,
+      "livePcmMatchesNativeWav": true,
+      "wavSha256": "f424b695ce18762c8e89317e10514be6cc2142e99c22aa821c30c488cb64faf9",
+      "readingSha256": "e4db399a20ea869a585b4ffc20c17dcb87fb6159ef11b8c42db23deda0e3d0ad",
+      "allElevenEmbeddedSourceHashes": true,
+      "portableRemoteRequests": [],
+      "corruptSourceExportRejected": true,
+      "corruptCacheReadinessRejected": true,
+      "missingWorkshopPageRepaired": true,
+      "offlineRepairFailurePreservesTuning": true,
+      "crossTabRepair": true,
+      "offlineOriginDisabled": true,
+      "offlineReadingByteIdentical": true,
+      "axeViolations": 0,
+      "pageErrors": [],
+      "externalRequests": []
+    }
+  ],
+  "servedFiles": [
+    {
+      "file": "assets/main-CmV2OXoF.js",
+      "bytes": 8331,
+      "sha256": "32525a74ca83297ce1b7e92cc887f42e31bc20ecdde15af819a869be52013713"
+    },
+    {
+      "file": "assets/offline-BNACetDe.css",
+      "bytes": 7254,
+      "sha256": "59058adf94711939f91077de7d5a67a98e655453f28916b4882b888c1ca22a7f"
+    },
+    {
+      "file": "assets/offline-Dhaig5t4.js",
+      "bytes": 36622,
+      "sha256": "ad10b755cc18ffa7d02abe88e0b3e22201658a4224b2bd7daa2260f4736785a4"
+    },
+    {
+      "file": "assets/tuning-DGTLASe1.js",
+      "bytes": 24359,
+      "sha256": "cb7081b7ca397a67b559e5d29a17c6502c0bef9a573d5588306c3794eb91c356"
+    },
+    {
+      "file": "assets/tuning-DJpGTIws.css",
+      "bytes": 3643,
+      "sha256": "9c3be8bbb8adfa10a881f4e68dcc706aa1172d66320ca86a52f4822786640926"
+    },
+    {
+      "file": "favicon.svg",
+      "bytes": 352,
+      "sha256": "ae9db7c7e064d96c879f4b8126682659dc0aaa81442dcb6c27c61917052ea144"
+    },
+    {
+      "file": "fonts/IBMPlex-OFL.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "file": "fonts/IBMPlexSans-Regular.woff2",
+      "bytes": 63020,
+      "sha256": "ba711a3085ff9f27440b6b9c4550cfc47c97bf36591d5da958b975bb3add8c1a"
+    },
+    {
+      "file": "fonts/IBMPlexSans-SemiBold.woff2",
+      "bytes": 67060,
+      "sha256": "f78048030eab62e860efa39a0df79e2e5581bf122eb95b9bc42c0b8a4988d205"
+    },
+    {
+      "file": "fonts/NotoSerif-OFL.txt",
+      "bytes": 4396,
+      "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a"
+    },
+    {
+      "file": "fonts/NotoSerif-Regular.ttf",
+      "bytes": 444064,
+      "sha256": "5473d2e43bdd018ee124a4addba8091fd0a29894b121cbb741023af6549662b6"
+    },
+    {
+      "file": "fonts/NotoSerifDevanagari-OFL.txt",
+      "bytes": 4386,
+      "sha256": "a216f6f8d85c7228093e0ee5e258d9d377e6671f68acb4db1930b29583d0f331"
+    },
+    {
+      "file": "fonts/NotoSerifDevanagari.ttf",
+      "bytes": 757692,
+      "sha256": "1191e07bfeb062d80e252eb85b0eafdfbda1e350707a2a60628668e8f677dbbb"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9306,
+      "sha256": "ddc2c7162f8382a9d4b9bf31f44fa6b183177500c60948d6137889cc1901395f"
+    },
+    {
+      "file": "sources/grosset-21.jpg",
+      "bytes": 377148,
+      "sha256": "79f6b71fbce81f18d63d663ce10883a2a17cc15fe2adb76b824acf426148a309"
+    },
+    {
+      "file": "sources/grosset-28.jpg",
+      "bytes": 431366,
+      "sha256": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3"
+    },
+    {
+      "file": "sources/grosset-29.jpg",
+      "bytes": 432007,
+      "sha256": "a60790bddea16456a75196c9274597a67b5e43531a65a843748d5397dc513ebe"
+    },
+    {
+      "file": "sources/grosset-57.jpg",
+      "bytes": 284343,
+      "sha256": "f39f7e571c06cb95e15a92b069ce0be095553a37629f875a9d26d8914df18ae6"
+    },
+    {
+      "file": "sources/grosset-58.jpg",
+      "bytes": 244755,
+      "sha256": "bdcc873c7a56e364bcf38c5a36f39ac1c43ed2f6e68ef164b524f006cc9eacb4"
+    },
+    {
+      "file": "sources/grosset-85.jpg",
+      "bytes": 436186,
+      "sha256": "a6c7d6ce73e1d116ae8b20483c5522dfee2b51e16ba9adec19dce6ecff180a3a"
+    },
+    {
+      "file": "sources/grosset-86.jpg",
+      "bytes": 443621,
+      "sha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92"
+    },
+    {
+      "file": "sources/grosset-title.jpg",
+      "bytes": 100346,
+      "sha256": "f900e5c8c737b1ac3e99af0fb83e161ebb2a7781e48ed94ee7298f0f4c9a1bb3"
+    },
+    {
+      "file": "sources/manifest.json",
+      "bytes": 4507,
+      "sha256": "dde86483b9804537b31624c0fac2cf20bf5a956b5a50dea7fb585b5771a188fb"
+    },
+    {
+      "file": "sources/natya-301.jpg",
+      "bytes": 469463,
+      "sha256": "bea36ffde05b6a9f6205fd92811a7ab988e7cc272e96f93fce33dfecb5d12fda"
+    },
+    {
+      "file": "sources/natya-302.jpg",
+      "bytes": 410056,
+      "sha256": "a87eddc7178a7226cedb70135e1bdf8bda3ace323e301849928693640a48aae8"
+    },
+    {
+      "file": "sources/natya-title.jpg",
+      "bytes": 122885,
+      "sha256": "ae16a256bf21bd9f3e7ed7d7212cb3e1d318de5b25dda14a571b348d2c0648d5"
+    },
+    {
+      "file": "sw.js",
+      "bytes": 7363,
+      "sha256": "b82e69a0d62a4dcb2582a20b1d8c058c6d4e70ad0b2eda9f3facb7b50b31f590"
+    },
+    {
+      "file": "tuning.html",
+      "bytes": 9516,
+      "sha256": "e1f42f541509dfac4f9e607314aa71b43cd35306f43e394ec736c0b420db23a5"
+    }
+  ]
+}

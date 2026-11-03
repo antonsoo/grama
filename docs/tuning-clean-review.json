@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-11-03T05:02:48.400134+00:00",
+  "sourceCommit": "c076afb791ed30be0ca898bedfc056a8c595c7ee",
+  "scope": "Fresh git archive and npm ci; local production delivery and operated workflows. Later evidence-only commits do not affect the build inputs. No remote publication or CI claim.",
+  "node": "v26.7.0",
+  "npm": "12.0.1",
+  "platform": "Linux x86_64",
+  "checks": {
+    "freshInstall": true,
+    "lint": true,
+    "typecheck": true,
+    "unitTests": 14,
+    "originalModelCases": 28,
+    "originalOrderedPitches": 224,
+    "familyGridCandidates": 7371,
+    "fixedFourthFifthCandidates": 91,
+    "familyBrowserConfigurations": 4,
+    "benchBrowserConfigurations": 4,
+    "initialInstallFailureRecoveryCases": 4,
+    "sourceJsonDevelopmentEditAndRestore": true,
+    "sourcePdfRerenderedPages": 8,
+    "localBuildEqualsCleanArchiveBuild": true,
+    "documentedDevCommandBothPages": true,
+    "reducedMotionRecaptureOnSameBuild": true
+  },
+  "workerSha256": "b82e69a0d62a4dcb2582a20b1d8c058c6d4e70ad0b2eda9f3facb7b50b31f590",
+  "canonicalFiles": 28,
+  "canonicalBytes": 5208503,
+  "examples": [
+    {
+      "file": "tuning-family.json",
+      "sha256": "31c5738436f0e937208051500f4aeba7da028c12c492cda636ad7dba91204782"
+    },
+    {
+      "file": "tuning-family.csv",
+      "sha256": "5d6679533e8857c145c403cfbad372e30299e31425fabac40e29a9d01dedffc7"
+    },
+    {
+      "file": "tuning-family.wav",
+      "sha256": "f424b695ce18762c8e89317e10514be6cc2142e99c22aa821c30c488cb64faf9"
+    }
+  ]
+}
