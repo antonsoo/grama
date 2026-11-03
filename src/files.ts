@@ -3,6 +3,7 @@ import { READINGS, WORDS } from "./content";
 import { score, wav } from "./core/audio";
 import { comparisonJSON } from "./core/record";
 import { verifiedFetch } from "./core/verified-fetch.js";
+import { keepSaveAlive } from "./save-liveness";
 
 export { comparisonJSON, parseComparison } from "./core/record";
 
@@ -33,6 +34,8 @@ export async function asset(
   file: string,
   options: ReadOptions = {},
 ): Promise<Uint8Array<ArrayBuffer>> {
+  const worker = "serviceWorker" in navigator ? navigator.serviceWorker.controller : null;
+  const stopAcknowledging = worker ? keepSaveAlive(worker) : () => {};
   try {
     return await verifiedFetch(
       `${import.meta.env.BASE_URL}${file}`,
@@ -40,7 +43,7 @@ export async function asset(
         sha256: __ASSET_HASHES__[file] ?? "",
         bytes: __ASSET_BYTES__[file] ?? -1,
       },
-      { ...options, headers: { "X-Grama-Edition": __GRAMA_EDITION__ } },
+      { ...options, cache: "no-cache", headers: { "X-Grama-Edition": __GRAMA_EDITION__ } },
     );
   } catch (error) {
     if (error instanceof Error && error.name === "IntegrityError")
@@ -48,6 +51,8 @@ export async function asset(
         `The saved copy of ${file} differs from this edition. Reload the complete current edition before saving.`,
       );
     throw error;
+  } finally {
+    stopAcknowledging();
   }
 }
 export const STUDY_ASSETS = [

@@ -245,7 +245,7 @@ scope.addEventListener("message", (event) => {
 async function savedOrFetched(file, request) {
   // A current page must not receive an older controller's source bytes.
   const requested = request.headers.get("X-Grama-Edition");
-  if (requested && requested !== CONFIG.edition) return fetch(request);
+  if (requested && requested !== CONFIG.edition) return fetch(request, { cache: "no-store" });
   const cached = await caches.match(file, { cacheName: CONFIG.cache });
   if (await valid(file, cached?.clone())) return /** @type {Response} */ (cached);
   if (cached) {
@@ -260,7 +260,7 @@ async function savedOrFetched(file, request) {
   // The document verifies its own identified source reads before displaying or
   // exporting them. Forward their response stream immediately: buffering here
   // would hide active bytes behind the document's header-inactivity deadline.
-  if (requested === CONFIG.edition) return fetch(request);
+  if (requested === CONFIG.edition) return fetch(request, { cache: "no-store" });
   const identity = CONFIG.assets[file];
   if (!identity) return fetch(request);
   const lease = await owner();

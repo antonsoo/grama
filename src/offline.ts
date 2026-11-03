@@ -1,21 +1,11 @@
+import { keepSaveAlive } from "./save-liveness";
+
 /** Readiness belongs to this page's edition, not merely to any active worker. */
 interface EditionReply {
   type: "GRAMA_EDITION";
   edition: string;
   complete: boolean;
   error?: string;
-}
-
-/** A live document acknowledges an active save; browser worker lifetimes are bounded. */
-function keepSaveAlive(worker: ServiceWorker): () => void {
-  const interval = setInterval(() => {
-    try {
-      worker.postMessage({ type: "GRAMA_SAVE_ACK", edition: __GRAMA_EDITION__ });
-    } catch {
-      /* The worker may have been replaced. */
-    }
-  }, 5000);
-  return () => clearInterval(interval);
 }
 
 function inspectWorker(

@@ -4,7 +4,7 @@
  * This exact helper also runs inside the generated service worker.
  * @param {string} url
  * @param {{ sha256: string, bytes: number }} identity
- * @param {{signal?: AbortSignal | undefined, onProgress?: ((received: number, total: number) => void) | undefined, headers?: HeadersInit | undefined, headerWaitMs?: number, idleWaitMs?: number}} options
+ * @param {{signal?: AbortSignal | undefined, onProgress?: ((received: number, total: number) => void) | undefined, headers?: HeadersInit | undefined, cache?: RequestCache, headerWaitMs?: number, idleWaitMs?: number}} options
  * @returns {Promise<Uint8Array<ArrayBuffer>>}
  */
 export async function verifiedFetch(url, identity, options = {}) {
@@ -37,7 +37,7 @@ export async function verifiedFetch(url, identity, options = {}) {
       "The retained file did not send its headers. Retry when the connection responds.",
     );
     const response = await fetch(url, {
-      cache: "no-store",
+      cache: options.cache ?? "no-store",
       signal: controller.signal,
       ...(options.headers ? { headers: options.headers } : {}),
     });
