@@ -4,10 +4,12 @@ import {
   assessment,
   DEFAULT_FAMILY,
   EQUAL_GAPS,
+  FAMILY_NOTICE,
   familyFromHash,
   familyHash,
   familyJSON,
   familyScore,
+  familyWave,
   OTHER_GAPS,
   parseFamily,
   parseFamilyJSON,
@@ -27,6 +29,20 @@ test("both existing sound models remain members of the whole-gap family", () => 
       assert(Math.abs(c - (1200 * (slots[i] ?? 0)) / 22) < 1e-10);
     });
   }
+});
+
+test("portable WAV keeps standard PCM and includes an even-padded RIFF copyright notice", () => {
+  const bytes = familyWave(DEFAULT_FAMILY),
+    view = new DataView(bytes.buffer);
+  assert.equal(view.getUint32(4, true), bytes.length - 8);
+  const end = 44 + view.getUint32(40, true),
+    decode = (a: number, b: number) => new TextDecoder().decode(bytes.subarray(a, b));
+  assert.equal(decode(end, end + 4), "LIST");
+  assert.equal(decode(end + 8, end + 16), "INFOICOP");
+  assert.equal(end + 8 + view.getUint32(end + 4, true), bytes.length);
+  assert.equal(decode(end + 20, end + 20 + view.getUint32(end + 16, true)), `${FAMILY_NOTICE}\0`);
+  assert.equal(bytes.length % 2, 0);
+  assert(familyJSON(DEFAULT_FAMILY).includes("PolyForm-Noncommercial-1.0.0"));
 });
 test("a changed two-count gap preserves the locked fourth/fifth, but changes Pa's lowering", () => {
   const changed = { ...RATIO_GAPS, two: RATIO_GAPS.two + 10 };

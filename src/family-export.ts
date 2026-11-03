@@ -1,13 +1,12 @@
 import manifest from "virtual:grama-sources";
 import { READINGS, WORDS } from "./content";
-import { wav } from "./core/audio";
 import {
   assessment,
   type FamilyState,
   familyCSV,
   familyHash,
   familyJSON,
-  familyScore,
+  familyWave,
 } from "./core/family";
 import { familyMap, familyRuler, familyTable, gapDescription } from "./family-figures";
 import { htmlEscape } from "./figures";
@@ -24,7 +23,7 @@ export async function familyReading(input: FamilyState): Promise<string> {
     if (!bytes) throw new Error(`The reading is missing ${file}.`);
     return `data:${mime};base64,${base64(bytes)}`;
   };
-  const wave = `data:audio/wav;base64,${base64(wav(familyScore(state, "compare")))}`;
+  const wave = `data:audio/wav;base64,${base64(familyWave(state))}`;
   const record = `data:application/json;base64,${base64(new TextEncoder().encode(familyJSON(state)))}`;
   const report = assessment(state.current);
   const passages = READINGS.map(

@@ -208,7 +208,7 @@ for (const [name, type] of [
         const wave = await save(page, "#save-wav", path.join(folder, "two-witnesses.wav"));
         assert.equal(
           pcm.sha256,
-          hash(wave.subarray(44)),
+          hash(wave.subarray(44, 44 + wave.readUInt32LE(40))),
           "actual live AudioBuffer and native WAV contain the same PCM",
         );
         const starts = await page.evaluate(() => window.audioReview.stopped);

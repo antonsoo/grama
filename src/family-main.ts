@@ -1,7 +1,7 @@
 import "./style.css";
 import "./family.css";
 import { READINGS, WORDS } from "./content";
-import { SAMPLE_RATE, samples, wav } from "./core/audio";
+import { SAMPLE_RATE, samples } from "./core/audio";
 import {
   assessment,
   DEFAULT_FAMILY,
@@ -13,6 +13,7 @@ import {
   familyHash,
   familyJSON,
   familyScore,
+  familyWave,
   type Gaps,
   OTHER_GAPS,
   PURE_FOUR,
@@ -207,7 +208,7 @@ element("save-csv").addEventListener("click", () =>
   download("grama-two-witnesses.csv", familyCSV(state), "text/csv;charset=utf-8"),
 );
 element("save-wav").addEventListener("click", () =>
-  download("grama-two-witnesses.wav", wav(familyScore(state, "compare")), "audio/wav"),
+  download("grama-two-witnesses.wav", familyWave(state), "audio/wav"),
 );
 element("save-reading").addEventListener("click", async () => {
   const captured = structuredClone(state),

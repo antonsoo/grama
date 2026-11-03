@@ -1,4 +1,4 @@
-import type { SoundEvent } from "./audio";
+import { type SoundEvent, wav } from "./audio";
 import { cents, type Grama, NOTES, outgoing } from "./tuning";
 
 /** Whole-gap sizes, in cents. This does not divide each gap into equal srutis. */
@@ -16,6 +16,8 @@ export const PURE_FOUR = cents(9 / 8);
 export const RATIO_GAPS: Gaps = { four: PURE_FOUR, two: cents(16 / 15) };
 export const EQUAL_GAPS: Gaps = { four: 4800 / 22, two: 2400 / 22 };
 export const OTHER_GAPS: Gaps = { four: 230, two: 90 };
+export const FAMILY_NOTICE =
+  "Copyright (c) 2026 Anthony Mercer. PolyForm-Noncommercial-1.0.0. Modern teaching model, not an ancient performance reconstruction.";
 export const DEFAULT_FAMILY: FamilyState = {
   current: { ...RATIO_GAPS },
   reference: { ...RATIO_GAPS },
@@ -123,13 +125,14 @@ export function familyFromHash(hash: string): FamilyState {
   });
 }
 export function familyJSON(state: FamilyState): string {
-  return `${JSON.stringify({ format: "grama-tuning-family-v1", state: parseFamily(state) }, null, 2)}\n`;
+  return `${JSON.stringify({ format: "grama-tuning-family-v1", notice: FAMILY_NOTICE, state: parseFamily(state) }, null, 2)}\n`;
 }
 export function parseFamilyJSON(raw: string): FamilyState {
   if (raw.length > 65536) throw new Error("Tuning JSON must be under 64 KB.");
   const data = object(JSON.parse(raw));
   if (
-    Object.keys(data).sort().join(",") !== "format,state" ||
+    Object.keys(data).sort().join(",") !== "format,notice,state" ||
+    data.notice !== FAMILY_NOTICE ||
     data.format !== "grama-tuning-family-v1"
   )
     throw new Error("Expected a grama-tuning-family-v1 record.");
@@ -137,7 +140,7 @@ export function parseFamilyJSON(raw: string): FamilyState {
 }
 export function familyCSV(state: FamilyState): string {
   const rows = [
-    "# Modern whole-gap family; not a recovered ancient tuning. Numerical cents and Hz are approximate.",
+    `# ${FAMILY_NOTICE} Numerical cents and Hz are approximate.`,
     "witness,grama,note,incoming_count,cents_from_Sa,frequency_hz,four_count_cents,three_count_cents,two_count_cents,ordered_gaps,Pa_lowers",
   ];
   for (const witness of ["reference", "current"] as const) {
@@ -182,4 +185,24 @@ export function familyScore(state: FamilyState, kind: FamilyListening): SoundEve
       }));
     });
   });
+}
+
+/** Standard RIFF INFO copyright chunk: keep attribution with the portable sound. */
+export function familyWave(state: FamilyState): Uint8Array<ArrayBuffer> {
+  const audio = wav(familyScore(state, "compare"));
+  const notice = new TextEncoder().encode(`${FAMILY_NOTICE}\0`);
+  const padded = notice.length + (notice.length % 2);
+  const out = new Uint8Array(audio.length + 20 + padded);
+  out.set(audio);
+  const view = new DataView(out.buffer);
+  const text = (offset: number, value: string) => out.set(new TextEncoder().encode(value), offset);
+  const offset = audio.length;
+  text(offset, "LIST");
+  view.setUint32(offset + 4, 12 + padded, true);
+  text(offset + 8, "INFO");
+  text(offset + 12, "ICOP");
+  view.setUint32(offset + 16, notice.length, true);
+  out.set(notice, offset + 20);
+  view.setUint32(4, out.length - 8, true);
+  return out;
 }

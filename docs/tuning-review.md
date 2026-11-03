@@ -77,6 +77,8 @@ The control rectangle is a bounded teaching domain, not historical limits.
 The original exact-fraction presets remain unchanged. The new family uses
 floating-point cents and frequencies; displayed values are rounded. A saved
 record retains full numerical control values, the lock and both witnesses.
+JSON and CSV carry the current attribution/license notice; WAV retains it in a
+standard RIFF INFO copyright chunk after the PCM data.
 A failed candidate can occupy the editable slot. A saved witness must meet
 the displayed conditions. JSON and links reject unknown, missing, duplicate
 link keys, nonfinite, out-of-bounds and inconsistent lock settings.
@@ -152,7 +154,7 @@ The independent Python check uses named-note closed forms rather than the
 product's count walk. It checks 7,371 integer-grid candidates (4,267 satisfy the
 strict gap ordering) and 91 settings on the fixed-fourth/fifth line. The latter
 uses 50-digit Decimal calculations to check the pure frequency ratios.
-Thirteen unit tests cover the existing exact examples and the new family.
+Fourteen unit tests cover the existing exact examples and the new family.
 
 Chromium and Firefox at 1440 and 375 pixels operate the actual controls,
 pinning, keyboard interaction, strict reopening, shared links, delayed audio
