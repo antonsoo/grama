@@ -1,3 +1,5 @@
+import { readingSave } from "./reading-save";
+import { SourcePlate } from "./source-plate";
 import "./style.css";
 import manifest from "virtual:grama-sources";
 import { READINGS, WORDS } from "./content";
@@ -70,16 +72,20 @@ page.innerHTML = manifest.pages
       `<option value="${p.file}">${p.edition === "grosset1888" ? "Grosset 1888" : "Nāṭyaśāstra 1894"}, p.${p.printed}: ${htmlEscape(p.caption)}</option>`,
   )
   .join("");
+const plate = new SourcePlate(
+  element<HTMLImageElement>("scan"),
+  element<HTMLAnchorElement>("scan-link"),
+  element("scan-caption"),
+);
 function showPage(file: string) {
   const p = manifest.pages.find((p) => p.file === file);
   if (!p) return;
   page.value = file;
-  const img = element<HTMLImageElement>("scan");
-  img.src = `${import.meta.env.BASE_URL}${file}`;
-  img.alt = `${p.edition === "grosset1888" ? "Grosset 1888" : "Nāṭyaśāstra 1894"}, printed p.${p.printed}: ${p.caption}`;
-  element<HTMLAnchorElement>("scan-link").href = img.src;
-  element("scan-caption").textContent =
-    `${p.caption}. Printed p.${p.printed}; physical PDF p.${p.pdfPage}.`;
+  void plate.show(
+    file,
+    `${p.edition === "grosset1888" ? "Grosset 1888" : "Nāṭyaśāstra 1894"}, printed p.${p.printed}: ${p.caption}`,
+    `${p.caption}. Printed p.${p.printed}; physical PDF p.${p.pdfPage}.`,
+  );
 }
 function showPassage() {
   const r = READINGS[passageIndex];
@@ -187,26 +193,13 @@ element("save-svg").addEventListener("click", () =>
 element("save-wav").addEventListener("click", () =>
   download("grama-modern-comparison.wav", wav(score(pose, "context")), "audio/wav"),
 );
-element("save-reading").addEventListener("click", async () => {
-  const captured = { ...pose };
-  const button = element<HTMLButtonElement>("save-reading");
-  button.disabled = true;
-  fileStatus.textContent =
-    "Preparing the complete reading and verifying its source pages and fonts…";
-  try {
-    const html = await illustratedReading(captured);
-    download("grama-illustrated-reading.html", html, "text/html;charset=utf-8");
-    fileStatus.textContent =
-      "Saved the illustrated reading, including all eleven source pages and the listening comparison, at the settings chosen when you clicked Save.";
-  } catch (e) {
-    fileStatus.textContent =
-      e instanceof Error
-        ? e.message
-        : "The reading could not be saved. Try again with the complete edition available.";
-  } finally {
-    button.disabled = false;
-  }
-});
+readingSave(
+  element<HTMLButtonElement>("save-reading"),
+  fileStatus,
+  (options) => illustratedReading({ ...pose }, options),
+  "grama-illustrated-reading.html",
+  "Saved the illustrated reading, including all eleven source pages and the listening comparison, at the settings chosen when you clicked Save.",
+);
 element<HTMLInputElement>("open-json").addEventListener("change", async (e) => {
   const input = e.target as HTMLInputElement;
   const file = input.files?.[0];

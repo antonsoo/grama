@@ -10,14 +10,15 @@ import {
 } from "./core/family";
 import { familyMap, familyRuler, familyTable, gapDescription } from "./family-figures";
 import { htmlEscape } from "./figures";
-import { asset, base64, STUDY_ASSETS } from "./files";
+import { base64, type ReadOptions, studyAssets } from "./files";
 
 /** Capture before any await: source fetching must not change the saved experiment. */
-export async function familyReading(input: FamilyState): Promise<string> {
+export async function familyReading(
+  input: FamilyState,
+  options: ReadOptions = {},
+): Promise<string> {
   const state = structuredClone(input);
-  const loaded = new Map(
-    await Promise.all(STUDY_ASSETS.map(async (file) => [file, await asset(file)] as const)),
-  );
+  const loaded = await studyAssets(options);
   const data = (file: string, mime: string) => {
     const bytes = loaded.get(file);
     if (!bytes) throw new Error(`The reading is missing ${file}.`);

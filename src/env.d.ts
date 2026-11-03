@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 declare const __GRAMA_EDITION__: string;
 declare const __ASSET_HASHES__: Record<string, string>;
+declare const __ASSET_BYTES__: Record<string, number>;
 declare module "virtual:grama-sources" {
   const manifest: {
     note: string;

@@ -25,6 +25,7 @@ export default defineConfig(async ({ command }) => {
     "tuning.html",
     "vite.config.ts",
     "tsconfig.json",
+    "tsconfig.worker.json",
     "package.json",
     "package-lock.json",
   ].sort();
@@ -42,6 +43,16 @@ export default defineConfig(async ({ command }) => {
       },
     },
     define: {
+      __ASSET_BYTES__: JSON.stringify(
+        Object.fromEntries(
+          await Promise.all(
+            (await filesIn("public")).map(async (file) => [
+              file.slice(7),
+              (await readFile(file)).length,
+            ]),
+          ),
+        ),
+      ),
       __GRAMA_EDITION__: JSON.stringify(edition),
       __ASSET_HASHES__: JSON.stringify(
         Object.fromEntries(
@@ -77,94 +88,42 @@ export default defineConfig(async ({ command }) => {
           const urls = files.map(
             (file) => base + path.relative("dist", file).split(path.sep).join("/"),
           );
-          const integrity = Object.fromEntries(
+          const types: Record<string, string> = {
+            ".html": "text/html",
+            ".js": "text/javascript",
+            ".css": "text/css",
+            ".jpg": "image/jpeg",
+            ".json": "application/json",
+            ".svg": "image/svg+xml",
+            ".ttf": "font/ttf",
+            ".woff2": "font/woff2",
+            ".txt": "text/plain",
+          };
+          const assets = Object.fromEntries(
             await Promise.all(
-              files.map(async (file, index) => [
-                urls[index],
-                `sha256-${createHash("sha256")
-                  .update(await readFile(file))
-                  .digest("base64")}`,
-              ]),
+              files.map(async (file, index) => {
+                const bytes = await readFile(file);
+                return [
+                  urls[index],
+                  {
+                    sha256: createHash("sha256").update(bytes).digest("hex"),
+                    bytes: bytes.length,
+                    type: types[path.extname(file)] ?? "application/octet-stream",
+                  },
+                ];
+              }),
             ),
           );
+          const inventory = createHash("sha256").update(JSON.stringify(assets)).digest("hex");
+          const config = { edition, cache: `grama-${edition}-${inventory}`, base, assets };
+          const helper = (await readFile("src/core/verified-fetch.js", "utf8")).replace(
+            /^export /gm,
+            "",
+          );
+          const worker = await readFile("src/offline-worker.js", "utf8");
           await writeFile(
             "dist/sw.js",
-            `/* Offline edition ${edition}. Generated from the complete build. */
-const CACHE = "grama-${edition}";
-const EDITION = ${JSON.stringify(edition)};
-const BASE = ${JSON.stringify(base)};
-const FILES = ${JSON.stringify(urls)};
-const INTEGRITY = ${JSON.stringify(integrity)};
-async function valid(file, response) {
-  if (!response || !response.ok) return false;
-  const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", await response.arrayBuffer()));
-  return "sha256-" + btoa(String.fromCharCode(...digest)) === INTEGRITY[file];
-}
-async function inspect() {
-  // match() avoids recreating a deleted superseded cache.
-  const checked = await Promise.all(FILES.map(async file => valid(file, await caches.match(file, { cacheName: CACHE }))));
-  return checked.every(Boolean);
-}
-async function announce() {
-  const clients = await self.clients.matchAll({ type: "window" });
-  clients.forEach(client => client.postMessage({ type: "GRAMA_CACHE_CHANGED", edition: EDITION }));
-}
-let repairing;
-async function repair() {
-  if (repairing) return repairing;
-  repairing = (async () => {
-    const cache = await caches.open(CACHE);
-    // Preserve valid files; fetch only missing or substituted bytes. Sequential
-    // requests also avoid competing with a foreground illustrated reading.
-    for (const file of FILES) {
-      if (await valid(file, await cache.match(file))) continue;
-      const response = await fetch(new Request(file, { cache: "reload", integrity: INTEGRITY[file], signal: AbortSignal.timeout(45000) }));
-      if (!await valid(file, response.clone())) throw new Error("Edition identity mismatch");
-      await cache.put(file, response);
-    }
-    return inspect();
-  })().finally(() => { repairing = undefined; });
-  return repairing;
-}
-self.addEventListener("install", event => {
-  // HTTP success does not establish edition identity. A stale entry page or
-  // substituted scan must fail the complete install before this worker activates.
-  const requests = FILES.map(url => new Request(url, { cache: "reload", integrity: INTEGRITY[url] }));
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(requests)).then(() => self.skipWaiting()));
-});
-self.addEventListener("activate", event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith("grama-") && key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim()));
-});
-self.addEventListener("message", event => {
-  if (event.data?.type === "GRAMA_CLAIM" && event.data.edition === EDITION) {
-    event.waitUntil(self.clients.claim());
-    return;
-  }
-  if (event.data?.type === "GRAMA_ACTIVATE") {
-    event.waitUntil(self.skipWaiting());
-    return;
-  }
-  if (!["GRAMA_INSPECT", "GRAMA_REPAIR"].includes(event.data?.type) || !event.ports[0]) return;
-  if (event.data.type === "GRAMA_REPAIR" && event.data.edition !== EDITION) return;
-  // A late reply from a superseded worker must not recreate its deleted cache.
-  const work = event.data.type === "GRAMA_REPAIR" ? repair() : inspect();
-  event.waitUntil(work.then(complete => {
-    event.ports[0].postMessage({ type: "GRAMA_EDITION", edition: EDITION, complete });
-  }).catch(() => event.ports[0].postMessage({ type: "GRAMA_EDITION", edition: EDITION, complete: false })).finally(() => {
-    if (event.data.type === "GRAMA_REPAIR") return announce();
-  }));
-});
-self.addEventListener("fetch", event => {
-  const url = new URL(event.request.url);
-  if (event.request.method !== "GET" || url.origin !== self.location.origin || !url.pathname.startsWith(BASE)) return;
-  if (event.request.mode === "navigate") {
-    const page = url.pathname === BASE || url.pathname === BASE + "index.html" ? BASE + "index.html" : url.pathname;
-    if (FILES.includes(page)) event.respondWith(fetch(event.request).catch(() => caches.open(CACHE).then(cache => cache.match(page))));
-  } else if (FILES.includes(url.pathname)) {
-    event.respondWith(caches.open(CACHE).then(cache => cache.match(url.pathname)).then(cached => cached || fetch(event.request)));
-  }
-});
-`,
+            `/* Offline edition ${edition}. Exact retained bytes, current worker ownership and transfer inactivity deadlines. */\nconst CONFIG = ${JSON.stringify(config)};\n${helper}\n${worker}`,
           );
         },
       },

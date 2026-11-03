@@ -25,11 +25,11 @@
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 4394 --strictPort",
-    "build": "tsc --noEmit && vite build",
+    "build": "npm run typecheck && vite build",
     "preview": "vite preview --host 127.0.0.1 --port 4394 --strictPort",
     "lint": "biome check .",
     "format": "biome check --write .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.worker.json",
     "test": "node --import tsx --test tests/*.test.ts",
     "check": "npm run lint && npm run typecheck && npm test && npm run build",
     "verify:oracle": "node --import tsx scripts/model-cases.ts | python3 scripts/model-oracle.py",
@@ -37,7 +37,11 @@
     "verify:family": "node --import tsx scripts/family-cases.ts | python3 scripts/family-oracle.py",
     "test:family": "node scripts/family-browser.mjs",
     "verify:family-audio": "python3 scripts/family-wav-oracle.py",
-    "test:source-json": "node scripts/source-json-development.mjs"
+    "test:source-json": "node scripts/source-json-development.mjs",
+    "test:interactions": "node scripts/interaction-audit.mjs",
+    "test:network": "node scripts/network-audit.mjs",
+    "test:cold-save": "node scripts/cold-save-audit.mjs",
+    "test:upgrade": "node scripts/upgrade-audit.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

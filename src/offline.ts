@@ -3,21 +3,72 @@ interface EditionReply {
   type: "GRAMA_EDITION";
   edition: string;
   complete: boolean;
+  error?: string;
 }
 
-function inspectWorker(worker: ServiceWorker, repair = false): Promise<EditionReply | null> {
+/** A live document acknowledges an active save; browser worker lifetimes are bounded. */
+function keepSaveAlive(worker: ServiceWorker): () => void {
+  const interval = setInterval(() => {
+    try {
+      worker.postMessage({ type: "GRAMA_SAVE_ACK", edition: __GRAMA_EDITION__ });
+    } catch {
+      /* The worker may have been replaced. */
+    }
+  }, 5000);
+  return () => clearInterval(interval);
+}
+
+function inspectWorker(
+  worker: ServiceWorker,
+  repair = false,
+  progress?: (text: string) => void,
+): Promise<EditionReply | null> {
   return new Promise((resolve) => {
     const channel = new MessageChannel();
+    const stopAcknowledging = repair ? keepSaveAlive(worker) : () => {};
+    let settled = false;
     const finish = (reply: EditionReply | null) => {
+      if (settled) return;
+      settled = true;
+      stopAcknowledging();
       clearTimeout(timeout);
       channel.port1.close();
       resolve(reply);
     };
     // Older published workers do not implement this message. Their silence is
     // not evidence that the newly loaded course has been cached.
-    const timeout = setTimeout(() => finish(null), repair ? 90000 : 10000);
+    let timeout = setTimeout(() => finish(null), repair ? 20000 : 10000);
     channel.port1.onmessage = (event: MessageEvent<unknown>) => {
       const data = event.data;
+      if (
+        repair &&
+        data &&
+        typeof data === "object" &&
+        "type" in data &&
+        data.type === "GRAMA_PROGRESS" &&
+        "edition" in data &&
+        data.edition === __GRAMA_EDITION__ &&
+        "checked" in data &&
+        typeof data.checked === "number" &&
+        "total" in data &&
+        typeof data.total === "number" &&
+        "received" in data &&
+        typeof data.received === "number" &&
+        "expected" in data &&
+        typeof data.expected === "number" &&
+        data.total > 0 &&
+        data.checked >= 0 &&
+        data.checked <= data.total &&
+        data.received >= 0 &&
+        data.received <= data.expected
+      ) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => finish(null), 20000);
+        progress?.(
+          `Repairing saved edition · ${data.checked}/${data.total} files checked · ${Math.round(data.received / 1024)}/${Math.round(data.expected / 1024)} KiB of this file. Your experiment stays in this tab.`,
+        );
+        return;
+      }
       if (
         data &&
         typeof data === "object" &&
@@ -72,13 +123,13 @@ export async function offline(status: HTMLElement): Promise<void> {
   const container = navigator.serviceWorker;
   let registration: ServiceWorkerRegistration | undefined;
   let revision = 0;
-  let verifiedCurrent = false;
   let installFailed = false;
   let repairing = false;
   const observedWorkers = new WeakSet<ServiceWorker>();
   const pending = () => {
     reload.hidden = true;
-    repair.hidden = true;
+    repair.hidden = !installFailed && !!(registration?.installing || registration?.waiting);
+    repair.textContent = "Retry offline save";
     status.textContent = installFailed
       ? "This edition could not be saved offline. Keep this tab open to continue reading."
       : !registration || registration.installing || registration.waiting
@@ -111,17 +162,16 @@ export async function offline(status: HTMLElement): Promise<void> {
     // Activation can replace the controller while the older worker is replying.
     if (currentRevision !== revision || worker !== container.controller) return;
     if (reply?.edition === __GRAMA_EDITION__ && reply.complete) {
-      verifiedCurrent = true;
       status.textContent = "Ready offline · the bench, reading, fonts & all source scans saved.";
       reload.hidden = true;
       repair.hidden = true;
     } else if (reply?.edition === __GRAMA_EDITION__ && !reply.complete) {
-      verifiedCurrent = false;
       status.textContent =
         "Offline copy is incomplete or damaged. Reconnect and repair the saved edition.";
       reload.hidden = true;
       repair.hidden = false;
-    } else if (verifiedCurrent && reply?.complete && reply.edition !== __GRAMA_EDITION__) {
+      repair.textContent = "Repair saved edition";
+    } else if (reply?.complete && reply.edition !== __GRAMA_EDITION__) {
       status.textContent = "A different edition is now saved offline. Reload to read that edition.";
       reload.hidden = false;
     } else {
@@ -133,23 +183,35 @@ export async function offline(status: HTMLElement): Promise<void> {
   });
   repair.addEventListener("click", async () => {
     const worker = container.controller;
-    if (!worker || repairing) return;
+    if (repairing) return;
+    if (!worker) {
+      installFailed = false;
+      await register();
+      return;
+    }
     repairing = true;
     revision++;
     repair.disabled = true;
     check.disabled = true;
     status.textContent = "Repairing the saved edition. Your current experiment stays in this tab…";
+    let failure: string | undefined;
     try {
-      const reply = await inspectWorker(worker, true);
+      const reply = await inspectWorker(worker, true, (text) => {
+        if (worker === container.controller) status.textContent = text;
+      });
       if (!reply?.complete)
-        status.textContent =
-          "The saved edition could not be repaired. Reconnect and try again; your current experiment was kept.";
+        failure =
+          typeof reply?.error === "string"
+            ? reply.error
+            : "The connection stopped responding. Retry the offline save.";
     } finally {
       repairing = false;
       repair.disabled = false;
       check.disabled = false;
     }
     await refresh();
+    if (failure && worker === container.controller)
+      status.textContent += ` ${failure} Your experiment was kept.`;
   });
   window.addEventListener("focus", () => {
     void refresh();
@@ -167,7 +229,9 @@ export async function offline(status: HTMLElement): Promise<void> {
     if (!worker || observedWorkers.has(worker)) return;
     observedWorkers.add(worker);
     let activated = worker.state === "activated";
+    const stopAcknowledging = worker.state === "installing" ? keepSaveAlive(worker) : () => {};
     const changed = () => {
+      if (worker.state !== "installing") stopAcknowledging();
       if (worker.state === "activated") activated = true;
       if (worker.state === "redundant" && !activated) installFailed = true;
       void refresh();

@@ -2,6 +2,7 @@ import manifest from "virtual:grama-sources";
 import { READINGS, WORDS } from "./content";
 import { score, wav } from "./core/audio";
 import { comparisonJSON } from "./core/record";
+import { verifiedFetch } from "./core/verified-fetch.js";
 
 export { comparisonJSON, parseComparison } from "./core/record";
 
@@ -24,19 +25,30 @@ export function base64(bytes: Uint8Array): string {
     binary += String.fromCharCode(...bytes.subarray(offset, offset + 16384));
   return btoa(binary);
 }
-export async function asset(file: string): Promise<Uint8Array<ArrayBuffer>> {
-  const response = await fetch(`${import.meta.env.BASE_URL}${file}`);
-  if (!response.ok)
-    throw new Error(`Could not load ${file}. Keep the complete edition available and try again.`);
-  const bytes = new Uint8Array(await response.arrayBuffer());
-  const digest = [...new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))]
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-  if (digest !== __ASSET_HASHES__[file])
-    throw new Error(
-      `The saved copy of ${file} differs from this edition. Reload the complete current edition before saving.`,
+export interface ReadOptions {
+  signal?: AbortSignal;
+  onProgress?: (received: number, total: number) => void;
+}
+export async function asset(
+  file: string,
+  options: ReadOptions = {},
+): Promise<Uint8Array<ArrayBuffer>> {
+  try {
+    return await verifiedFetch(
+      `${import.meta.env.BASE_URL}${file}`,
+      {
+        sha256: __ASSET_HASHES__[file] ?? "",
+        bytes: __ASSET_BYTES__[file] ?? -1,
+      },
+      { ...options, headers: { "X-Grama-Edition": __GRAMA_EDITION__ } },
     );
-  return bytes;
+  } catch (error) {
+    if (error instanceof Error && error.name === "IntegrityError")
+      throw new Error(
+        `The saved copy of ${file} differs from this edition. Reload the complete current edition before saving.`,
+      );
+    throw error;
+  }
 }
 export const STUDY_ASSETS = [
   ...manifest.pages.map((p) => p.file),
@@ -48,11 +60,49 @@ export const STUDY_ASSETS = [
   "fonts/NotoSerif-OFL.txt",
   "fonts/NotoSerifDevanagari-OFL.txt",
 ];
-export async function illustratedReading(captured: Pose): Promise<string> {
+export async function studyAssets(
+  options: ReadOptions = {},
+): Promise<Map<string, Uint8Array<ArrayBuffer>>> {
+  const controller = new AbortController();
+  const abort = () => controller.abort(options.signal?.reason);
+  options.signal?.addEventListener("abort", abort, { once: true });
+  if (options.signal?.aborted) abort();
+  const received = new Map<string, number>();
+  const total = STUDY_ASSETS.reduce((sum, file) => sum + (__ASSET_BYTES__[file] ?? 0), 0);
+  try {
+    return new Map(
+      await Promise.all(
+        STUDY_ASSETS.map(
+          async (file) =>
+            [
+              file,
+              await asset(file, {
+                signal: controller.signal,
+                onProgress(bytes) {
+                  received.set(file, bytes);
+                  options.onProgress?.(
+                    [...received.values()].reduce((a, b) => a + b, 0),
+                    total,
+                  );
+                },
+              }),
+            ] as const,
+        ),
+      ),
+    );
+  } catch (error) {
+    controller.abort(error);
+    throw error;
+  } finally {
+    options.signal?.removeEventListener("abort", abort);
+  }
+}
+export async function illustratedReading(
+  captured: Pose,
+  options: ReadOptions = {},
+): Promise<string> {
   const pose = { ...captured };
-  const loaded = new Map(
-    await Promise.all(STUDY_ASSETS.map(async (file) => [file, await asset(file)] as const)),
-  );
+  const loaded = await studyAssets(options);
   const data = (file: string, type: string) => {
     const bytes = loaded.get(file);
     if (!bytes) throw new Error(`Missing ${file}`);

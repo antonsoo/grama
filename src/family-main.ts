@@ -1,3 +1,5 @@
+import { readingSave } from "./reading-save";
+import { SourcePlate } from "./source-plate";
 import "./style.css";
 import "./family.css";
 import { READINGS, WORDS } from "./content";
@@ -176,25 +178,13 @@ element("save-csv").addEventListener("click", () =>
 element("save-wav").addEventListener("click", () =>
   download("grama-two-witnesses.wav", familyWave(state), "audio/wav"),
 );
-element("save-reading").addEventListener("click", async () => {
-  const captured = structuredClone(state),
-    button = element<HTMLButtonElement>("save-reading");
-  button.disabled = true;
-  status.textContent = "Preparing your reading and verifying its source pages and fonts…";
-  try {
-    download(
-      "grama-tuning-family-reading.html",
-      await familyReading(captured),
-      "text/html;charset=utf-8",
-    );
-    status.textContent =
-      "Saved both witnesses at the settings chosen when you clicked Save, with sound, source pages and their identities.";
-  } catch (error) {
-    status.textContent = error instanceof Error ? error.message : "The reading could not be saved.";
-  } finally {
-    button.disabled = false;
-  }
-});
+readingSave(
+  element<HTMLButtonElement>("save-reading"),
+  status,
+  (options) => familyReading(structuredClone(state), options),
+  "grama-tuning-family-reading.html",
+  "Saved both witnesses at the settings chosen when you clicked Save, with sound, source pages and their identities.",
+);
 element<HTMLInputElement>("open-json").addEventListener("change", async (event) => {
   const input = event.target as HTMLInputElement,
     file = input.files?.[0];
@@ -239,15 +229,23 @@ element("family-reading").innerHTML = passages
         .join("")}</dl></details></article>`,
   )
   .join("");
+const plate = new SourcePlate(
+  element<HTMLImageElement>("scan"),
+  element<HTMLAnchorElement>("scan-link"),
+  element("scan-caption"),
+);
+function showSource(page: string) {
+  void plate.show(
+    `sources/grosset-${page}.jpg`,
+    `Grosset 1888, full printed page ${page}`,
+    `Grosset 1888, printed p.${page}. Open to enlarge the full page.`,
+  );
+}
+showSource("28");
 element<HTMLSelectElement>("source-page").addEventListener("change", (event) => {
   const page = (event.target as HTMLSelectElement).value;
   if (!["28", "29", "86"].includes(page)) return;
-  const image = element<HTMLImageElement>("scan");
-  image.src = `${import.meta.env.BASE_URL}sources/grosset-${page}.jpg`;
-  image.alt = `Grosset 1888, full printed page ${page}`;
-  element<HTMLAnchorElement>("scan-link").href = image.src;
-  element("scan-caption").textContent =
-    `Grosset 1888, printed p.${page}. Open to enlarge the full page.`;
+  showSource(page);
 });
 for (const anchor of document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')) {
   anchor.addEventListener("click", (event) => {
