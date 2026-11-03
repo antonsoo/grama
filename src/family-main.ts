@@ -1,7 +1,6 @@
 import "./style.css";
 import "./family.css";
 import { READINGS, WORDS } from "./content";
-import { SAMPLE_RATE, samples } from "./core/audio";
 import {
   assessment,
   DEFAULT_FAMILY,
@@ -26,6 +25,7 @@ import { familyMap, familyRuler, familyTable, gapDescription } from "./family-fi
 import { htmlEscape } from "./figures";
 import { download } from "./files";
 import { offline } from "./offline";
+import { ListeningPlayer } from "./player";
 
 function element<T extends HTMLElement>(id: string): T {
   const node = document.getElementById(id);
@@ -44,52 +44,18 @@ try {
 } catch {
   status.textContent = "Invalid tuning link. The initial examples are shown.";
 }
-let context: AudioContext | null = null,
-  playing: AudioBufferSourceNode | null = null,
-  revision = 0;
+const player = new ListeningPlayer(sound);
 function stop(message = "Sound stopped.") {
-  revision++;
-  if (playing) {
-    playing.onended = null;
-    playing.stop();
-    playing.disconnect();
-    playing = null;
-  }
-  sound.textContent = message;
+  player.stop(message);
 }
-async function listen(kind: FamilyListening) {
-  stop();
-  const captured = structuredClone(state),
-    ticket = revision;
-  try {
-    if (!context) {
-      context = new AudioContext({ sampleRate: SAMPLE_RATE });
-      context.addEventListener("statechange", () => {
-        if (context?.state !== "running" && playing)
-          stop("Audio was interrupted. Choose a listening button to start again.");
-      });
-    }
-    await context.resume();
-    if (ticket !== revision || document.hidden) return;
-    const pcm = samples(familyScore(captured, kind)),
-      buffer = context.createBuffer(1, pcm.length, SAMPLE_RATE);
-    buffer.copyToChannel(pcm, 0);
-    const source = context.createBufferSource();
-    source.buffer = buffer;
-    source.connect(context.destination);
-    playing = source;
-    source.onended = () => {
-      if (playing !== source) return;
-      source.disconnect();
-      playing = null;
-      sound.textContent = "Finished. Change a whole gap and compare again.";
-    };
-    source.start();
-    sound.textContent = `${kind === "compare" ? "Saved witness first, then your candidate." : kind === "current" ? "Playing your candidate." : "Playing the saved witness."} Ma–Pa–Dha initially, then with Pa changed. Sa = ${captured.base} Hz.${kind !== "reference" && !assessment(captured.current).lowers ? " This candidate does not lower Pa." : ""}`;
-  } catch {
-    if (ticket === revision)
-      stop("Audio could not start. Try again, or save the WAV for another player.");
-  }
+function listen(kind: FamilyListening) {
+  const captured = structuredClone(state);
+  const message = `${kind === "compare" ? "Saved witness first, then your candidate." : kind === "current" ? "Playing your candidate." : "Playing the saved witness."} Ma–Pa–Dha initially, then with Pa changed. Sa = ${captured.base} Hz.${kind !== "reference" && !assessment(captured.current).lowers ? " This candidate does not lower Pa." : ""}`;
+  return player.play(
+    familyScore(captured, kind),
+    message,
+    "Finished. Change a whole gap and compare again.",
+  );
 }
 function figures() {
   element("family-map").innerHTML = familyMap(state);
@@ -128,7 +94,7 @@ function render() {
   element("comparison-summary").textContent =
     difference < 1e-8
       ? "Your candidate matches the saved witness. Move the 2-count gap to create a different one."
-      : `Same count rows and reference pitch. Saved Pa lowering: ${reference.lowering.toFixed(3)} cents. Your candidate’s change: ${report.lowering.toFixed(3)} cents downward${report.lowers ? "." : " (zero or negative: failed lowering)."} ${state.locked ? "Your initial fourth and fifth remain at the locked pure ratios." : "The initial fourth and fifth are free to change."}`;
+      : `Same count rows and reference pitch. Saved Pa lowering: ${reference.lowering.toFixed(3)} cents. Your candidate ${report.lowers ? `lowers Pa by ${report.lowering.toFixed(3)} cents.` : report.lowering < -1e-8 ? `raises Pa by ${(-report.lowering).toFixed(3)} cents: failed lowering.` : "leaves Pa unchanged: failed lowering."} ${state.locked ? "Your initial fourth and fifth remain at the locked pure ratios." : "The initial fourth and fifth are free to change."}`;
   element<HTMLButtonElement>("pin").disabled = !report.ordered;
   element("family-table").innerHTML = familyTable(state);
   figures();
@@ -304,10 +270,6 @@ window.addEventListener("hashchange", () => {
     status.textContent = "Invalid tuning link. Your current experiment was kept.";
   }
 });
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) stop();
-});
-window.addEventListener("pagehide", () => stop());
 new ResizeObserver(figures).observe(element("family-ruler"));
 render();
 void offline(element("offline-status"));

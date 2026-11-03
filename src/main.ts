@@ -1,7 +1,7 @@
 import "./style.css";
 import manifest from "virtual:grama-sources";
 import { READINGS, WORDS } from "./content";
-import { type Listening, SAMPLE_RATE, samples, score, wav } from "./core/audio";
+import { type Listening, score, wav } from "./core/audio";
 import {
   csv,
   DEFAULT,
@@ -18,6 +18,7 @@ import {
 import { comparisonTable, countFigure, htmlEscape, pitchFigure } from "./figures";
 import { comparisonJSON, download, illustratedReading, parseComparison } from "./files";
 import { offline } from "./offline";
+import { ListeningPlayer } from "./player";
 
 function element<T extends HTMLElement>(id: string): T {
   const node = document.getElementById(id);
@@ -37,52 +38,23 @@ try {
     "This link has invalid comparison settings. The initial comparison is shown.";
 }
 let passageIndex = 2;
-let context: AudioContext | null = null;
-let playing: AudioBufferSourceNode | null = null;
-let soundRevision = 0;
+const player = new ListeningPlayer(soundStatus);
 function stopSound(message = "Sound stopped.") {
-  soundRevision++;
-  if (playing) {
-    playing.onended = null;
-    playing.stop();
-    playing.disconnect();
-    playing = null;
-  }
-  soundStatus.textContent = message;
+  player.stop(message);
 }
-async function listen(kind: Listening) {
-  stopSound();
-  const revision = soundRevision;
-  try {
-    context ??= new AudioContext({ sampleRate: SAMPLE_RATE });
-    await context.resume();
-    if (revision !== soundRevision || document.hidden) return;
-    const pcm = samples(score(pose, kind));
-    const buffer = context.createBuffer(1, pcm.length, SAMPLE_RATE);
-    buffer.copyToChannel(pcm, 0);
-    const source = context.createBufferSource();
-    source.buffer = buffer;
-    source.connect(context.destination);
-    playing = source;
-    source.onended = () => {
-      if (playing === source) {
-        source.disconnect();
-        playing = null;
-        soundStatus.textContent = "Finished. You can compare another order or pitch assumption.";
-      }
-    };
-    source.start();
-    soundStatus.textContent =
-      kind === "scale"
-        ? `Playing the ascent from ${NOTES[pose.start]?.short} in ${pose.grama === "sadja" ? "ṣaḍja" : "madhyama"}-grāma. ${MODEL_NAMES[pose.model]}.`
-        : kind === "pa"
-          ? `Playing initial Pa, lowered Pa, initial Pa, lowered Pa. ${MODEL_NAMES[pose.model]}.`
-          : `Playing Ma–Pa–Dha in the initial tuning, then Ma–Pa–Dha with Pa lowered. ${MODEL_NAMES[pose.model]}.`;
-  } catch {
-    stopSound(
-      "Audio could not start. Try a listening button again, or save the WAV to hear it in another player.",
-    );
-  }
+function listen(kind: Listening) {
+  const captured = { ...pose };
+  const message =
+    kind === "scale"
+      ? `Playing the ascent from ${NOTES[captured.start]?.short} in ${captured.grama === "sadja" ? "ṣaḍja" : "madhyama"}-grāma. ${MODEL_NAMES[captured.model]}.`
+      : kind === "pa"
+        ? `Playing initial Pa, lowered Pa, initial Pa, lowered Pa. ${MODEL_NAMES[captured.model]}.`
+        : `Playing Ma–Pa–Dha in the initial tuning, then Ma–Pa–Dha with Pa lowered. ${MODEL_NAMES[captured.model]}.`;
+  return player.play(
+    score(captured, kind),
+    message,
+    "Finished. You can compare another order or pitch assumption.",
+  );
 }
 start.innerHTML = NOTES.map(
   (n, i) => `<option value="${i}">${n.short} — ${htmlEscape(n.name)}</option>`,
@@ -267,10 +239,6 @@ element("share").addEventListener("click", async () => {
     field.select();
   }
 });
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) stopSound();
-});
-window.addEventListener("pagehide", () => stopSound());
 window.addEventListener("hashchange", () => {
   try {
     update(fromHash(location.hash));

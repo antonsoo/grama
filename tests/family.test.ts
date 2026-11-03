@@ -17,6 +17,22 @@ import {
   RATIO_GAPS,
 } from "../src/core/family";
 import { exactNotes, value } from "../src/core/tuning";
+import { familyRuler, gapDescription } from "../src/family-figures";
+
+test("failed candidate diagrams and descriptions report a raised or unchanged Pa", () => {
+  const raised = { four: 180, two: 60 },
+    unchanged = { four: 200, two: 100 };
+  assert.match(
+    familyRuler({ ...DEFAULT_FAMILY, current: raised, locked: false }),
+    /RAISED Pa \(failed\)/,
+  );
+  assert.match(
+    familyRuler({ ...DEFAULT_FAMILY, current: unchanged, locked: false }),
+    /UNCHANGED Pa \(failed\)/,
+  );
+  assert.match(gapDescription(raised), /Pa rises by 90\.000000 cents/);
+  assert.match(gapDescription(unchanged), /Pa stays unchanged/);
+});
 
 test("both existing sound models remain members of the whole-gap family", () => {
   for (const grama of ["sadja", "madhyama"] as const) {

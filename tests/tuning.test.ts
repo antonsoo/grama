@@ -2,6 +2,21 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { SAMPLE_RATE, samples, score, wav } from "../src/core/audio";
 import { comparisonJSON, parseComparison } from "../src/core/record";
+
+test("comparison links reject missing, duplicate, empty and unknown fields", () => {
+  const good = poseHash({ ...DEFAULT, start: 2, base: 220.5, model: "equal" });
+  for (const hash of [
+    "#hz=432",
+    "#g=sadja&m=equal&hz=220",
+    `${good}&s=1`,
+    `${good}&unknown=1`,
+    good.replace("s=2", "s="),
+  ])
+    assert.throws(() => fromHash(hash));
+  assert.deepEqual(fromHash("#reading"), DEFAULT);
+  assert.deepEqual(fromHash(good), { ...DEFAULT, start: 2, base: 220.5, model: "equal" });
+});
+
 import {
   csv,
   DEFAULT,

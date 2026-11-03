@@ -34,7 +34,14 @@ export function familyRuler(state: FamilyState, narrow = false): string {
       const y = 64 + lane * 132,
         current = positions(state.current, grama),
         reference = positions(state.reference, grama);
-      return `<text x="${left}" y="${y - 30}" fill="#c3d8dd">${lane ? "LOWERED Pa / madhyama" : "INITIAL / ṣaḍja"}</text><path d="M${left} ${y}H${right}" stroke="#69818a"/>
+      const change = assessment(state.current).lowering;
+      const second =
+        change > 1e-8
+          ? "LOWERED Pa"
+          : change < -1e-8
+            ? "RAISED Pa (failed)"
+            : "UNCHANGED Pa (failed)";
+      return `<text x="${left}" y="${y - 30}" fill="#c3d8dd">${lane ? `${second} / second row` : "INITIAL / ṣaḍja"}</text><path d="M${left} ${y}H${right}" stroke="#69818a"/>
     ${current
       .map(
         (
@@ -47,7 +54,7 @@ export function familyRuler(state: FamilyState, narrow = false): string {
       .join("")}`;
     })
     .join("");
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 315" role="img" aria-labelledby="ruler-title ruler-desc"><title id="ruler-title">Your tuning and the saved witness at the same Sa</title><desc id="ruler-desc">Two logarithmic pitch rulers, initial and lowered Pa. Solid circles: your tuning. Dashed ticks: saved witness. Only Pa changes between the initial and lowered rows. An octave spans 1200 cents.</desc>
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 315" role="img" aria-labelledby="ruler-title ruler-desc"><title id="ruler-title">Your tuning and the saved witness at the same Sa</title><desc id="ruler-desc">Two logarithmic pitch rulers, initial and second row. Solid circles: your tuning. Dashed ticks: saved witness. Pa is the only note allowed to move; a failed candidate can leave it unchanged or raise it. An octave spans 1200 cents.</desc>
   ${[0, 200, 400, 600, 800, 1000, 1200].map((c) => `<path d="M${x(c)} 46V268" stroke="#345360"/><text x="${x(c)}" y="291" text-anchor="middle" fill="#c3d8dd">${c}</text>`).join("")}
   ${lanes}<text x="${width / 2}" y="312" text-anchor="middle" fill="#c3d8dd">CENTS ABOVE Sa</text></svg>`;
 }
@@ -57,8 +64,13 @@ export function familyTable(state: FamilyState): string {
   const now0 = positions(state.current, "sadja"),
     now1 = positions(state.current, "madhyama");
   const hz = (c: number | undefined) => (state.base * 2 ** ((c ?? 0) / 1200)).toFixed(3);
-  return `<table><caption>Both witnesses, same Sa = ${state.base} Hz. Initial → lowered-Pa frequency. Six notes keep their frequencies within each witness; the witnesses can differ from each other.</caption><thead><tr><th scope="col">Note</th><th scope="col">Saved witness / Hz</th><th scope="col">Your tuning / Hz</th><th scope="col">Your initial / cents</th></tr></thead><tbody>${now0.map((pitch, i) => `<tr${i === 4 ? ' class="pa"' : ""}><th scope="row">${i === 7 ? "Sa′" : NOTES[i]?.short}</th><td>${hz(ref0[i])} → ${hz(ref1[i])}</td><td>${hz(pitch)} → ${hz(now1[i])}</td><td>${pitch.toFixed(3)}</td></tr>`).join("")}</tbody></table>`;
+  return `<table><caption>Both witnesses, same Sa = ${state.base} Hz. Initial → second-row frequency. Six notes keep their frequencies within each witness; the witnesses can differ from each other.</caption><thead><tr><th scope="col">Note</th><th scope="col">Saved witness / Hz</th><th scope="col">Your tuning / Hz</th><th scope="col">Your initial / cents</th></tr></thead><tbody>${now0.map((pitch, i) => `<tr${i === 4 ? ' class="pa"' : ""}><th scope="row">${i === 7 ? "Sa′" : NOTES[i]?.short}</th><td>${hz(ref0[i])} → ${hz(ref1[i])}</td><td>${hz(pitch)} → ${hz(now1[i])}</td><td>${pitch.toFixed(3)}</td></tr>`).join("")}</tbody></table>`;
 }
 export function gapDescription(gaps: Gaps): string {
-  return `four = ${gaps.four.toFixed(6)}, three = ${three(gaps).toFixed(6)}, two = ${gaps.two.toFixed(6)} cents; Pa ${assessment(gaps).lowers ? "lowers" : "does not lower"} by ${(assessment(gaps).lowering).toFixed(6)} cents`;
+  const change = assessment(gaps).lowering;
+  const operation =
+    Math.abs(change) < 1e-8
+      ? "Pa stays unchanged"
+      : `Pa ${change > 0 ? "lowers" : "rises"} by ${Math.abs(change).toFixed(6)} cents`;
+  return `four = ${gaps.four.toFixed(6)}, three = ${three(gaps).toFixed(6)}, two = ${gaps.two.toFixed(6)} cents; ${operation}`;
 }

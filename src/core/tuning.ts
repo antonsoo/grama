@@ -132,8 +132,12 @@ export function poseHash(pose: Pose): string {
   return `#g=${pose.grama}&s=${pose.start}&m=${pose.model}&hz=${pose.base}`;
 }
 export function fromHash(hash: string): Pose {
+  if (!hash || hash === "#" || !hash.includes("=")) return { ...DEFAULT };
   const p = new URLSearchParams(hash.replace(/^#/, ""));
-  if (!p.has("g")) return { ...DEFAULT };
+  if ([...p.keys()].sort().join(",") !== "g,hz,m,s")
+    throw new Error("This comparison link is incomplete or has unrecognized settings.");
+  for (const value of p.values())
+    if (!value.trim()) throw new Error("Comparison settings cannot be empty.");
   return parsePose({
     grama: p.get("g"),
     start: Number(p.get("s")),

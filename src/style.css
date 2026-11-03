@@ -339,6 +339,9 @@ details[open] summary {
 .reference {
   font-size: 14px;
 }
+[lang="sa"] {
+  font-family: GramaDeva, serif;
+}
 .deva {
   font:
     23px / 1.95 GramaDeva,

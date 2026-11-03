@@ -5,6 +5,10 @@ export const htmlEscape = (text: string): string =>
     (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] ?? c,
   );
 const f = (n: number) => n.toFixed(2);
+/** Keep labels at their native size; scrolling stays inside a named region. */
+export function readingFigure(svg: string, label: string): string {
+  return `<section class="figure-scroll" tabindex="0" aria-label="${htmlEscape(label)}; scroll horizontally if needed">${svg}</section>`;
+}
 export function countFigure(pose: Pose, width = 920): string {
   const w = Math.max(320, width);
   const left = 16;
