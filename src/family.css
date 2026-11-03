@@ -1,0 +1,275 @@
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--ocean);
+}
+.family-opening {
+  grid-template-columns: 1.25fr 1fr;
+}
+.family-opening h1 {
+  font-size: clamp(36px, 4.3vw, 60px);
+}
+.family-opening .eyebrow {
+  margin-bottom: 22px;
+}
+.family-workspace {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  margin: 36px 0;
+}
+.gap-controls > label:not(.lock) {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 600;
+  gap: 12px;
+}
+.gap-controls output,
+.derived strong {
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+.gap-controls input[type="range"] {
+  width: 100%;
+  margin: 8px 0 24px;
+  accent-color: var(--plum);
+  min-height: 36px;
+  cursor: pointer;
+}
+.gap-controls input:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.derived {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  font-size: 20px;
+}
+.derived span {
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  color: var(--ocean);
+}
+.lock {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  font-size: 16px;
+}
+.lock input {
+  min-width: 20px;
+  height: 20px;
+  margin: 4px 0 0;
+  accent-color: var(--ocean);
+}
+#lock-note {
+  font-size: 13px;
+  margin: 8px 0 22px 32px;
+}
+.family-presets {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.family-presets button {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+.family-space {
+  background: var(--pale);
+  padding: 20px;
+  align-self: start;
+}
+.family-space svg {
+  width: 100%;
+  display: block;
+  font:
+    12px GramaSans,
+    sans-serif;
+  fill: var(--ink);
+}
+.family-space p {
+  font-size: 13px;
+  margin: 8px 14px 0;
+}
+.equation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+  padding: 20px 24px;
+  background: var(--pale);
+  font-variant-numeric: tabular-nums;
+}
+.equation > span:first-child {
+  width: 100%;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+.equation b {
+  font-weight: 400;
+}
+.equation-note {
+  font-size: 14px;
+  margin: 12px 0 24px;
+}
+#verdict {
+  font-size: 23px;
+  font-weight: 600;
+  max-width: 60ch;
+  margin-top: 28px;
+}
+#verdict[data-pass="false"] {
+  color: var(--plum);
+}
+.constraints {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0 30px;
+  font-size: 15px;
+}
+.constraints li {
+  padding-top: 12px;
+  border-top: 3px solid var(--ocean);
+}
+.constraints li[data-pass="false"] {
+  border-color: var(--plum);
+}
+.constraints strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.instrument {
+  background: #173d50;
+  color: white;
+  padding: 24px 24px 18px;
+  margin: 28px 0;
+}
+.instrument-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+}
+.instrument-heading h3 {
+  font-size: 22px;
+}
+.instrument-heading p {
+  color: #eda8dc;
+  font-size: 13px;
+}
+.instrument-heading span {
+  color: #c3d8dd;
+  margin-left: 14px;
+}
+.instrument svg {
+  display: block;
+  width: 100%;
+  font:
+    14px GramaSans,
+    sans-serif;
+}
+.instrument > p {
+  font-size: 15px;
+  margin: 14px 0 0;
+  color: #e1eff3;
+}
+.witness-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 16px;
+  margin: 28px 0 20px;
+}
+.witness-controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 6px;
+}
+.witness-controls input {
+  width: 130px;
+}
+#family-reading article {
+  margin-bottom: 30px;
+}
+#family-reading h3 {
+  font-size: 21px;
+}
+#family-reading .deva {
+  font-size: 21px;
+}
+#family-reading .iast {
+  font-size: 18px;
+}
+#family-reading .translation {
+  font-size: 19px;
+}
+@media (max-width: 760px) {
+  .family-opening,
+  .family-workspace {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .family-workspace {
+    margin: 26px 0;
+  }
+  .family-space {
+    padding: 12px;
+  }
+  .constraints {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .constraints li {
+    padding-top: 8px;
+  }
+  .instrument {
+    padding: 18px 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .instrument-heading {
+    display: block;
+    padding: 0 10px;
+  }
+  .instrument > p {
+    padding: 0 10px;
+  }
+  .instrument-heading h3 {
+    font-size: 21px;
+  }
+  .instrument svg {
+    font-size: 12px;
+  }
+  .equation {
+    padding: 14px;
+    font-size: 16px;
+    gap: 6px 10px;
+  }
+  #verdict {
+    font-size: 21px;
+  }
+}
+@media print {
+  .gap-controls,
+  .witness-controls,
+  .family-listening {
+    display: none;
+  }
+  .instrument {
+    print-color-adjust: exact;
+  }
+}

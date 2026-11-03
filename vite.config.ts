@@ -22,6 +22,7 @@ export default defineConfig(async ({ command }) => {
     ...(await filesIn("src")),
     ...(await filesIn("public")),
     "index.html",
+    "tuning.html",
     "vite.config.ts",
     "tsconfig.json",
     "package.json",
@@ -37,7 +38,7 @@ export default defineConfig(async ({ command }) => {
     base,
     build: {
       rolldownOptions: {
-        input: { main: "index.html" },
+        input: { main: "index.html", tuning: "tuning.html" },
       },
     },
     define: {
@@ -56,6 +57,18 @@ export default defineConfig(async ({ command }) => {
       ),
     },
     plugins: [
+      {
+        name: "retained-source-manifest",
+        resolveId(id: string) {
+          if (id === "virtual:grama-sources") return "\0grama-sources";
+        },
+        async load(id: string) {
+          if (id !== "\0grama-sources") return;
+          const file = path.resolve("public/sources/manifest.json");
+          this.addWatchFile(file);
+          return `export default ${await readFile(file, "utf8")};`;
+        },
+      },
       {
         name: "offline-workshop",
         apply: "build",
@@ -82,6 +95,37 @@ const EDITION = ${JSON.stringify(edition)};
 const BASE = ${JSON.stringify(base)};
 const FILES = ${JSON.stringify(urls)};
 const INTEGRITY = ${JSON.stringify(integrity)};
+async function valid(file, response) {
+  if (!response || !response.ok) return false;
+  const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", await response.arrayBuffer()));
+  return "sha256-" + btoa(String.fromCharCode(...digest)) === INTEGRITY[file];
+}
+async function inspect() {
+  // match() avoids recreating a deleted superseded cache.
+  const checked = await Promise.all(FILES.map(async file => valid(file, await caches.match(file, { cacheName: CACHE }))));
+  return checked.every(Boolean);
+}
+async function announce() {
+  const clients = await self.clients.matchAll({ type: "window" });
+  clients.forEach(client => client.postMessage({ type: "GRAMA_CACHE_CHANGED", edition: EDITION }));
+}
+let repairing;
+async function repair() {
+  if (repairing) return repairing;
+  repairing = (async () => {
+    const cache = await caches.open(CACHE);
+    // Preserve valid files; fetch only missing or substituted bytes. Sequential
+    // requests also avoid competing with a foreground illustrated reading.
+    for (const file of FILES) {
+      if (await valid(file, await cache.match(file))) continue;
+      const response = await fetch(new Request(file, { cache: "reload", integrity: INTEGRITY[file], signal: AbortSignal.timeout(45000) }));
+      if (!await valid(file, response.clone())) throw new Error("Edition identity mismatch");
+      await cache.put(file, response);
+    }
+    return inspect();
+  })().finally(() => { repairing = undefined; });
+  return repairing;
+}
 self.addEventListener("install", event => {
   // HTTP success does not establish edition identity. A stale entry page or
   // substituted scan must fail the complete install before this worker activates.
@@ -100,11 +144,15 @@ self.addEventListener("message", event => {
     event.waitUntil(self.skipWaiting());
     return;
   }
-  if (event.data?.type !== "GRAMA_INSPECT" || !event.ports[0]) return;
+  if (!["GRAMA_INSPECT", "GRAMA_REPAIR"].includes(event.data?.type) || !event.ports[0]) return;
+  if (event.data.type === "GRAMA_REPAIR" && event.data.edition !== EDITION) return;
   // A late reply from a superseded worker must not recreate its deleted cache.
-  event.waitUntil(Promise.all(FILES.map(file => caches.match(file, { cacheName: CACHE }))).then(saved => {
-    event.ports[0].postMessage({ type: "GRAMA_EDITION", edition: EDITION, complete: saved.every(Boolean) });
-  }).catch(() => event.ports[0].postMessage({ type: "GRAMA_EDITION", edition: EDITION, complete: false })));
+  const work = event.data.type === "GRAMA_REPAIR" ? repair() : inspect();
+  event.waitUntil(work.then(complete => {
+    event.ports[0].postMessage({ type: "GRAMA_EDITION", edition: EDITION, complete });
+  }).catch(() => event.ports[0].postMessage({ type: "GRAMA_EDITION", edition: EDITION, complete: false })).finally(() => {
+    if (event.data.type === "GRAMA_REPAIR") return announce();
+  }));
 });
 self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);

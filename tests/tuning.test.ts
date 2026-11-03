@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { SAMPLE_RATE, samples, score, wav } from "../src/core/audio";
+import { comparisonJSON, parseComparison } from "../src/core/record";
 import {
   csv,
   DEFAULT,
@@ -15,7 +16,6 @@ import {
   poseHash,
   sequence,
 } from "../src/core/tuning";
-import { comparisonJSON, parseComparison } from "../src/files";
 
 test("the named assignments and ascending gaps preserve their different conventions", () => {
   assert.deepEqual(incoming("sadja"), [4, 3, 2, 4, 4, 3, 2]);

@@ -1,30 +1,12 @@
-import manifest from "../public/sources/manifest.json";
+import manifest from "virtual:grama-sources";
 import { READINGS, WORDS } from "./content";
 import { score, wav } from "./core/audio";
-import {
-  csv,
-  MODEL_NAMES,
-  NOTES,
-  outgoing,
-  type Pose,
-  parsePose,
-  poseHash,
-  sequence,
-} from "./core/tuning";
+import { comparisonJSON } from "./core/record";
+
+export { comparisonJSON, parseComparison } from "./core/record";
+
+import { csv, MODEL_NAMES, NOTES, outgoing, type Pose, poseHash, sequence } from "./core/tuning";
 import { comparisonTable, countFigure, htmlEscape, pitchFigure } from "./figures";
-export function comparisonJSON(pose: Pose): string {
-  return `${JSON.stringify({ format: "grama-comparison-v1", pose }, null, 2)}\n`;
-}
-export function parseComparison(raw: string): Pose {
-  if (raw.length > 65536) throw new Error("Comparison JSON must be under 64 KB.");
-  const input: unknown = JSON.parse(raw);
-  if (!input || typeof input !== "object" || Array.isArray(input))
-    throw new Error("Expected a saved Grama comparison.");
-  const data = input as Record<string, unknown>;
-  if (Object.keys(data).sort().join(",") !== "format,pose" || data.format !== "grama-comparison-v1")
-    throw new Error("Expected the grama-comparison-v1 format and a pose.");
-  return parsePose(data.pose);
-}
 export function download(name: string, body: string | Uint8Array<ArrayBuffer>, type: string): void {
   const blob = new Blob([body], { type });
   const url = URL.createObjectURL(blob);
@@ -36,13 +18,13 @@ export function download(name: string, body: string | Uint8Array<ArrayBuffer>, t
   link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 10000);
 }
-function base64(bytes: Uint8Array): string {
+export function base64(bytes: Uint8Array): string {
   let binary = "";
   for (let offset = 0; offset < bytes.length; offset += 16384)
     binary += String.fromCharCode(...bytes.subarray(offset, offset + 16384));
   return btoa(binary);
 }
-async function asset(file: string): Promise<Uint8Array<ArrayBuffer>> {
+export async function asset(file: string): Promise<Uint8Array<ArrayBuffer>> {
   const response = await fetch(`${import.meta.env.BASE_URL}${file}`);
   if (!response.ok)
     throw new Error(`Could not load ${file}. Keep the complete edition available and try again.`);

@@ -1,5 +1,5 @@
 import "./style.css";
-import manifest from "../public/sources/manifest.json";
+import manifest from "virtual:grama-sources";
 import { READINGS, WORDS } from "./content";
 import { type Listening, SAMPLE_RATE, samples, score, wav } from "./core/audio";
 import {
