@@ -20,3 +20,7 @@ jobs:
       - run: npm run test:browser -- /tmp/grama-browser-review
       - run: python3 scripts/wav-oracle.py /tmp/grama-browser-review/chromium-1440
       - run: node scripts/offline-failure.mjs /tmp/grama-offline-failure
+      - run: npm run verify:family
+      - run: npm run test:family -- /tmp/claude-1000/grama-family-browser
+      - run: npm run verify:family-audio -- /tmp/claude-1000/grama-family-browser
+      - run: npm run test:source-json

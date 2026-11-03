@@ -52,6 +52,37 @@ Madhyama-grama        o---3-----o------4-------o
 Diagram spacing counts ordinal groups, not equal pitch steps or string lengths.
 The app has a separate logarithmic pitch ruler.
 
+## Build another tuning
+
+This checkout adds **[Twenty-two counts. Find another tuning.](docs/tuning-review.md)**
+at `http://127.0.0.1:4394/grama/tuning.html`. It is locally reviewed and has not
+been published. Follow **Find another tuning** from the count bench.
+
+Leave the fourth/fifth lock on, focus the **2-count gap** slider and press
+**Shift + Right**. The initial Sa–Ma and Sa–Pa remain at 4/3 and 3/2;
+Pa’s lowering changes by ten cents. The count row and octave still agree.
+
+| Whole-gap assumption         | Four counts | Three counts | Two counts | Pa lowers |
+| ---------------------------- | ----------: | -----------: | ---------: | --------: |
+| Ratio example                |     203.910 |      182.404 |    111.731 |    21.506 |
+| Move the two-count gap by 10 |     203.910 |      172.404 |    121.731 |    31.506 |
+| A different witness          |     230.000 |      165.000 |     90.000 |    65.000 |
+
+All sizes are rounded cents. These are modern numerical witnesses, not recovered
+ancient tunings. A fourth/fifth pair does not stand for all the text’s consonance
+requirements. The workshop states its equal-whole-gap assumption, derives octave
+closure, and keeps failed candidates visible. **Try a failed candidate** closes
+the octave but leaves Pa unmoved.
+
+Keep one witness while editing another, compare their actual sound and frequency
+tables, or save a link, JSON, CSV, WAV or one illustrated HTML reading. The
+script-free reading embeds both candidates, their successful or failed checks,
+audio, all eight Sanskrit passages, eleven source images and fonts. It works as
+a local file. Both pages share an integrity-checked offline edition with explicit
+check/repair controls; repairs preserve the current experiment.
+
+![The whole-gap controls on a phone, with the fourth/fifth lock](docs/assets/tuning-controls-mobile.png)
+
 ## A count is not yet a tuning
 
 The named-note verses assign the arriving interval four counts to Sa, three to
@@ -128,6 +159,10 @@ npm run verify:oracle
 npm run test:browser -- /tmp/grama-browser-review
 python3 scripts/wav-oracle.py /tmp/grama-browser-review/chromium-1440
 node scripts/offline-failure.mjs /tmp/grama-offline-failure
+npm run verify:family
+npm run test:family -- /tmp/claude-1000/grama-family-browser
+npm run verify:family-audio -- /tmp/claude-1000/grama-family-browser
+npm run test:source-json
 ```
 
 The pure model tests compare exact fractions against a separately specified
@@ -139,7 +174,9 @@ use. It compares live AudioBuffer PCM with exported WAV data. A separate Python
 waveform check measures the twelve actual downloaded tone frequencies using
 interpolated zero crossings.
 
-[Direct review and retained evidence](docs/review.md). CI workflows are supplied;
+The new family has a separate [model and local review](docs/tuning-review.md),
+including independent closed-form checks, real native-file/browser evidence and
+re-rendered primary pages. [Earlier bench review and retained evidence](docs/review.md). CI workflows are supplied;
 local, public and CI verification remain separate claims.
 
 ## Contributing and license
