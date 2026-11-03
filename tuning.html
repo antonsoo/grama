@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Build different tunings that keep the same twenty-two counted śrutis. A source-grounded experiment in what an ancient count row leaves undetermined." />
+    <meta name="theme-color" content="#173d50" />
+    <title>Grāma — find another tuning</title>
+    <link rel="icon" href="/grama/favicon.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="/grama/assets/tuning-DyY8D0nz.js"></script>
+    <link rel="modulepreload" crossorigin href="/grama/assets/player-Cc_mpSiY.js">
+    <link rel="stylesheet" crossorigin href="/grama/assets/player-CcXBFrmZ.css">
+    <link rel="stylesheet" crossorigin href="/grama/assets/tuning-DJpGTIws.css">
+  </head>
+  <body>
+    <a class="skip" href="#workbench">Skip to the tuning controls</a>
+    <header class="mast"><a class="brand" href="./">Grāma <span lang="sa">ग्राम</span></a><nav aria-label="Main"><a href="./">Count bench</a><a href="#evidence">Sanskrit</a><a href="#keep">Save</a></nav></header>
+    <main>
+      <section class="opening family-opening" aria-labelledby="title">
+        <div><p class="eyebrow">THE COUNT DOES NOT CHOOSE THE SOUND</p><h1 id="title">Twenty-two counts.<br />Find another tuning.</h1></div>
+        <div><p>The Sanskrit gives a count row and an instruction to lower Pa. Does that choose a single set of frequencies?</p><p>Keep the counts. Keep the octave. Change the size of a whole gap, then listen to what the numbers leave open.</p><a href="#workbench">Build a counterexample ↓</a></div>
+      </section>
+      <section id="workbench" aria-labelledby="workbench-title">
+        <div class="section-intro"><h2 id="workbench-title">Two choices.<br />The third follows.</h2><p>Give a size in cents to each whole 4-count and 2-count gap. The 3-count size follows from closing the octave. No pitches are assigned to the individual śrutis inside a gap.</p></div>
+        <div class="family-workspace">
+          <div class="gap-controls">
+            <p class="eyebrow">YOUR WHOLE-GAP SIZES</p>
+            <label for="four">4-count gap <output id="four-value" for="four"></output></label><input id="four" type="range" min="180" max="260" step="any" aria-describedby="lock-note" />
+            <label for="two">2-count gap <output id="two-value" for="two"></output></label><input id="two" type="range" min="60" max="150" step="any" />
+            <p class="derived">3-count gap <strong id="three-value"></strong><span>calculated, not a third free control</span></p>
+            <label class="lock"><input id="lock" type="checkbox" checked /> Hold the initial fourth at 4/3 and fifth at 3/2</label>
+            <p id="lock-note">A modern extra constraint. It fixes the 4-count size; the 2-count size can still move. These conditions do not stand for the text’s full consonance theory.</p>
+            <fieldset class="family-presets"><legend>Starting examples</legend><button id="preset-ratios" type="button">Ratio example</button><button id="preset-equal" type="button">22 equal divisions</button><button id="preset-other" type="button">A different witness</button><button id="preset-failed" type="button">Try a failed candidate</button></fieldset>
+          </div>
+          <div class="family-space"><div id="family-map"></div><p>Shaded: 4-count &gt; 3-count &gt; 2-count gaps. Filled point: yours. Ring: saved witness. Dashed line: fourth/fifth lock. The shaded region belongs to this modern model.</p></div>
+        </div>
+        <div class="equation"><span>OCTAVE CLOSURE</span> <span>3 × <b id="equation-four"></b></span> + <span>2 × <b id="equation-three"></b></span> + <span>2 × <b id="equation-two"></b></span> = <strong>1,200 cents</strong></div>
+        <p class="equation-note">The row 3–2–4–4–3–2–4 contains three 4-count gaps, two 3-count gaps and two 2-count gaps. Cents add; frequency ratios multiply. Displayed values are rounded.</p>
+        <div id="verdict" role="status"></div>
+        <ul id="constraints" class="constraints"></ul>
+        <div class="instrument"><div class="instrument-heading"><h3>Same counts. Different distances.</h3><p>● Your tuning <span>┆ Saved witness</span></p></div><div id="family-ruler"></div><p id="movement"></p></div>
+        <div class="listening family-listening"><button id="hear-current" type="button">Hear your tuning</button><button id="hear-reference" type="button">Hear saved witness</button><button id="hear-compare" type="button">Hear both in order</button><button id="stop" type="button">Stop sound</button><p id="sound-status" role="status">Each example plays Ma–Pa–Dha, then the same three with Pa changed. Synthetic sine tones; no ancient performance is reconstructed.</p></div>
+        <div class="witness-controls"><button id="pin" type="button">Keep yours as saved witness</button><label>Same Sa for both, Hz <input id="base" type="number" min="110" max="440" step="any" value="220" /></label><button id="set-base" type="button">Set Sa</button></div>
+        <p id="comparison-summary"></p>
+        <details><summary>Inspect all note frequencies</summary><!-- biome-ignore lint/a11y/noNoninteractiveTabindex: keyboard users need to scroll the frequency table. --><section id="family-table" class="table-scroll" tabindex="0" aria-label="Witness frequencies; scroll horizontally if needed"></section></details>
+        <details><summary>Why can the fourth and fifth stay pure while another gap moves?</summary><p>Write the whole-gap sizes as A (four counts), B (three), C (two). Closing the octave requires 3A + 2B + 2C = 1,200. In the initial row, Sa–Ma = A + B + C = 600 − A/2; Sa–Pa = 2A + B + C = 600 + A/2. Fixing these at 4/3 and 3/2 fixes A, but leaves C free while B compensates.</p><p>Pa’s change is A − B. It can vary even while those two initial consonances stay fixed. This is a family inside our chosen whole-gap model, not the complete space of ancient tunings. A successful candidate meets only the conditions shown here.</p></details>
+      </section>
+      <section id="evidence" aria-labelledby="evidence-title">
+        <div class="section-intro"><h2 id="evidence-title">The instruction survives.<br />Our numbers are extra.</h2><p>The count rows and lowering instruction come from the text. Cents, octave closure, equal size for repeated whole-count groups and the optional ratio lock are declared assumptions of this experiment.</p></div>
+        <div class="reading-layout"><article id="family-reading"></article><aside class="source-view"><h3>Inspect the printed page</h3><label>Page <select id="source-page"><option value="28">28 — counts and lowering Pa</option><option value="29">29 — both named count rows</option><option value="86">86 — the editor’s uncertainty</option></select></label><a id="scan-link" href="sources/grosset-28.jpg" hidden target="_blank" rel="noreferrer"><img id="scan" hidden alt="Grosset 1888, printed page 28, counts and lowering Pa" /></a><p id="scan-caption">Grosset 1888, printed p.28. Open to enlarge the full page.</p></aside></div>
+        <details><summary>What would this experiment fail to establish?</summary><p>A candidate with ordered gaps and a lower Pa is a numerical witness for this count-row exercise. That does not establish a historically used tuning, an equal division of every śruti, or satisfaction of the text’s additional consonance and two-vīṇā conditions.</p><p>Grosset brackets the longer two-vīṇā passage on pp.28–29, and his note 36 on p.86 calls the interpretation approximate. This experiment leaves that problem open. The optional pure fourth/fifth lock supplies two modern numerical tests; it does not replace a study of all the ancient interval relations.</p><p><a href="./#reading">Read all eight excerpts and word notes</a> · <a href="https://archive.org/details/dli.ministry.04243">Grosset’s 1888 scanned volume</a> · <a href="sources/manifest.json">Source page identities</a></p></details>
+      </section>
+      <section id="keep" aria-labelledby="keep-title"><div class="section-intro"><h2 id="keep-title">Keep your counterexample.</h2><p>The reading records both witnesses, their checks and frequencies, embedded sound, Sanskrit and full printed evidence. Failed candidates keep their failed checks in saved work.</p></div><div class="save-actions"><button id="save-reading" type="button">Save illustrated reading</button><button id="save-json" type="button">Save editable JSON</button><button id="save-csv" type="button">Save both witnesses (CSV)</button><button id="save-wav" type="button">Save both listening examples (WAV)</button><button id="share" type="button">Copy tuning link</button><label class="file-label">Reopen tuning JSON <input id="open-json" type="file" accept="application/json,.json" /></label></div><p id="file-status" role="status">Saved links and JSON preserve both witnesses and the consonance lock.</p></section>
+    </main>
+    <footer><p id="offline-status" role="status">Checking the offline edition…</p><p><a href="https://github.com/antonsoo/grama">Source code</a> · <a href="./">Count bench</a> · Code and new content: PolyForm Noncommercial; printed editions public domain; fonts OFL.</p></footer>
+    <noscript>This experiment needs JavaScript. The repository retains script-free illustrated readings and full source pages.</noscript>
+  </body>
+</html>
