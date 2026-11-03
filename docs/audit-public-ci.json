@@ -1,0 +1,17 @@
+{
+  "conclusion": "failure",
+  "headSha": "d6a241beb415b3154e1544a7815c951c88aa20db",
+  "jobs": [
+    {
+      "completedAt": "2026-11-03T06:34:08Z",
+      "conclusion": "failure",
+      "databaseId": 125766502757,
+      "name": "check",
+      "startedAt": "2026-11-03T06:34:06Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/antonsoo/grama/actions/runs/41590698452/job/125766502757"
+    }
+  ],
+  "status": "completed"
+}

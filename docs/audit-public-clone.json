@@ -1,0 +1,148 @@
+{
+  "scope": "Fresh public HTTPS shallow clone, npm ci and full npm run check using Node 26.7.0; all current build bytes match reviewed local build",
+  "sourceRevision": "d6a241beb415b3154e1544a7815c951c88aa20db",
+  "cleanAfterInstallAndBuild": true,
+  "unitCases": 16,
+  "files": [
+    {
+      "file": "assets/main-dltKPGfY.js",
+      "bytes": 7328,
+      "sha256": "533113425ee98fa53268d0a4c0c7922f1df404ab0561a624db005d0311fca4b6"
+    },
+    {
+      "file": "assets/player-CcXBFrmZ.css",
+      "bytes": 7292,
+      "sha256": "361878c00d1063b5d8bde9e0cc8ea29b90c74d5173fe3f57d91e573b86d08e59"
+    },
+    {
+      "file": "assets/player-Cc_mpSiY.js",
+      "bytes": 46934,
+      "sha256": "bbe9f81e0b1a98d2d9270e63366f17885f498a70c99af5b1ed4dc7dab9da4d50"
+    },
+    {
+      "file": "assets/tuning-DJpGTIws.css",
+      "bytes": 3643,
+      "sha256": "9c3be8bbb8adfa10a881f4e68dcc706aa1172d66320ca86a52f4822786640926"
+    },
+    {
+      "file": "assets/tuning-DyY8D0nz.js",
+      "bytes": 23480,
+      "sha256": "3c80ce6c4c4d0d6097b9d933c9f9bb22c0219f58a203dd314c3f3952757c6e99"
+    },
+    {
+      "file": "favicon.svg",
+      "bytes": 352,
+      "sha256": "ae9db7c7e064d96c879f4b8126682659dc0aaa81442dcb6c27c61917052ea144"
+    },
+    {
+      "file": "fonts/IBMPlex-OFL.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "file": "fonts/IBMPlexSans-Regular.woff2",
+      "bytes": 63020,
+      "sha256": "ba711a3085ff9f27440b6b9c4550cfc47c97bf36591d5da958b975bb3add8c1a"
+    },
+    {
+      "file": "fonts/IBMPlexSans-SemiBold.woff2",
+      "bytes": 67060,
+      "sha256": "f78048030eab62e860efa39a0df79e2e5581bf122eb95b9bc42c0b8a4988d205"
+    },
+    {
+      "file": "fonts/NotoSerif-OFL.txt",
+      "bytes": 4396,
+      "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a"
+    },
+    {
+      "file": "fonts/NotoSerif-Regular.ttf",
+      "bytes": 444064,
+      "sha256": "5473d2e43bdd018ee124a4addba8091fd0a29894b121cbb741023af6549662b6"
+    },
+    {
+      "file": "fonts/NotoSerifDevanagari-OFL.txt",
+      "bytes": 4386,
+      "sha256": "a216f6f8d85c7228093e0ee5e258d9d377e6671f68acb4db1930b29583d0f331"
+    },
+    {
+      "file": "fonts/NotoSerifDevanagari.ttf",
+      "bytes": 757692,
+      "sha256": "1191e07bfeb062d80e252eb85b0eafdfbda1e350707a2a60628668e8f677dbbb"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9291,
+      "sha256": "9833f74d8dd7835f17cfc03d19891511f2e4929d6ce4a2a57f3f8ecbf8b3ad08"
+    },
+    {
+      "file": "sources/grosset-21.jpg",
+      "bytes": 377148,
+      "sha256": "79f6b71fbce81f18d63d663ce10883a2a17cc15fe2adb76b824acf426148a309"
+    },
+    {
+      "file": "sources/grosset-28.jpg",
+      "bytes": 431366,
+      "sha256": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3"
+    },
+    {
+      "file": "sources/grosset-29.jpg",
+      "bytes": 432007,
+      "sha256": "a60790bddea16456a75196c9274597a67b5e43531a65a843748d5397dc513ebe"
+    },
+    {
+      "file": "sources/grosset-57.jpg",
+      "bytes": 284343,
+      "sha256": "f39f7e571c06cb95e15a92b069ce0be095553a37629f875a9d26d8914df18ae6"
+    },
+    {
+      "file": "sources/grosset-58.jpg",
+      "bytes": 244755,
+      "sha256": "bdcc873c7a56e364bcf38c5a36f39ac1c43ed2f6e68ef164b524f006cc9eacb4"
+    },
+    {
+      "file": "sources/grosset-85.jpg",
+      "bytes": 436186,
+      "sha256": "a6c7d6ce73e1d116ae8b20483c5522dfee2b51e16ba9adec19dce6ecff180a3a"
+    },
+    {
+      "file": "sources/grosset-86.jpg",
+      "bytes": 443621,
+      "sha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92"
+    },
+    {
+      "file": "sources/grosset-title.jpg",
+      "bytes": 100346,
+      "sha256": "f900e5c8c737b1ac3e99af0fb83e161ebb2a7781e48ed94ee7298f0f4c9a1bb3"
+    },
+    {
+      "file": "sources/manifest.json",
+      "bytes": 4507,
+      "sha256": "dde86483b9804537b31624c0fac2cf20bf5a956b5a50dea7fb585b5771a188fb"
+    },
+    {
+      "file": "sources/natya-301.jpg",
+      "bytes": 469463,
+      "sha256": "bea36ffde05b6a9f6205fd92811a7ab988e7cc272e96f93fce33dfecb5d12fda"
+    },
+    {
+      "file": "sources/natya-302.jpg",
+      "bytes": 410056,
+      "sha256": "a87eddc7178a7226cedb70135e1bdf8bda3ace323e301849928693640a48aae8"
+    },
+    {
+      "file": "sources/natya-title.jpg",
+      "bytes": 122885,
+      "sha256": "ae16a256bf21bd9f3e7ed7d7212cb3e1d318de5b25dda14a571b348d2c0648d5"
+    },
+    {
+      "file": "sw.js",
+      "bytes": 19374,
+      "sha256": "27cdd5b87b5776f5ab51b5e53a7844dfcecf3169a3b0a888e691030a53d53f5e"
+    },
+    {
+      "file": "tuning.html",
+      "bytes": 9501,
+      "sha256": "f1f568b36a874436a816b5b32be0396a94a74b90af12fbf3e367b11ad87f8d81"
+    }
+  ]
+}

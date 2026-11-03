@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-11-03T06:35:42.388Z",
+  "scope": "Clean source tree equals origin/main at capture; immutable unauthenticated raw evidence bytes match; deployment and CI are separate claims",
+  "sourceRevision": "d6a241beb415b3154e1544a7815c951c88aa20db",
+  "remoteRevision": "d6a241beb415b3154e1544a7815c951c88aa20db",
+  "cleanAtCapture": true,
+  "files": [
+    {
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/README.md",
+      "bytes": 10621,
+      "sha256": "92f9f59434f673a476d7d4f7450e36d523a98bc7f74c2ceb532b40e5316c3fa7",
+      "matches": true
+    },
+    {
+      "file": "docs/audit.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit.md",
+      "bytes": 13172,
+      "sha256": "60d19c9f40728718ca45a38106a7a895919b9fdafeb7ada3ca3cac14495be32f",
+      "matches": true
+    },
+    {
+      "file": "docs/audit-clean-build.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit-clean-build.json",
+      "bytes": 4752,
+      "sha256": "3507c3b7d318bcab974d1bdc8ae508f365ddfa3fedb3821c1d3efa7c8db5d3bb",
+      "matches": true
+    },
+    {
+      "file": "docs/audit-network.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit-network.json",
+      "bytes": 2814,
+      "sha256": "51c9fcd3f41750a63fa3a78f9cd96e9daf44a637284e86ef14fa1623e23b2b62",
+      "matches": true
+    },
+    {
+      "file": "docs/audit-cold.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit-cold.json",
+      "bytes": 1614,
+      "sha256": "153c47fc55de61e76d03a658935516838e9a1fec8a8bcd23ee7051f8a486bf46",
+      "matches": true
+    },
+    {
+      "file": "docs/audit-source-pages.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit-source-pages.json",
+      "bytes": 4333,
+      "sha256": "5c591f3d9cc87887ba1bc0bfd3e5a3698ffab266f51fedb8607bf3aaf52c9f8b",
+      "matches": true
+    },
+    {
+      "file": "docs/audit-interactions.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit-interactions.json",
+      "bytes": 5681,
+      "sha256": "d315deb3ba68c9091b2c814f98d0049c7b35b8020c484b957a7d67192a0f833b",
+      "matches": true
+    },
+    {
+      "file": "docs/audit-upgrade.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit-upgrade.json",
+      "bytes": 782,
+      "sha256": "d0fe452ea142a72193a3565ccb46dc2118ba97c656f2699c693657a3e2b59010",
+      "matches": true
+    },
+    {
+      "file": "docs/audit-bench.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit-bench.json",
+      "bytes": 4117,
+      "sha256": "3767455f135247688750ddc89c6b11287b866f1cfafda30575667f72f1013e31",
+      "matches": true
+    },
+    {
+      "file": "docs/audit-family.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit-family.json",
+      "bytes": 8701,
+      "sha256": "4f129046d63c744c10b18c92a3df52012507d8bbc311532fb846621918f8a894",
+      "matches": true
+    },
+    {
+      "file": "examples/grama-comparison.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/examples/grama-comparison.json",
+      "bytes": 246,
+      "sha256": "3d4c067e4a409f6eac75825be362a1b07a22c931be3b9c653389091481999cda",
+      "matches": true
+    },
+    {
+      "file": "examples/tuning-family.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/d6a241beb415b3154e1544a7815c951c88aa20db/examples/tuning-family.json",
+      "bytes": 393,
+      "sha256": "31c5738436f0e937208051500f4aeba7da028c12c492cda636ad7dba91204782",
+      "matches": true
+    }
+  ]
+}

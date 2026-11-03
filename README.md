@@ -54,9 +54,9 @@ The app has a separate logarithmic pitch ruler.
 
 ## Build another tuning
 
-This checkout adds **[Twenty-two counts. Find another tuning.](docs/tuning-review.md)**
-at `http://127.0.0.1:4394/grama/tuning.html`. It is locally reviewed and has not
-been published. Follow **Find another tuning** from the count bench.
+**[Twenty-two counts. Find another tuning.](https://antonsoo.github.io/grama/tuning.html)**
+opens the whole-gap experiment. Follow **Find another tuning** from the count
+bench, or run it locally at `http://127.0.0.1:4394/grama/tuning.html`.
 
 Leave the fourth/fifth lock on, focus the **2-count gap** slider and press
 **Shift + Right**. The initial Sa–Ma and Sa–Pa remain at 4/3 and 3/2;

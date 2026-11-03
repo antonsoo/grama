@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-11-03T06:45:16.477Z",
+  "scope": "Public continuous catalogue-to-workshop learning journey; old catalogue review remains pinned to its original edition, new audit opened at supplied immutable revision",
+  "results": [
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "query": "Bharata",
+      "catalogueReview": "https://github.com/antonsoo/grama/blob/433620732c1f4fef46947d38cdf677a821cd0102/docs/review.md#what-changed-for-a-learner",
+      "newAudit": "https://github.com/antonsoo/grama/blob/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit.md",
+      "discoveredRepositoryAuditLink": "https://github.com/antonsoo/grama/blob/main/docs/audit.md",
+      "lockedCandidateOperated": true,
+      "nativeJSONDownloaded": true,
+      "printedUncertaintyPageSha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+      "pinnedAuditSha256": "60d19c9f40728718ca45a38106a7a895919b9fdafeb7ada3ca3cac14495be32f"
+    },
+    {
+      "browser": "chromium",
+      "width": 375,
+      "query": "Bharata",
+      "catalogueReview": "https://github.com/antonsoo/grama/blob/433620732c1f4fef46947d38cdf677a821cd0102/docs/review.md#what-changed-for-a-learner",
+      "newAudit": "https://github.com/antonsoo/grama/blob/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit.md",
+      "discoveredRepositoryAuditLink": "https://github.com/antonsoo/grama/blob/main/docs/audit.md",
+      "lockedCandidateOperated": true,
+      "nativeJSONDownloaded": true,
+      "printedUncertaintyPageSha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+      "pinnedAuditSha256": "60d19c9f40728718ca45a38106a7a895919b9fdafeb7ada3ca3cac14495be32f"
+    },
+    {
+      "browser": "firefox",
+      "width": 1440,
+      "query": "Bharata",
+      "catalogueReview": "https://github.com/antonsoo/grama/blob/433620732c1f4fef46947d38cdf677a821cd0102/docs/review.md#what-changed-for-a-learner",
+      "newAudit": "https://github.com/antonsoo/grama/blob/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit.md",
+      "discoveredRepositoryAuditLink": "https://github.com/antonsoo/grama/blob/main/docs/audit.md",
+      "lockedCandidateOperated": true,
+      "nativeJSONDownloaded": true,
+      "printedUncertaintyPageSha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+      "pinnedAuditSha256": "60d19c9f40728718ca45a38106a7a895919b9fdafeb7ada3ca3cac14495be32f"
+    },
+    {
+      "browser": "firefox",
+      "width": 375,
+      "query": "Bharata",
+      "catalogueReview": "https://github.com/antonsoo/grama/blob/433620732c1f4fef46947d38cdf677a821cd0102/docs/review.md#what-changed-for-a-learner",
+      "newAudit": "https://github.com/antonsoo/grama/blob/d6a241beb415b3154e1544a7815c951c88aa20db/docs/audit.md",
+      "discoveredRepositoryAuditLink": "https://github.com/antonsoo/grama/blob/main/docs/audit.md",
+      "lockedCandidateOperated": true,
+      "nativeJSONDownloaded": true,
+      "printedUncertaintyPageSha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+      "pinnedAuditSha256": "60d19c9f40728718ca45a38106a7a895919b9fdafeb7ada3ca3cac14495be32f"
+    }
+  ]
+}

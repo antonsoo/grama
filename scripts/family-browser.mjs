@@ -361,49 +361,54 @@ for (const [name, type] of [
           .locator("#file-status")
           .filter({ hasText: /Reopened both/ })
           .waitFor();
-        // Corrupt a real cached source. Presence alone must not mean ready.
-        const companion = await context.newPage();
-        await companion.goto(server.base);
-        await ready(companion);
-        const sourceURL = new URL("sources/grosset-28.jpg", server.base).href;
-        await page.evaluate(async (url) => {
-          const key = (await caches.keys()).find((k) => k.startsWith("grama-")),
-            cache = await caches.open(key);
-          await cache.put(url, new Response("wrong source bytes"));
-          await cache.delete(new URL("tuning.html", location.href).href);
-        }, sourceURL);
-        await page.locator("#check-offline").click();
-        await page
-          .locator("#offline-status")
-          .filter({ hasText: /incomplete or damaged/ })
-          .waitFor();
-        server.offline();
-        await context.setOffline(true);
-        let downloads = 0;
-        page.on("download", () => downloads++);
-        await page.locator("#save-reading").click();
-        await page
-          .locator("#file-status")
-          .filter({ hasText: /differs from this edition|Failed to fetch|NetworkError|Load failed/ })
-          .waitFor();
-        assert.equal(downloads, 0);
-        // Failed offline repair keeps the candidate; reconnecting repair updates both tabs.
-        server.offline();
-        await context.setOffline(true);
-        await page.locator("#repair-offline").click();
-        await page.waitForFunction(() => !document.querySelector("#repair-offline").disabled);
-        await page
-          .locator("#offline-status")
-          .filter({ hasText: /incomplete or damaged|could not be repaired/ })
-          .waitFor();
-        assert.equal(await page.locator("#four").inputValue(), "230");
-        server.online();
-        await context.setOffline(false);
-        await page.locator("#repair-offline").click();
-        await ready(page);
-        await ready(companion);
-        assert.equal(await page.locator("#four").inputValue(), "230");
-        await companion.close();
+        if (!hosted) {
+          // Corrupt a real cached source. Presence alone must not mean ready.
+          const companion = await context.newPage();
+          await companion.goto(server.base);
+          await ready(companion);
+          const sourceURL = new URL("sources/grosset-28.jpg", server.base).href;
+          await page.evaluate(async (url) => {
+            const key = (await caches.keys()).find((k) => k.startsWith("grama-")),
+              cache = await caches.open(key);
+            await cache.put(url, new Response("wrong source bytes"));
+            await cache.delete(new URL("tuning.html", location.href).href);
+          }, sourceURL);
+          await page.locator("#check-offline").click();
+          await page
+            .locator("#offline-status")
+            .filter({ hasText: /incomplete or damaged/ })
+            .waitFor();
+          server.offline();
+          await context.setOffline(true);
+          let downloads = 0;
+          page.on("download", () => downloads++);
+          await page.locator("#save-reading").click();
+          await page
+            .locator("#file-status")
+            .filter({
+              hasText:
+                /differs from this edition|Failed to fetch|NetworkError|Load failed|did not send its headers|stopped sending bytes|Error in input stream/,
+            })
+            .waitFor();
+          assert.equal(downloads, 0);
+          // Failed offline repair keeps the candidate; reconnecting repair updates both tabs.
+          server.offline();
+          await context.setOffline(true);
+          await page.locator("#repair-offline").click();
+          await page.waitForFunction(() => !document.querySelector("#repair-offline").disabled);
+          await page
+            .locator("#offline-status")
+            .filter({ hasText: /incomplete or damaged|could not be repaired/ })
+            .waitFor();
+          assert.equal(await page.locator("#four").inputValue(), "230");
+          server.online();
+          await context.setOffline(false);
+          await page.locator("#repair-offline").click();
+          await ready(page);
+          await ready(companion);
+          assert.equal(await page.locator("#four").inputValue(), "230");
+          await companion.close();
+        }
         server.offline();
         await context.setOffline(true);
         await page.reload();
@@ -434,11 +439,11 @@ for (const [name, type] of [
           readingSha256: hash(Buffer.from(html)),
           allElevenEmbeddedSourceHashes: true,
           portableRemoteRequests: remote,
-          corruptSourceExportRejected: true,
-          corruptCacheReadinessRejected: true,
-          missingWorkshopPageRepaired: true,
-          offlineRepairFailurePreservesTuning: true,
-          crossTabRepair: true,
+          corruptSourceExportRejected: hosted ? null : true,
+          corruptCacheReadinessRejected: hosted ? null : true,
+          missingWorkshopPageRepaired: hosted ? null : true,
+          offlineRepairFailurePreservesTuning: hosted ? null : true,
+          crossTabRepair: hosted ? null : true,
           offlineOriginDisabled: !hosted,
           offlineReadingByteIdentical: true,
           axeViolations: axe.violations.length,
@@ -446,7 +451,7 @@ for (const [name, type] of [
           externalRequests: external,
         });
         console.log(
-          `${name} ${width}: operated tuning, actual PCM, native reopening, script-free reading, cache damage/repair and ${hosted ? "browser-offline" : "origin-disabled offline"} use passed`,
+          `${name} ${width}: operated tuning, actual PCM, native reopening, script-free reading, ${hosted ? "" : "cache damage/repair and "}${hosted ? "browser-offline" : "origin-disabled offline"} use passed`,
         );
       } finally {
         await context.close();

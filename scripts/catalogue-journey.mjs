@@ -40,7 +40,10 @@ for (const [name, type] of [
         await page.locator("#two").focus();
         await page.keyboard.press("Shift+ArrowRight");
         assert.equal(Number(await page.locator("#two").inputValue()), before + 10);
-        assert.match(await page.locator("#constraints").textContent(), /4\/3|fourth/);
+        assert.match(
+          await page.locator("#movement").textContent(),
+          /4\/3 by 0\.000 cents; Sa–Pa differs from 3\/2 by 0\.000/,
+        );
         await page.locator("#source-page").selectOption("86");
         await page.locator("#scan").waitFor({ state: "visible" });
         const sourceHash = await page
@@ -62,7 +65,12 @@ for (const [name, type] of [
         await page.locator("#save-json").click();
         await (await download).saveAs(file);
         assert.equal(JSON.parse(await readFile(file, "utf8")).format, "grama-tuning-family-v1");
-        const pinned = `https://github.com/antonsoo/grama/blob/${reviewRevision}/docs/audit.md`;
+        await page.getByRole("link", { name: "Source code", exact: true }).click();
+        const auditLink = page.getByRole("link", { name: "operated audit", exact: true });
+        const linkedAudit = new URL(await auditLink.getAttribute("href"), page.url()).href;
+        assert.match(linkedAudit, /\/blob\/main\/docs\/audit\.md$/);
+        // Resolve the discovered review to its immutable version before opening.
+        const pinned = linkedAudit.replace("/blob/main/", `/blob/${reviewRevision}/`);
         await page.goto(pinned);
         await page
           .getByRole("heading", {
@@ -79,6 +87,7 @@ for (const [name, type] of [
           query: "Bharata",
           catalogueReview: oldReview,
           newAudit: pinned,
+          discoveredRepositoryAuditLink: linkedAudit,
           lockedCandidateOperated: true,
           nativeJSONDownloaded: true,
           printedUncertaintyPageSha256: sourceHash,
@@ -87,6 +96,19 @@ for (const [name, type] of [
         console.log(
           `${name} ${width}: public catalogue -> count bench -> tuning family -> operated lock -> verified scan -> native JSON -> pinned audit`,
         );
+      } catch (error) {
+        console.error(
+          name,
+          width,
+          page.url(),
+          await page.title(),
+          await page.locator("h1,h2").allTextContents(),
+        );
+        await page.screenshot({
+          path: path.join(output, `${name}-${width}-failure.png`),
+          fullPage: false,
+        });
+        throw error;
       } finally {
         await context.close();
       }

@@ -1,4 +1,9 @@
-# Public edition
+# Publication records
+
+The current [tuning-family publication and operated audit](audit-publication.md)
+records the later source, build, browser and public-file boundaries.
+
+## Original count-bench edition
 
 The [Grāma bench](https://antonsoo.github.io/grama/) was published and verified
 on 2026-10-24, under the owner's explicit authorization to push and publish.
