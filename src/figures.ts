@@ -1,3 +1,4 @@
+import { NOTICE } from "./core/notice";
 import { cents, incoming, NOTES, noteFactors, outgoing, type Pose } from "./core/tuning";
 export const htmlEscape = (text: string): string =>
   text.replace(
@@ -55,7 +56,7 @@ export function countFigure(pose: Pose, width = 920): string {
       body += `<circle cx="${f(px)}" cy="${y}" r="${pa ? 5 : 3}" fill="${pa ? "#843e77" : "#176477"}"/><text x="${f(px)}" y="${y - 15}" text-anchor="middle" font-size="14" fill="${pa ? "#843e77" : "#173d50"}">${i === 7 ? "Sa′" : NOTES[i]?.short}</text>`;
     }
   }
-  return `<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 ${w} 272" width="${w}" height="272" style="font-family:GramaSans,Arial,sans-serif;background:white;max-width:100%;height:auto">${body}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 ${w} 272" width="${w}" height="272" style="font-family:GramaSans,Arial,sans-serif;background:white;max-width:100%;height:auto"><metadata>${NOTICE}</metadata>${body}</svg>`;
 }
 export function pitchFigure(pose: Pose, width = 920): string {
   const w = Math.max(320, width);
@@ -74,7 +75,7 @@ export function pitchFigure(pose: Pose, width = 920): string {
   const pa0 = cents(noteFactors("sadja", pose.model)[4] ?? 1),
     pa1 = cents(noteFactors("madhyama", pose.model)[4] ?? 1);
   body += `<path d="M${f(x(pa0))} 61 L${f(x(pa1))} 123" stroke="#843e77" stroke-width="2"/>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 ${w} 190" width="${w}" height="190" style="font-family:GramaSans,Arial,sans-serif;background:white;max-width:100%;height:auto">${body}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 ${w} 190" width="${w}" height="190" style="font-family:GramaSans,Arial,sans-serif;background:white;max-width:100%;height:auto"><metadata>${NOTICE}</metadata>${body}</svg>`;
 }
 export function comparisonTable(pose: Pose): string {
   const a = noteFactors("sadja", pose.model),

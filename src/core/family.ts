@@ -189,20 +189,5 @@ export function familyScore(state: FamilyState, kind: FamilyListening): SoundEve
 
 /** Standard RIFF INFO copyright chunk: keep attribution with the portable sound. */
 export function familyWave(state: FamilyState): Uint8Array<ArrayBuffer> {
-  const audio = wav(familyScore(state, "compare"));
-  const notice = new TextEncoder().encode(`${FAMILY_NOTICE}\0`);
-  const padded = notice.length + (notice.length % 2);
-  const out = new Uint8Array(audio.length + 20 + padded);
-  out.set(audio);
-  const view = new DataView(out.buffer);
-  const text = (offset: number, value: string) => out.set(new TextEncoder().encode(value), offset);
-  const offset = audio.length;
-  text(offset, "LIST");
-  view.setUint32(offset + 4, 12 + padded, true);
-  text(offset + 8, "INFO");
-  text(offset + 12, "ICOP");
-  view.setUint32(offset + 16, notice.length, true);
-  out.set(notice, offset + 20);
-  view.setUint32(4, out.length - 8, true);
-  return out;
+  return wav(familyScore(state, "compare"), FAMILY_NOTICE);
 }

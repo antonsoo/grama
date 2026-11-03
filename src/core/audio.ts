@@ -1,3 +1,4 @@
+import { NOTICE } from "./notice";
 import { noteFactors, type Pose, sequence } from "./tuning";
 export interface SoundEvent {
   frequency: number;
@@ -67,9 +68,12 @@ export function samples(events: SoundEvent[], rate = SAMPLE_RATE): Float32Array<
   for (let i = 0; i < out.length; i++) out[i] = Math.max(-0.95, Math.min(0.95, out[i] ?? 0));
   return out;
 }
-export function wav(events: SoundEvent[]): Uint8Array<ArrayBuffer> {
+export function wav(events: SoundEvent[], requiredNotice = NOTICE): Uint8Array<ArrayBuffer> {
   const pcm = samples(events);
-  const bytes = new Uint8Array(44 + pcm.length * 2);
+  const notice = new TextEncoder().encode(`${requiredNotice}\0`);
+  const padded = notice.length + (notice.length % 2);
+  const pcmEnd = 44 + pcm.length * 2;
+  const bytes = new Uint8Array(pcmEnd + 20 + padded);
   const view = new DataView(bytes.buffer);
   const text = (offset: number, s: string) =>
     [...s].forEach((c, i) => {
@@ -91,5 +95,11 @@ export function wav(events: SoundEvent[]): Uint8Array<ArrayBuffer> {
   pcm.forEach((sample, i) => {
     view.setInt16(44 + 2 * i, Math.round(sample * 32767), true);
   });
+  text(pcmEnd, "LIST");
+  view.setUint32(pcmEnd + 4, 12 + padded, true);
+  text(pcmEnd + 8, "INFO");
+  text(pcmEnd + 12, "ICOP");
+  view.setUint32(pcmEnd + 16, notice.length, true);
+  bytes.set(notice, pcmEnd + 20);
   return bytes;
 }

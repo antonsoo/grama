@@ -1,3 +1,4 @@
+import { NOTICE } from "./notice";
 /** A count-row experiment, not a reconstruction of every Natya-shastra constraint. */
 export type Grama = "sadja" | "madhyama";
 export type PitchModel = "ratios" | "equal";
@@ -147,7 +148,7 @@ export function fromHash(hash: string): Pose {
 }
 export function csv(pose: Pose): string {
   const head = [
-    "# Grama: count-row experiment; modern pitch assumption, not an ancient performance reconstruction",
+    `# Grama: count-row experiment; modern pitch assumption, not an ancient performance reconstruction. ${NOTICE}`,
     `# model=${pose.model}; Sa=${pose.base} Hz; start=${NOTES[pose.start]?.short}`,
     "grama,note,incoming_count,frequency_hz,cents_from_Sa,exact_ratio_if_assumed",
   ];
