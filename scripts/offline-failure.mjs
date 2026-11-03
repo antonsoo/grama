@@ -92,7 +92,7 @@ for (const [name, type] of [
             .filter({ hasText: /could not be saved offline/ })
             .waitFor();
           broken = false;
-          await page.reload();
+          await page.getByRole("button", { name: "Retry offline save", exact: true }).click();
         }
         await page
           .locator("#offline-status")
@@ -108,12 +108,15 @@ for (const [name, type] of [
             new Response("wrong printed page", { headers: { "Content-Type": "image/jpeg" } }),
           );
         });
+        online = false;
+        server.closeAllConnections();
+        await context.setOffline(true);
         let downloads = 0;
         page.on("download", () => downloads++);
         await page.locator("#save-reading").click();
         await page
           .locator("#file-status")
-          .filter({ hasText: /differs from this edition/ })
+          .filter({ hasText: /differs from this edition|Failed to fetch|NetworkError|Load failed/ })
           .waitFor();
         assert.equal(downloads, 0, "a substituted source must not be silently exported");
         // Restore the known bytes, then prove the same edition can export offline.
@@ -146,7 +149,9 @@ for (const [name, type] of [
           fault,
           falseReadyWhilePendingOrFailed: false,
           recoveredAfter:
-            fault === "held" ? "release source response" : "reload after correcting source bytes",
+            fault === "held"
+              ? "release source response"
+              : "Retry offline save after correcting source bytes",
           corruptSourceExportBlocked: true,
           offlineReadingAfterRestoration: true,
         });

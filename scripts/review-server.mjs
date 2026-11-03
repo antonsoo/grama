@@ -5,8 +5,8 @@ import path from "node:path";
 
 /** A real local origin with observable, configurable response-body faults. */
 export async function reviewServer(directory = "dist") {
-  const root = path.resolve(directory),
-    faults = new Map(),
+  let root = path.resolve(directory);
+  const faults = new Map(),
     requests = [];
   let online = true;
   const mime = {
@@ -47,6 +47,7 @@ export async function reviewServer(directory = "dist") {
       const fault = faults.get(file) ?? {};
       const bytes =
         fault.body === undefined ? await readFile(path.join(root, file)) : Buffer.from(fault.body);
+      if (fault.headersStall) return;
       response.writeHead(fault.status ?? 200, {
         "Content-Type": mime[path.extname(file)] ?? "application/octet-stream",
         "Cache-Control": "no-store",
@@ -55,6 +56,12 @@ export async function reviewServer(directory = "dist") {
       if (fault.stall) {
         response.write(bytes.subarray(0, 128));
         record.bytes = 128;
+        if (fault.release)
+          void fault.release.then(() => {
+            if (response.destroyed) return;
+            record.bytes = bytes.length;
+            response.end(bytes.subarray(128));
+          });
       } else if (fault.bytesPerSecond) {
         let offset = 0;
         const tick = () => {
@@ -83,6 +90,9 @@ export async function reviewServer(directory = "dist") {
     base: `http://127.0.0.1:${server.address().port}/grama/`,
     faults,
     requests,
+    setDirectory(directory) {
+      root = path.resolve(directory);
+    },
     offline() {
       online = false;
       server.closeAllConnections();

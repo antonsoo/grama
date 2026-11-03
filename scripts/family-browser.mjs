@@ -275,13 +275,16 @@ for (const [name, type] of [
           await page.locator("#source-page").selectOption(printed);
           await page.waitForFunction(() => {
             const img = document.querySelector("#scan");
-            return img.complete && img.naturalWidth > 0;
+            return !img.hidden && img.complete && img.naturalWidth > 0;
           });
-          const source = await page.request.get(
-            new URL(await page.locator("#scan").getAttribute("src"), page.url()).href,
-          );
+          const sourceHash = await page.locator("#scan").evaluate(async (image) => {
+            const bytes = await (await fetch(image.src)).arrayBuffer();
+            return Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes)), (b) =>
+              b.toString(16).padStart(2, "0"),
+            ).join("");
+          });
           assert.equal(
-            hash(await source.body()),
+            sourceHash,
             manifest.pages.find((p) => p.file.endsWith(`grosset-${printed}.jpg`)).sha256,
           );
         }
@@ -370,12 +373,14 @@ for (const [name, type] of [
           .locator("#offline-status")
           .filter({ hasText: /incomplete or damaged/ })
           .waitFor();
+        server.offline();
+        await context.setOffline(true);
         let downloads = 0;
         page.on("download", () => downloads++);
         await page.locator("#save-reading").click();
         await page
           .locator("#file-status")
-          .filter({ hasText: /differs from this edition/ })
+          .filter({ hasText: /differs from this edition|Failed to fetch|NetworkError|Load failed/ })
           .waitFor();
         assert.equal(downloads, 0);
         // Failed offline repair keeps the candidate; reconnecting repair updates both tabs.

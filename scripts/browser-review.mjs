@@ -151,7 +151,7 @@ for (const [name, type] of [
         );
         assert.equal(
           originalAudio.sha256,
-          hash(originalWave.subarray(44)),
+          hash(originalWave.subarray(44, 44 + originalWave.readUInt32LE(40))),
           "live AudioBuffer PCM and downloaded WAV agree",
         );
         assert.equal(originalAudio.rate, 44100);
@@ -242,7 +242,7 @@ for (const [name, type] of [
           await page.locator("#source-page").selectOption(p.file);
           await page.waitForFunction(() => {
             const img = document.querySelector("#scan");
-            return img.complete && img.naturalWidth > 0;
+            return !img.hidden && img.complete && img.naturalWidth > 0;
           });
           const actual = await page.evaluate(async (file) => {
             const b = await (await fetch(new URL(file, location.href))).arrayBuffer();
@@ -337,7 +337,7 @@ for (const [name, type] of [
         await page.locator("#source-page").selectOption("sources/natya-302.jpg");
         await page.waitForFunction(() => {
           const i = document.querySelector("#scan");
-          return i.complete && i.naturalWidth > 0;
+          return !i.hidden && i.complete && i.naturalWidth > 0;
         });
         const offlineWav = await save(page, "#save-wav", path.join(directory, "offline.wav"));
         assert.equal(hash(offlineWav), hash(equalWave));
