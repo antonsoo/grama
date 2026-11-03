@@ -1,0 +1,36 @@
+[
+  {
+    "browser": "chromium",
+    "audio": {
+      "started": 1,
+      "stopped": 1,
+      "status": "Audio could not start. Try a listening button again, or save the WAV to hear it in another player."
+    },
+    "incompleteLink": {
+      "model": "ratios",
+      "status": "The saved reading works as a local file. The WAV is synthetic sine audio of Ma–Pa–Dha before and after lowering Pa."
+    },
+    "savedDiagram": {
+      "computedFont": "16px",
+      "scale": 0.36408547794117646,
+      "height": 8
+    }
+  },
+  {
+    "browser": "firefox",
+    "audio": {
+      "started": 1,
+      "stopped": 1,
+      "status": "Audio could not start. Try a listening button again, or save the WAV to hear it in another player."
+    },
+    "incompleteLink": {
+      "model": "ratios",
+      "status": "The saved reading works as a local file. The WAV is synthetic sine audio of Ma–Pa–Dha before and after lowering Pa."
+    },
+    "savedDiagram": {
+      "computedFont": "16px",
+      "scale": 0.364130437374115,
+      "height": 10.75
+    }
+  }
+]

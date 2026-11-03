@@ -12,7 +12,7 @@ on 2026-10-24, under the owner's explicit authorization to push and publish.
 | Public browser             | Chromium 153 and Firefox 155 at 1440 and 375 px exercise all seven starts, tuning/pitch assumptions, all eight passages, eleven source hashes, real JSON/CSV/SVG/WAV/HTML downloads, click-time snapshot, local portable reading and live PCM/WAV agreement |
 | Hosted offline scope       | Browser networking is disabled after the complete edition is installed; the public origin itself stays available. Local origin-disabled evidence remains separate.                                                                                          |
 | Public source installation | A fresh HTTPS Git clone of the reviewed commit, Node 24.22.0 `npm ci` and full check pass; all 24 built files match the reviewed edition                                                                                                                    |
-| Repository CI              | CI and workflow-based Pages jobs did not start. GitHub's check annotation states: “The job was not started because your account is locked due to a billing issue.” No passing CI claim is made.                                                             |
+| Repository CI              | CI and workflow-based Pages jobs did not start. The jobs recorded no executed steps. No passing CI claim is made.                                                                                                                                           |
 
 [Public file identities](hosted-files.json) ·
 [Four public browser configurations](hosted-browser.json) ·

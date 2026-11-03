@@ -8,6 +8,8 @@ import AxeBuilder from "@axe-core/playwright";
 import { chromium, firefox } from "playwright";
 
 const output = path.resolve(process.argv[2] ?? "/tmp/claude-1000/grama-family-browser");
+const hosted = process.argv[3];
+if (hosted) assert.match(hosted, /^https:\/\/.+\/$/);
 await mkdir(output, { recursive: true });
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const manifest = JSON.parse(await readFile("public/sources/manifest.json", "utf8"));
@@ -88,8 +90,9 @@ async function fits(page) {
 }
 const report = {
   checkedAt: new Date().toISOString(),
-  scope:
-    "Local production; actual native files and audio nodes; origin disabled for offline reload. No publication claim.",
+  scope: hosted
+    ? "Public production; actual native files and audio nodes; browser networking disabled for offline reload. The public origin remains available."
+    : "Local production; actual native files and audio nodes; origin disabled for offline reload. No publication claim.",
   workerSha256: hash(await readFile("dist/sw.js")),
   configurations: [],
 };
@@ -143,6 +146,7 @@ for (const [name, type] of [
           return source;
         };
       });
+      if (hosted) server.base = hosted;
       const page = await context.newPage(),
         errors = [],
         external = [];
@@ -435,14 +439,14 @@ for (const [name, type] of [
           missingWorkshopPageRepaired: true,
           offlineRepairFailurePreservesTuning: true,
           crossTabRepair: true,
-          offlineOriginDisabled: true,
+          offlineOriginDisabled: !hosted,
           offlineReadingByteIdentical: true,
           axeViolations: axe.violations.length,
           pageErrors: errors,
           externalRequests: external,
         });
         console.log(
-          `${name} ${width}: operated tuning, actual PCM, native reopening, script-free reading, cache damage/repair and origin-disabled offline use passed`,
+          `${name} ${width}: operated tuning, actual PCM, native reopening, script-free reading, cache damage/repair and ${hosted ? "browser-offline" : "origin-disabled offline"} use passed`,
         );
       } finally {
         await context.close();

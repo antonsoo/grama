@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-11-03T06:29:44.444Z",
+  "scope": "Cold native installation with concurrent foreground source at 4000 bytes/s per response, then header stall and retry; local origin only",
+  "workerSha256": "27cdd5b87b5776f5ab51b5e53a7844dfcecf3169a3b0a888e691030a53d53f5e",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "coldSaveElapsedMs": 108898,
+      "sourceTransfers": [
+        {
+          "url": "/grama/sources/grosset-28.jpg",
+          "bytes": 431366,
+          "finished": true,
+          "started": 1793687254689,
+          "ended": 1793687362776
+        },
+        {
+          "url": "/grama/sources/grosset-28.jpg",
+          "bytes": 431366,
+          "finished": true,
+          "started": 1793687255234,
+          "ended": 1793687363278
+        }
+      ],
+      "headerInactivityMs": 15390,
+      "sourceRetry": true,
+      "originDisabledReload": true,
+      "settingsKept": true
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "coldSaveElapsedMs": 110101,
+      "sourceTransfers": [
+        {
+          "url": "/grama/sources/grosset-28.jpg",
+          "bytes": 431366,
+          "finished": true,
+          "started": 1793687258328,
+          "ended": 1793687366381
+        },
+        {
+          "url": "/grama/sources/grosset-28.jpg",
+          "bytes": 431366,
+          "finished": true,
+          "started": 1793687259237,
+          "ended": 1793687367289
+        }
+      ],
+      "headerInactivityMs": 15545,
+      "sourceRetry": true,
+      "originDisabledReload": true,
+      "settingsKept": true
+    }
+  ]
+}

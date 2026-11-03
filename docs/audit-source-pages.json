@@ -1,0 +1,128 @@
+{
+  "editions": [
+    {
+      "id": "grosset1888",
+      "title": "Contribution \u00e0 l\u2019\u00e9tude de la musique hindoue",
+      "author": "Joanny Grosset",
+      "date": 1888,
+      "container": "M\u00e9langes de philologie indo-europ\u00e9enne, Biblioth\u00e8que de la Facult\u00e9 des lettres de Lyon VI",
+      "publisher": "Ernest Leroux, Paris",
+      "scan": "https://archive.org/details/dli.ministry.04243",
+      "pdf": "https://archive.org/download/dli.ministry.04243/20900.158%2520A%252081.pdf",
+      "pdfSha256": "1eb7997ccdeb25bcd92a1269ece6ef634502f2276b46eb78a8a2da1a53465872"
+    },
+    {
+      "id": "natya1894",
+      "title": "The N\u0101\u1e6dya\u015b\u0101stra of Bharata Muni",
+      "editors": "\u015aivadatta and K\u0101\u015b\u012bn\u0101th P\u0101\u1e47\u1e0dura\u1e45g Parab",
+      "date": 1894,
+      "series": "K\u0101vyam\u0101l\u0101 42",
+      "publisher": "Tuk\u0101r\u0101m J\u0101vaj\u012b, Nir\u1e47aya-S\u0101gara Press, Bombay",
+      "scan": "https://archive.org/details/Mus-SourceTexts",
+      "pdf": "https://archive.org/download/Mus-SourceTexts/TxtSkt-nATyaSAstra-BharataMuni-Kavyamala-1894-0030.pdf",
+      "pdfSha256": "fef81ac25b0e8edc8d205acac54c1857489154c43b6877583c128ab8348deef5"
+    }
+  ],
+  "method": "Poppler re-render from the downloaded primary edition; exact JPEG SHA-256 equality",
+  "pages": [
+    {
+      "edition": "grosset1888",
+      "printedPage": 1,
+      "physicalPdfPage": 163,
+      "scaleTo": 1850,
+      "jpegQuality": 85,
+      "sha256": "f900e5c8c737b1ac3e99af0fb83e161ebb2a7781e48ed94ee7298f0f4c9a1bb3",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "grosset1888",
+      "printedPage": 21,
+      "physicalPdfPage": 183,
+      "scaleTo": 1850,
+      "jpegQuality": 85,
+      "sha256": "79f6b71fbce81f18d63d663ce10883a2a17cc15fe2adb76b824acf426148a309",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "grosset1888",
+      "printedPage": 28,
+      "physicalPdfPage": 190,
+      "scaleTo": 2200,
+      "jpegQuality": 88,
+      "sha256": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "grosset1888",
+      "printedPage": 29,
+      "physicalPdfPage": 191,
+      "scaleTo": 2200,
+      "jpegQuality": 88,
+      "sha256": "a60790bddea16456a75196c9274597a67b5e43531a65a843748d5397dc513ebe",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "grosset1888",
+      "printedPage": 57,
+      "physicalPdfPage": 219,
+      "scaleTo": 1850,
+      "jpegQuality": 85,
+      "sha256": "f39f7e571c06cb95e15a92b069ce0be095553a37629f875a9d26d8914df18ae6",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "grosset1888",
+      "printedPage": 58,
+      "physicalPdfPage": 220,
+      "scaleTo": 1850,
+      "jpegQuality": 85,
+      "sha256": "bdcc873c7a56e364bcf38c5a36f39ac1c43ed2f6e68ef164b524f006cc9eacb4",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "grosset1888",
+      "printedPage": 85,
+      "physicalPdfPage": 247,
+      "scaleTo": 1850,
+      "jpegQuality": 85,
+      "sha256": "a6c7d6ce73e1d116ae8b20483c5522dfee2b51e16ba9adec19dce6ecff180a3a",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "grosset1888",
+      "printedPage": 86,
+      "physicalPdfPage": 248,
+      "scaleTo": 1850,
+      "jpegQuality": 85,
+      "sha256": "59e90de8599d931310a7c436d4ad59eb22678872e3acbb00a71f9369231ecd92",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "natya1894",
+      "printedPage": "title",
+      "physicalPdfPage": 1,
+      "scaleTo": 1700,
+      "jpegQuality": 85,
+      "sha256": "ae16a256bf21bd9f3e7ed7d7212cb3e1d318de5b25dda14a571b348d2c0648d5",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "natya1894",
+      "printedPage": 301,
+      "physicalPdfPage": 304,
+      "scaleTo": 2200,
+      "jpegQuality": 88,
+      "sha256": "bea36ffde05b6a9f6205fd92811a7ab988e7cc272e96f93fce33dfecb5d12fda",
+      "byteIdenticalToRetained": true
+    },
+    {
+      "edition": "natya1894",
+      "printedPage": 302,
+      "physicalPdfPage": 305,
+      "scaleTo": 2000,
+      "jpegQuality": 88,
+      "sha256": "a87eddc7178a7226cedb70135e1bdf8bda3ace323e301849928693640a48aae8",
+      "byteIdenticalToRetained": true
+    }
+  ]
+}

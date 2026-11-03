@@ -181,6 +181,13 @@ const results = await Promise.all(
       row.checks.push({
         check: "reading cancellation preserves settings and next native save succeeds",
       });
+      await page.locator("#check-offline").click();
+      await page
+        .locator("#offline-status")
+        .filter({ hasText: /incomplete/ })
+        .waitFor();
+      await page.locator("#repair-offline").click();
+      await ready(page);
       // An independently opened tab must lose ready status after external cache damage.
       const second = await context.newPage();
       await second.goto(server.base);

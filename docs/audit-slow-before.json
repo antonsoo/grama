@@ -1,0 +1,36 @@
+{
+  "scope": "Before the transfer fix: actual service-worker repair with continuously delivered 4000 bytes/s source response",
+  "workerSha256": "89910d66fecfc99d631338f8828ecbf50d58f2dafc64ceffb576464d4dbc7f70",
+  "results": [
+    {
+      "browser": "chromium",
+      "elapsedMs": 45153,
+      "status": "Offline copy is incomplete or damaged. Reconnect and repair the saved edition.",
+      "referenceHz": "220",
+      "candidateFour": "230",
+      "sourceTransfer": {
+        "url": "/grama/sources/grosset-28.jpg",
+        "bytes": 179600,
+        "finished": false,
+        "started": 1793684543120,
+        "ended": 1793684588120
+      },
+      "expectedSourceBytes": 431366
+    },
+    {
+      "browser": "firefox",
+      "elapsedMs": 45853,
+      "status": "Offline copy is incomplete or damaged. Reconnect and repair the saved edition.",
+      "referenceHz": "220",
+      "candidateFour": "230",
+      "sourceTransfer": {
+        "url": "/grama/sources/grosset-28.jpg",
+        "bytes": 182400,
+        "finished": false,
+        "started": 1793684543578,
+        "ended": 1793684589240
+      },
+      "expectedSourceBytes": 431366
+    }
+  ]
+}

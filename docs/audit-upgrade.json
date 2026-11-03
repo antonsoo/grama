@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-11-03T06:33:00.695Z",
+  "scope": "Two independently built production editions, native worker replacement while old repair response is held",
+  "firstWorkerSha256": "27cdd5b87b5776f5ab51b5e53a7844dfcecf3169a3b0a888e691030a53d53f5e",
+  "secondWorkerSha256": "a7a8b9c242518ba01965a68578777e5a38ba648bb68f9929de987dafb8847a8c",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "oldCacheRecreated": false,
+      "staleTabsOfferReload": true,
+      "settingsKept": true,
+      "newEditionOfflineReload": true
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "oldCacheRecreated": false,
+      "staleTabsOfferReload": true,
+      "settingsKept": true,
+      "newEditionOfflineReload": true
+    }
+  ]
+}

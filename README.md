@@ -128,7 +128,9 @@ The two editions' differing verse numbers remain explicit.
 - **Share link:** restores the same comparison. In-page reading navigation keeps it.
 - **Offline edition:** bench, reader, fonts and all scans after a complete,
   integrity-checked installation. A failed or pending source download cannot
-  produce a ready claim. A substituted source blocks the illustrated export.
+  produce a ready claim. Substituted bytes are rejected before source display or
+  illustrated export; a verified network replacement can still be read while the
+  offline copy needs repair. Active saves show progress and can be cancelled.
 
 [Saved reading](examples/grama-illustrated-reading.html) ·
 [Printable PDF](examples/grama-illustrated-reading.pdf) ·
@@ -178,7 +180,8 @@ use. It compares live AudioBuffer PCM with exported WAV data. A separate Python
 waveform check measures the twelve actual downloaded tone frequencies using
 interpolated zero crossings.
 
-The new family has a separate [model and local review](docs/tuning-review.md),
+The family has a [model review](docs/tuning-review.md) and a later
+[operated audit](docs/audit.md),
 including independent closed-form checks, real native-file/browser evidence and
 re-rendered primary pages. [Earlier bench review and retained evidence](docs/review.md). CI workflows are supplied;
 local, public and CI verification remain separate claims.

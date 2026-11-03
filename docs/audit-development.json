@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-11-03T06:17:37.070Z",
+  "scope": "Isolated development fixture; no live-checkout source edits",
+  "originalPublicImportWarningReproduced": true,
+  "virtualModuleReloadedOnSourceEdit": true,
+  "rawDownloadMatchesSameJSON": true,
+  "sourceRestorationReloaded": true,
+  "pageErrorsAfterFix": []
+}

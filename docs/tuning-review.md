@@ -6,9 +6,10 @@ frequencies. The existing bench supplied two presets. `tuning.html` opens the
 numerical assumption so the learner can change it, preserve selected conditions,
 keep a witness and inspect a failed attempt.
 
-It is not published. The older [publication record](publication.md) describes an
-earlier edition. No remote, hosted-file, deployment or CI success is claimed for
-this addition.
+This record describes the original local review before publication. The later
+[operated audit](audit.md) records fixes and fresh evidence. Publication evidence
+is retained separately in the [publication record](publication.md); this earlier
+review makes no remote, hosted-file, deployment or CI success claim.
 
 ## An actual exercise
 
