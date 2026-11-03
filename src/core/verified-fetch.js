@@ -37,7 +37,7 @@ export async function verifiedFetch(url, identity, options = {}) {
       "The retained file did not send its headers. Retry when the connection responds.",
     );
     const response = await fetch(url, {
-      cache: "no-cache",
+      cache: "no-store",
       signal: controller.signal,
       ...(options.headers ? { headers: options.headers } : {}),
     });

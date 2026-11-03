@@ -84,6 +84,14 @@ const results = await Promise.all(
         originDisabledReload: true,
         settingsKept: true,
       };
+    } catch (error) {
+      console.error(
+        name,
+        await page.locator("#scan-caption").textContent(),
+        await page.locator("#offline-status").textContent(),
+        server.requests.filter((r) => r.url.endsWith("sources/grosset-28.jpg")),
+      );
+      throw error;
     } finally {
       await context.close();
       await browser.close();

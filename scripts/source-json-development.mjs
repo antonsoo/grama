@@ -16,6 +16,7 @@ for (const file of [
   "tuning.html",
   "vite.config.ts",
   "tsconfig.json",
+  "tsconfig.worker.json",
   "package.json",
   "package-lock.json",
 ])
