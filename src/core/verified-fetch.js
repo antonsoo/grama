@@ -1,4 +1,31 @@
 /**
+ * @param {() => Promise<Uint8Array<ArrayBuffer>>} read
+ * @param {AbortSignal | undefined} signal
+ */
+async function withRetainedTransfer(read, signal) {
+  signal?.throwIfAborted();
+  const locks = globalThis.navigator?.locks;
+  if (!locks) return read();
+  const run = () => {
+    signal?.throwIfAborted();
+    return read();
+  };
+  // Two origin-wide permits keep identified reads out of the browser's crowded
+  // HTTP queue. An available second permit avoids blocking the displayed source
+  // behind a background install. ifAvailable requests cannot take an abort signal;
+  // only the queued fallback uses it, and run checks cancellation before I/O.
+  return locks.request("grama-retained-transfer-0", { ifAvailable: true }, (first) =>
+    first
+      ? run()
+      : locks.request("grama-retained-transfer-1", { ifAvailable: true }, (second) =>
+          second
+            ? run()
+            : locks.request("grama-retained-transfer-0", signal ? { signal } : {}, run),
+        ),
+  );
+}
+
+/**
  * Read bounded, identified bytes. A slow active transfer may take as long as it
  * needs; only waiting for headers or a silent body consumes the network deadline.
  * This exact helper also runs inside the generated service worker.
@@ -15,6 +42,15 @@ export async function verifiedFetch(url, identity, options = {}) {
     identity.bytes > 64 * 1024 * 1024
   )
     throw new Error("The retained file has no bounded identity.");
+  return withRetainedTransfer(() => readIdentified(url, identity, options), options.signal);
+}
+
+/**
+ * @param {string} url
+ * @param {{sha256: string, bytes: number}} identity
+ * @param {{signal?: AbortSignal | undefined, onProgress?: ((received: number, total: number) => void) | undefined, headers?: HeadersInit | undefined, cache?: RequestCache, headerWaitMs?: number, idleWaitMs?: number}} options
+ */
+async function readIdentified(url, identity, options) {
   const controller = new AbortController();
   const abort = () => controller.abort(options.signal?.reason);
   options.signal?.addEventListener("abort", abort, { once: true });

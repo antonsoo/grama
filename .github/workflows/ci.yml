@@ -32,3 +32,4 @@ jobs:
       - run: npm run test:attachment
       - run: npm run verify:attachment-audio
       - run: npm run test:record-open
+      - run: npm run test:shared-network -- /tmp/claude-1000/grama-shared-bandwidth foreground

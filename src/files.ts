@@ -39,13 +39,17 @@ export async function asset(
   const worker = "serviceWorker" in navigator ? navigator.serviceWorker.controller : null;
   const stopAcknowledging = worker ? keepSaveAlive(worker) : () => {};
   try {
+    // Firefox can serialize revalidating reads of the same URL behind an active
+    // source plate. These bytes have their own immutable identity and worker
+    // cache, so bypass the HTTP cache rather than spending the header deadline
+    // waiting for its revalidation lock.
     return await verifiedFetch(
       `${import.meta.env.BASE_URL}${file}`,
       {
         sha256: __ASSET_HASHES__[file] ?? "",
         bytes: __ASSET_BYTES__[file] ?? -1,
       },
-      { ...options, cache: "no-cache", headers: { "X-Grama-Edition": __GRAMA_EDITION__ } },
+      { ...options, cache: "no-store", headers: { "X-Grama-Edition": __GRAMA_EDITION__ } },
     );
   } catch (error) {
     if (error instanceof Error && error.name === "IntegrityError")
@@ -77,26 +81,31 @@ export async function studyAssets(
   const received = new Map<string, number>();
   const total = STUDY_ASSETS.reduce((sum, file) => sum + (__ASSET_BYTES__[file] ?? 0), 0);
   try {
-    return new Map(
-      await Promise.all(
-        STUDY_ASSETS.map(
-          async (file) =>
-            [
-              file,
-              await asset(file, {
-                signal: controller.signal,
-                onProgress(bytes) {
-                  received.set(file, bytes);
-                  options.onProgress?.(
-                    [...received.values()].reduce((a, b) => a + b, 0),
-                    total,
-                  );
-                },
-              }),
-            ] as const,
-        ),
-      ),
+    const loaded = new Map<string, Uint8Array<ArrayBuffer>>();
+    let next = 0;
+    // Do not queue the whole source bundle behind the browser's connection
+    // limit: a queued request is not a silent server. Two readers also bound
+    // memory and the number of pending permits during installation or repair.
+    await Promise.all(
+      Array.from({ length: 2 }, async () => {
+        while (next < STUDY_ASSETS.length) {
+          const file = STUDY_ASSETS[next++];
+          if (!file) break;
+          const bytes = await asset(file, {
+            signal: controller.signal,
+            onProgress(bytes) {
+              received.set(file, bytes);
+              options.onProgress?.(
+                [...received.values()].reduce((a, b) => a + b, 0),
+                total,
+              );
+            },
+          });
+          loaded.set(file, bytes);
+        }
+      }),
     );
+    return loaded;
   } catch (error) {
     controller.abort(error);
     throw error;
