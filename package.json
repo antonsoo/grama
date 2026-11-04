@@ -43,7 +43,9 @@
     "test:cold-save": "node scripts/cold-save-audit.mjs",
     "test:upgrade": "node scripts/upgrade-audit.mjs",
     "test:listening": "node scripts/listening-browser.mjs",
-    "verify:listening-audio": "python3 scripts/listening-audio-oracle.py"
+    "verify:listening-audio": "python3 scripts/listening-audio-oracle.py",
+    "test:listening-record": "node scripts/listening-record-browser.mjs",
+    "test:listening-save": "node scripts/listening-save-review.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

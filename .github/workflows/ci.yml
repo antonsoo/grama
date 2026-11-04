@@ -24,3 +24,8 @@ jobs:
       - run: npm run test:family -- /tmp/claude-1000/grama-family-browser
       - run: npm run verify:family-audio -- /tmp/claude-1000/grama-family-browser
       - run: npm run test:source-json
+      - run: npm run test:listening
+      - run: npm run verify:listening-audio
+      - run: npm run test:listening-record
+      - run: npm run test:listening-save
+      - run: npm run test:interactions

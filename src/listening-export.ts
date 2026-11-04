@@ -7,6 +7,7 @@ import {
   pitchDifference,
   STIMULI,
 } from "./core/listening";
+import { type ListeningSession, listeningJSON } from "./core/listening-record";
 import { familyReading } from "./family-export";
 import { htmlEscape } from "./figures";
 import { base64, type ReadOptions } from "./files";
@@ -21,17 +22,20 @@ export function resultEvidence(result: ListeningResult): string {
   const a = listeningScore(result, "A"),
     b = listeningScore(result, "B"),
     checks = assessment(result.state.current);
-  return `<p>${htmlEscape(STIMULI[result.stimulus])}. Sa = ${result.state.base} Hz. Largest A/B pitch difference: ${pitchDifference(result).toFixed(6)} cents.</p><p>B’s count-row checks: lower Pa ${checks.lowers ? "passes" : "fails"}; ordered whole gaps ${checks.ordered ? "passes" : "fails"}. Both octaves close by construction. These are the displayed model conditions.</p><section class="table-scroll" tabindex="0" aria-label="Frozen post-retuning frequencies; scroll horizontally if needed"><table><caption>Frozen post-retuning pitches; rounded display</caption><thead><tr><th scope="col">Note</th><th scope="col">A, Hz</th><th scope="col">B, Hz</th><th scope="col">B − A, cents</th></tr></thead><tbody>${a.map((tone, i) => `<tr><th scope="row">${htmlEscape(tone.label)}</th><td>${tone.frequency.toFixed(6)}</td><td>${(b[i]?.frequency ?? 0).toFixed(6)}</td><td>${(1200 * Math.log2((b[i]?.frequency ?? tone.frequency) / tone.frequency)).toFixed(6)}</td></tr>`).join("")}</tbody></table></section>`;
+  return `<p>${htmlEscape(STIMULI[result.stimulus])}. Sa = ${result.state.base} Hz. Largest A/B pitch difference: ${pitchDifference(result).toFixed(6)} cents.</p><p>${result.provenance === "reopened" ? "Record origin: reopened file. Past playback counts and answers are not verified in this tab." : "Record origin: this tab. Counts describe completed digital playback, not physical sound delivery."}</p><p>B’s count-row checks: lower Pa ${checks.lowers ? "passes" : "fails"}; ordered whole gaps ${checks.ordered ? "passes" : "fails"}. Both octaves close by construction. These are the displayed model conditions.</p><section class="table-scroll" tabindex="0" aria-label="Frozen post-retuning frequencies; scroll horizontally if needed"><table><caption>Frozen post-retuning pitches; rounded display</caption><thead><tr><th scope="col">Note</th><th scope="col">A, Hz</th><th scope="col">B, Hz</th><th scope="col">B − A, cents</th></tr></thead><tbody>${a.map((tone, i) => `<tr><th scope="row">${htmlEscape(tone.label)}</th><td>${tone.frequency.toFixed(6)}</td><td>${(b[i]?.frequency ?? 0).toFixed(6)}</td><td>${(1200 * Math.log2((b[i]?.frequency ?? tone.frequency) / tone.frequency)).toFixed(6)}</td></tr>`).join("")}</tbody></table></section>`;
 }
 export async function listeningReading(
   input: readonly ListeningResult[],
   options: ReadOptions = {},
+  continuation?: Pick<ListeningSession, "state" | "stimulus">,
 ): Promise<string> {
   const results = structuredClone(input),
     last = results.at(-1);
   if (!last) throw new Error("Reveal a listening attempt before saving its study.");
+  const resume = structuredClone(continuation ?? { state: last.state, stimulus: last.stimulus });
+  const json = `data:application/json;base64,${base64(new TextEncoder().encode(listeningJSON({ ...resume, results })))}`;
   const csv = `data:text/csv;base64,${base64(new TextEncoder().encode(listeningCSV(results)))}`;
-  const record = `<section id="listening-record"><h2>Your revealed listening record</h2><p>Self-guided practice with immediate feedback and unlimited replay. This descriptive record does not measure a hearing threshold or establish an ancient tuning. Only completed digital playbacks are counted; physical sound delivery is not verified. Unfinished trials are omitted. The diagrams and editable tuning link above describe the last revealed attempt; each frozen pair is specified below.</p><p><a download="grama-listening-record.csv" href="${csv}">Download the complete attempt CSV</a></p>${results
+  const record = `<section id="listening-record"><h2>Your revealed listening record</h2><p>Self-guided practice with immediate feedback and unlimited replay. This descriptive record does not measure a hearing threshold or establish an ancient tuning. Counts made in this tab record finished digital playback, not physical sound delivery. Reopened counts and answers come from files and are not verified here. Each attempt identifies its origin. Unfinished trials are omitted. The diagrams and editable tuning link above describe the last revealed attempt; each frozen pair is specified below.</p><p><a download="grama-listening-record.csv" href="${csv}">Download the complete attempt CSV</a> · <a download="grama-listening-record.json" href="${json}">Download the reopenable listening record</a></p>${results
     .map((r, i) => {
       const sounds = (["A", "B"] as const)
         .map((key) => {

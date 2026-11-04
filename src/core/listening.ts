@@ -20,9 +20,10 @@ export interface ListeningTrial {
 export interface ListeningResult extends ListeningTrial {
   guess: Lane | null;
   identical: boolean;
+  provenance: "this-tab" | "reopened";
 }
 export function startTrial(state: FamilyState, stimulus: Stimulus, x: Lane): ListeningTrial {
-  if (!(stimulus in STIMULI) || !["A", "B"].includes(x))
+  if (!Object.hasOwn(STIMULI, stimulus) || !["A", "B"].includes(x))
     throw new Error("Choose a supported listening exercise.");
   return { state: parseFamily(state), stimulus, x, completed: { A: 0, B: 0, X: 0 } };
 }
@@ -56,7 +57,12 @@ export function canAnswer(trial: ListeningTrial): boolean {
 export function finishTrial(trial: ListeningTrial, guess: Lane | null): ListeningResult {
   if (guess !== null && !canAnswer(trial))
     throw new Error("Hear A, B and X to the end before answering. Identical sounds are unscored.");
-  return { ...structuredClone(trial), guess, identical: identicalSound(trial) };
+  return {
+    ...structuredClone(trial),
+    guess,
+    identical: identicalSound(trial),
+    provenance: "this-tab",
+  };
 }
 export function pitchDifference(trial: ListeningTrial): number {
   const a = listeningScore(trial, "A"),
@@ -71,7 +77,7 @@ export function listeningCSV(results: readonly ListeningResult[]): string {
   const rows = [
     "# Grama listening practice. Copyright (c) 2026 Anthony Mercer. PolyForm-Noncommercial-1.0.0.",
     "# Descriptive attempts only; no hearing threshold or ancient tuning is established. No unfinished trial is exported.",
-    "trial,stimulus,Sa_hz,A_four_cents,A_two_cents,B_four_cents,B_two_cents,B_lock,B_ordered_gaps,B_Pa_lowers,X,answer,outcome,A_completed,B_completed,X_completed,max_pitch_difference_cents",
+    "trial,stimulus,Sa_hz,A_four_cents,A_two_cents,B_four_cents,B_two_cents,B_lock,B_ordered_gaps,B_Pa_lowers,X,answer,outcome,A_completed,B_completed,X_completed,max_pitch_difference_cents,record_origin",
   ];
   results.forEach((r, index) => {
     rows.push(
@@ -99,6 +105,7 @@ export function listeningCSV(results: readonly ListeningResult[]): string {
         r.completed.B,
         r.completed.X,
         pitchDifference(r).toFixed(9),
+        r.provenance,
       ].join(","),
     );
   });
