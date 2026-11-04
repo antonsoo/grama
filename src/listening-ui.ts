@@ -24,7 +24,7 @@ export function listeningExercise(
   player: ListeningPlayer,
   getState: () => FamilyState,
   setState: (state: FamilyState) => void,
-): { invalidate: () => void } {
+): { invalidate: () => void; refreshControls: () => void } {
   const el = <T extends HTMLElement = HTMLElement>(id: string) => {
     const node = document.getElementById(`listening-${id}`);
     if (!node) throw new Error(`Missing listening-${id}`);
@@ -252,5 +252,5 @@ export function listeningExercise(
     () => results.length > 0,
   );
   controls();
-  return { invalidate };
+  return { invalidate, refreshControls: controls };
 }

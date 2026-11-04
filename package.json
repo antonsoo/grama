@@ -49,7 +49,8 @@
     "test:attachment": "node scripts/attachment-browser.mjs",
     "test:record-open": "node scripts/record-open-browser.mjs",
     "verify:attachment-audio": "python3 scripts/attachment-audio-oracle.py",
-    "test:shared-network": "node scripts/shared-bandwidth-audit.mjs"
+    "test:shared-network": "node scripts/shared-bandwidth-audit.mjs",
+    "test:startup": "node scripts/startup-browser.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

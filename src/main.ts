@@ -3,6 +3,7 @@ import { parseComparisonRecord } from "./core/record";
 import { readingSave } from "./reading-save";
 import { recordOpen } from "./record-open";
 import { SourcePlate } from "./source-plate";
+import { activateControls } from "./startup";
 import "./style.css";
 import manifest from "virtual:grama-sources";
 import { READINGS, WORDS } from "./content";
@@ -278,6 +279,7 @@ document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((a) => {
   });
 });
 new ResizeObserver(figures).observe(element("count-figure"));
+activateControls();
 render();
 showPassage();
 void offline(element("offline-status"));

@@ -2,6 +2,7 @@ import { listeningExercise } from "./listening-ui";
 import { readingSave } from "./reading-save";
 import { recordOpen } from "./record-open";
 import { SourcePlate } from "./source-plate";
+import { activateControls } from "./startup";
 import "./style.css";
 import "./family.css";
 import { READINGS, WORDS } from "./content";
@@ -270,5 +271,7 @@ window.addEventListener("hashchange", () => {
   }
 });
 new ResizeObserver(figures).observe(element("family-ruler"));
+activateControls();
 render();
+exercise.refreshControls();
 void offline(element("offline-status"));
