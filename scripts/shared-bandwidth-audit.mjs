@@ -20,7 +20,7 @@ const types = {
   ".svg": "image/svg+xml",
   ".txt": "text/plain",
 };
-async function origin(rate) {
+async function origin(rate, fastFonts = false) {
   const active = new Set(),
     requests = [],
     faults = new Map();
@@ -32,7 +32,8 @@ async function origin(rate) {
         file = url.pathname.replace(/^\/grama\//, "") || "index.html";
       assert(!file.includes(".."));
       const bytes = await readFile(path.join("dist", file));
-      const retained = /\.(jpg|woff2|ttf)$/.test(file),
+      const retained =
+          /\.(jpg|woff2|ttf)$/.test(file) && !(fastFonts && /\.(woff2|ttf)$/.test(file)),
         identified = retained && request.headers["sec-fetch-dest"] === "empty";
       const record = { file, identified, started: Date.now(), bytes: 0, finished: false };
       requests.push(record);
@@ -45,9 +46,17 @@ async function origin(rate) {
         "Content-Length": bytes.length,
         "Cache-Control": "no-store",
       });
-      if (faults.get(file) === "body") {
+      if (["body", "drip"].includes(faults.get(file))) {
         response.write(bytes.subarray(0, 128));
         record.bytes = 128;
+        if (faults.get(file) === "drip") {
+          let offset = 128;
+          const heartbeat = setInterval(() => {
+            response.write(bytes.subarray(offset, offset + 1));
+            record.bytes = ++offset;
+          }, 1000);
+          response.once("close", () => clearInterval(heartbeat));
+        }
         return;
       }
       if (!retained) {
@@ -103,7 +112,10 @@ async function origin(rate) {
 const report = {
   checkedAt: new Date().toISOString(),
   scope:
-    "One shared byte budget per local HTTP/1.1 origin, fair across every retained image/font response. Bootstrap HTML/JS/CSS is fast. Real native files, workers and locks; no public bandwidth or outage claim.",
+    "One shared byte budget per local HTTP/1.1 origin, fair across every retained image/font response. Bootstrap HTML/JS/CSS is fast. Cancellation isolates queue behavior with fast fonts and two one-byte/s source bodies. Real native files, workers and locks; no public bandwidth or outage claim.",
+  workerSha256: createHash("sha256")
+    .update(await readFile("dist/sw.js"))
+    .digest("hex"),
   cases: [],
 };
 const runs = await Promise.allSettled(
@@ -119,7 +131,7 @@ const runs = await Promise.allSettled(
           (k) => mode === "all" || k === mode,
         )) {
           const rate = kind === "multi" ? 131072 : 65536,
-            s = await origin(rate);
+            s = await origin(rate, kind === "queue");
           const context = await browser.newContext({
             serviceWorkers: kind === "multi" ? "allow" : "block",
             reducedMotion: "reduce",
@@ -159,7 +171,7 @@ const runs = await Promise.allSettled(
           let failed = false;
           try {
             if (kind === "queue") {
-              s.faults.set("sources/grosset-28.jpg", "body");
+              s.faults.set("sources/grosset-28.jpg", "drip");
               const holders = [];
               for (let i = 0; i < 2; i++) {
                 const page = await context.newPage();
@@ -172,6 +184,9 @@ const runs = await Promise.allSettled(
                     l.name.startsWith("grama-retained-transfer-"),
                   ).length === 2,
               );
+              const owners = (await holders[0].evaluate(() => navigator.locks.query())).held
+                .map((l) => l.clientId)
+                .sort();
               const page = await context.newPage();
               await page.goto(`${s.base}tuning.html`, { waitUntil: "domcontentloaded" });
               await page.locator("#save-reading").click();
@@ -199,6 +214,7 @@ const runs = await Promise.allSettled(
                 after.pending.filter((l) => l.name.startsWith("grama-retained-transfer-")).length,
                 1,
               );
+              assert.deepEqual(after.held.map((l) => l.clientId).sort(), owners);
               const cancellationMs = Date.now() - cancelStart;
               assert(cancellationMs < 3000);
               await page.close();
