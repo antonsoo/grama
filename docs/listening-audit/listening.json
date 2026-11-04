@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-04T23:13:00.413Z",
+  "checkedAt": "2026-11-04T23:35:39.604Z",
   "scope": "Local production; real native AudioBuffers, completion events, actual downloads reopened from disk, and origin refused for offline use. No physical-speaker or public delivery claim.",
   "configurations": [
     {
@@ -47,7 +47,7 @@
     {
       "browser": "firefox",
       "width": 1440,
-      "nativeXExactMatch": "B",
+      "nativeXExactMatch": "A",
       "replayPCMIdentical": true,
       "controlPCMIdentical": true,
       "stoppedAndStaleResumeNotCredited": true,
@@ -68,7 +68,7 @@
     {
       "browser": "firefox",
       "width": 375,
-      "nativeXExactMatch": "B",
+      "nativeXExactMatch": "A",
       "replayPCMIdentical": true,
       "controlPCMIdentical": true,
       "stoppedAndStaleResumeNotCredited": true,

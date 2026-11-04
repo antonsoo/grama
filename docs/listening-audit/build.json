@@ -1,15 +1,15 @@
 {
-  "checkedAt": "2026-11-04T23:16:14.087586+00:00",
-  "scope": "Final local production inventory. Clean Node 24.22.1 build byte-compared with Node 26 build. Hosted bytes and CI are separate checks.",
-  "sourceRevision": "7477b0f3e46cdba9feb10950e3adacde188ed5f1",
+  "checkedAt": "2026-11-04T23:37:46.821644+00:00",
+  "scope": "Final startup-guard production inventory. Clean Node 24.22.1 build byte-compared with Node 26 build. Hosted bytes and CI are separate checks.",
+  "sourceRevision": "cb42526542232f06f8806800cf84f8192f44cc5d",
   "buildCommand": "npm run build",
   "output": "dist/",
-  "edition": "3a42bf85376e4c94ebca78bd14e3f25d436a34d2d624d375092b2e3210cfe1ab",
+  "edition": "f610213c974775dffa84e45285392a961f1118906443d04f54e2fa3fd5d137ef",
   "files": [
     {
-      "path": "assets/main-smBYRM6b.js",
-      "bytes": 8897,
-      "sha256": "80cee47e9f12df4128defa29592969f3f2f37a3ff7425a2ffd1535f3f0222895"
+      "path": "assets/main-DvueUPPs.js",
+      "bytes": 8910,
+      "sha256": "dbed751afeb5e9174edc9c49515357eb189a1e459711618381a6e8d152845d8c"
     },
     {
       "path": "assets/player-B3uckT-V.css",
@@ -17,19 +17,19 @@
       "sha256": "de63ed851acce48d63db8377b00490b6d34deb8cecc92b0e475e19382d38e8e0"
     },
     {
-      "path": "assets/player-BpOTfCif.js",
-      "bytes": 53268,
-      "sha256": "1e0b4461a5e26fcb9ab15f931631ed106f023dea6e6000e8449374a95d05d4f3"
-    },
-    {
-      "path": "assets/tuning-BIi8nqJh.js",
-      "bytes": 36705,
-      "sha256": "ccfb197f6b191e3374e52d3d12bc738c94f6b30746dcf81eb7faabf7370cacfd"
+      "path": "assets/player-BK9p2PC_.js",
+      "bytes": 53416,
+      "sha256": "217e9c8ebccb5a1003f805897d3d79aae8633f356652c923b872373f2eb076e6"
     },
     {
       "path": "assets/tuning-C2r19Xzz.css",
       "bytes": 5411,
       "sha256": "24fd7345d193bbd6357e7bb396532b101da1cf729c1e62f5c34ce94f4c8cdadc"
+    },
+    {
+      "path": "assets/tuning-CfhZSqF3.js",
+      "bytes": 36768,
+      "sha256": "d0f18bd4ed348124ea3a0252562c71ee44516493741d83d973ef0fb3040b76d2"
     },
     {
       "path": "favicon.svg",
@@ -73,8 +73,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 11932,
-      "sha256": "2abd5586723a91044e4c1983542d2ca349c4b3eec4f1b36789c3c5919524b0f3"
+      "bytes": 12742,
+      "sha256": "f2dea6cf0699c4041acd9d09aa8475a95c13ecb95c3102a25710a02044282083"
     },
     {
       "path": "sources/grosset-21.jpg",
@@ -139,12 +139,12 @@
     {
       "path": "sw.js",
       "bytes": 20840,
-      "sha256": "02a32d1128ec8b242163e4e29b6ea312ae68696def5df85c1929ef88b6903306"
+      "sha256": "97a634fa813c0cde4c994d0c73b0d0829c75dc08f231db99389dc1bea159bccc"
     },
     {
       "path": "tuning.html",
-      "bytes": 13913,
-      "sha256": "ccb66e62e004446906f2eaba497e8c5c1baf5e1c0cc3aedf1ecb0be24fbe33f0"
+      "bytes": 14843,
+      "sha256": "fe1cdb81dc889f40c353685d2b8e463cfccff20e5dd98cbca1c44a6a035124e0"
     }
   ]
 }

@@ -1,31 +1,31 @@
 {
-  "checkedAt": "2026-11-04T23:16:10.463Z",
+  "checkedAt": "2026-11-04T23:37:06.409Z",
   "scope": "Cold native installation with concurrent foreground source at 4000 bytes/s per response, then header stall and retry; local origin only",
-  "workerSha256": "02a32d1128ec8b242163e4e29b6ea312ae68696def5df85c1929ef88b6903306",
+  "workerSha256": "97a634fa813c0cde4c994d0c73b0d0829c75dc08f231db99389dc1bea159bccc",
   "results": [
     {
       "browser": "chromium",
       "version": "153.0.8010.12",
-      "coldSaveElapsedMs": 118341,
+      "coldSaveElapsedMs": 113931,
       "sourceTransfers": [
         {
-          "url": "/grama/sources/grosset-28.jpg?grama-read=eb5cc0c0-d0be-491b-9e03-e58ff84d950d",
+          "url": "/grama/sources/grosset-28.jpg?grama-read=7f0882a5-c5b3-4ca3-9153-6a8dd5bd047b",
           "pathname": "/grama/sources/grosset-28.jpg",
           "bytes": 431366,
           "finished": true,
-          "started": 1793834021000,
-          "ended": 1793834133671
+          "started": 1793835283440,
+          "ended": 1793835394745
         },
         {
           "url": "/grama/sources/grosset-28.jpg",
           "pathname": "/grama/sources/grosset-28.jpg",
           "bytes": 431366,
           "finished": true,
-          "started": 1793834023014,
-          "ended": 1793834135623
+          "started": 1793835284745,
+          "ended": 1793835395963
         }
       ],
-      "headerInactivityMs": 15116,
+      "headerInactivityMs": 15128,
       "sourceRetry": true,
       "originDisabledReload": true,
       "settingsKept": true
@@ -33,26 +33,26 @@
     {
       "browser": "firefox",
       "version": "155.0",
-      "coldSaveElapsedMs": 121686,
+      "coldSaveElapsedMs": 119049,
       "sourceTransfers": [
         {
-          "url": "/grama/sources/grosset-28.jpg?grama-read=4bd4cf3f-5e91-463e-9e65-55b02ced5782",
+          "url": "/grama/sources/grosset-28.jpg?grama-read=c8b056ef-3c77-4de1-b995-8febaf6fb133",
           "pathname": "/grama/sources/grosset-28.jpg",
           "bytes": 431366,
           "finished": true,
-          "started": 1793834030896,
-          "ended": 1793834143771
+          "started": 1793835291624,
+          "ended": 1793835402653
         },
         {
           "url": "/grama/sources/grosset-28.jpg",
           "pathname": "/grama/sources/grosset-28.jpg",
           "bytes": 431366,
           "finished": true,
-          "started": 1793834034145,
-          "ended": 1793834146604
+          "started": 1793835294977,
+          "ended": 1793835405986
         }
       ],
-      "headerInactivityMs": 15407,
+      "headerInactivityMs": 15216,
       "sourceRetry": true,
       "originDisabledReload": true,
       "settingsKept": true

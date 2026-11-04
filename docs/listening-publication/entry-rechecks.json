@@ -1,0 +1,39 @@
+{
+  "scope": "Canonical directory and worker rechecked after each completed four-configuration record/placement hosted workflow. Other workflows perform their own entry checks.",
+  "checks": [
+    {
+      "workflow": "record",
+      "checkedAt": "2026-11-04T23:41:21.819Z",
+      "receiptSha256": "1aabbafc661e8a141ca871c6f319778f2a28393687c3c83df497ab4f45af1bee",
+      "entries": [
+        {
+          "url": "https://antonsoo.github.io/grama/",
+          "sha256": "f2dea6cf0699c4041acd9d09aa8475a95c13ecb95c3102a25710a02044282083",
+          "matches": true
+        },
+        {
+          "url": "https://antonsoo.github.io/grama/sw.js",
+          "sha256": "97a634fa813c0cde4c994d0c73b0d0829c75dc08f231db99389dc1bea159bccc",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "workflow": "attachment",
+      "checkedAt": "2026-11-04T23:41:10.470Z",
+      "receiptSha256": "f0bee1bb3407fbff50f1799561d9d3542d2042dbfb64b80278db3cf5f53d6d73",
+      "entries": [
+        {
+          "url": "https://antonsoo.github.io/grama/",
+          "sha256": "f2dea6cf0699c4041acd9d09aa8475a95c13ecb95c3102a25710a02044282083",
+          "matches": true
+        },
+        {
+          "url": "https://antonsoo.github.io/grama/sw.js",
+          "sha256": "97a634fa813c0cde4c994d0c73b0d0829c75dc08f231db99389dc1bea159bccc",
+          "matches": true
+        }
+      ]
+    }
+  ]
+}

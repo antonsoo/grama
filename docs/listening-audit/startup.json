@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-11-04T23:33:06.205Z",
+  "scope": "Real HTML and controls with the production entry module deliberately withheld. A pending native action waits for readiness; it must then perform the intended edit, not fall through to an identical default pair. No public speed claim.",
+  "workerSha256": "97a634fa813c0cde4c994d0c73b0d0829c75dc08f231db99389dc1bea159bccc",
+  "cases": [
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "room": "count",
+      "unavailableBeforeHandlers": true,
+      "intendedActionAppliedAfterReady": true,
+      "statefulDisablingPreserved": true,
+      "nativeRecordDownloaded": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "room": "family",
+      "unavailableBeforeHandlers": true,
+      "intendedActionAppliedAfterReady": true,
+      "statefulDisablingPreserved": true,
+      "nativeRecordDownloaded": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "width": 375,
+      "room": "count",
+      "unavailableBeforeHandlers": true,
+      "intendedActionAppliedAfterReady": true,
+      "statefulDisablingPreserved": true,
+      "nativeRecordDownloaded": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "width": 375,
+      "room": "family",
+      "unavailableBeforeHandlers": true,
+      "intendedActionAppliedAfterReady": true,
+      "statefulDisablingPreserved": true,
+      "nativeRecordDownloaded": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 1440,
+      "room": "count",
+      "unavailableBeforeHandlers": true,
+      "intendedActionAppliedAfterReady": true,
+      "statefulDisablingPreserved": true,
+      "nativeRecordDownloaded": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 1440,
+      "room": "family",
+      "unavailableBeforeHandlers": true,
+      "intendedActionAppliedAfterReady": true,
+      "statefulDisablingPreserved": true,
+      "nativeRecordDownloaded": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 375,
+      "room": "count",
+      "unavailableBeforeHandlers": true,
+      "intendedActionAppliedAfterReady": true,
+      "statefulDisablingPreserved": true,
+      "nativeRecordDownloaded": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 375,
+      "room": "family",
+      "unavailableBeforeHandlers": true,
+      "intendedActionAppliedAfterReady": true,
+      "statefulDisablingPreserved": true,
+      "nativeRecordDownloaded": true,
+      "pageErrors": []
+    }
+  ]
+}

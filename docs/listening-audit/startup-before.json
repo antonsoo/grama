@@ -1,0 +1,17 @@
+{
+  "scope": "Native click while entry module is deliberately withheld; no slow-public-host claim.",
+  "cases": [
+    {
+      "browser": "chromium",
+      "setupEnabledBeforeHandler": true,
+      "afterEarlySetupAndFreeze": "A and B generate identical samples for this selection. Replay the control and reveal; it will remain unscored. Change the pair or stimulus for a distinction.",
+      "firstSetupClickLost": true
+    },
+    {
+      "browser": "firefox",
+      "setupEnabledBeforeHandler": true,
+      "afterEarlySetupAndFreeze": "A and B generate identical samples for this selection. Replay the control and reveal; it will remain unscored. Change the pair or stimulus for a distinction.",
+      "firstSetupClickLost": true
+    }
+  ]
+}

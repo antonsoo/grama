@@ -1,5 +1,8 @@
 # Publication records
 
+The latest [listening, reopening and count-placement publication](listening-publication.md)
+records the startup-fixed edition and its sixteen operated public configurations.
+
 The current [tuning-family publication and operated audit](audit-publication.md)
 records the later source, build, browser and public-file boundaries.
 

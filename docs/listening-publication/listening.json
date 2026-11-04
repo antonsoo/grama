@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-11-04T23:37:11.247Z",
+  "scope": "Hosted HTTPS production; actual native AudioBuffers and downloaded studies; browser networking disabled after worker takeover. No origin-outage or physical-speaker claim.",
+  "configurations": [
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "nativeXExactMatch": "B",
+      "replayPCMIdentical": true,
+      "controlPCMIdentical": true,
+      "stoppedAndStaleResumeNotCredited": true,
+      "matchedAndMissedAnswers": true,
+      "recordFrozenAcrossEdits": true,
+      "recordLimit": 12,
+      "offlineOriginRefused": false,
+      "browserNetworkDisabledForOffline": true,
+      "standaloneStudy": {
+        "images": 11,
+        "trialAudio": 6,
+        "externalRequests": 0,
+        "nativePlaybackFinished": true
+      },
+      "accessibilityViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "width": 375,
+      "nativeXExactMatch": "B",
+      "replayPCMIdentical": true,
+      "controlPCMIdentical": true,
+      "stoppedAndStaleResumeNotCredited": true,
+      "matchedAndMissedAnswers": true,
+      "recordFrozenAcrossEdits": true,
+      "recordLimit": 12,
+      "offlineOriginRefused": false,
+      "browserNetworkDisabledForOffline": true,
+      "standaloneStudy": {
+        "images": 11,
+        "trialAudio": 6,
+        "externalRequests": 0,
+        "nativePlaybackFinished": true
+      },
+      "accessibilityViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 1440,
+      "nativeXExactMatch": "A",
+      "replayPCMIdentical": true,
+      "controlPCMIdentical": true,
+      "stoppedAndStaleResumeNotCredited": true,
+      "matchedAndMissedAnswers": true,
+      "recordFrozenAcrossEdits": true,
+      "recordLimit": 12,
+      "offlineOriginRefused": false,
+      "browserNetworkDisabledForOffline": true,
+      "standaloneStudy": {
+        "images": 11,
+        "trialAudio": 6,
+        "externalRequests": 0,
+        "nativePlaybackFinished": true
+      },
+      "accessibilityViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 375,
+      "nativeXExactMatch": "B",
+      "replayPCMIdentical": true,
+      "controlPCMIdentical": true,
+      "stoppedAndStaleResumeNotCredited": true,
+      "matchedAndMissedAnswers": true,
+      "recordFrozenAcrossEdits": true,
+      "recordLimit": 12,
+      "offlineOriginRefused": false,
+      "browserNetworkDisabledForOffline": true,
+      "standaloneStudy": {
+        "images": 11,
+        "trialAudio": 6,
+        "externalRequests": 0,
+        "nativePlaybackFinished": true
+      },
+      "accessibilityViolations": 0,
+      "pageErrors": []
+    }
+  ]
+}

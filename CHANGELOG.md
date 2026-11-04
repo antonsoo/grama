@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Keep controls unavailable until their handlers exist, preserving the first
+  setup, edit and file-opening action after a cold arrival from the catalogue.
+
 - Bound study-asset reads and coordinate two identified transfers across windows
   and workers, preventing healthy shared-bandwidth queues from consuming the
   network-header deadline. Keep queued cancellation and actual inactivity checks.

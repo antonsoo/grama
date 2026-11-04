@@ -51,6 +51,27 @@ both rooms in Chromium and Firefox at 1440/375px. File-read delays and pagehide
 are deliberate lifecycle injections, not claims about a measured slow disk or
 physical OS interruption.
 
+### The first click waits for a working instrument
+
+A public discovery run reached the lesson before its entry module had attached
+its listeners. **Set up a 10-cent comparison** looked available and accepted a
+click, but did nothing. Freezing afterward captured the default identical pair;
+all three examples could complete, yet the intentionally guarded answer stayed
+unavailable. I reproduced the lost setup click in both browsers by withholding
+only the production entry module: [before receipt](listening-audit/startup-before.json).
+
+Both rooms now ship their interactive controls disabled. The synchronous entry
+module releases those startup disables only after attaching its handlers; the
+normal render then reapplies the experiment's own conditions. Locked gaps,
+unavailable answers, and an empty record's unavailable exports remain disabled.
+Text, navigation and the source citations remain readable during startup.
+
+The [eight native startup cases](listening-audit/startup.json) exercise both
+rooms at 1440/375px in Chromium and Firefox. A native action waits while the
+module is held, then applies the requested Sa edit or ten-cent setup. Actual
+A/B/X completions unlock the answer, and the native downloaded record preserves
+the result. The hold is a deliberate lifecycle fault, not a public-speed claim.
+
 ### A healthy shared connection no longer looks like a silent server
 
 The previous slow-source checks throttled one response at a time. A new test
@@ -152,7 +173,7 @@ an analytical sine/envelope and the actual captured native AudioBuffers.
   offline reopening/export. The audited WCAG A/AA tag sets reported no violations.
 - [Slow source installation](listening-audit/cold-transfer.json): a cold
   foreground read concurrent with worker installation, both at 4,000 bytes/s
-  per response. Chromium/Firefox completed after approximately 118.3/121.7 s;
+  per response. Chromium/Firefox completed after approximately 113.9/119.0 s;
   header stalls timed out and same-tab retries recovered.
 - [Network failures](listening-audit/network.json): continuous transfer can
   continue beyond 100 seconds; silent bodies release repair controls. HTTP 503
@@ -165,8 +186,12 @@ an analytical sine/envelope and the actual captured native AudioBuffers.
   [slow-save audit](listening-audit/save.json): native resume/context ownership,
   interrupted audio, source-save cancellation and captured inputs survive.
 
-The current cold-transfer, edition-replacement and build receipts identify the
-final production worker; earlier interaction receipts remain explicitly dated.
+The startup, cold-transfer, edition-replacement and build receipts identify the
+startup-fixed production worker. The earlier full shared-transfer and original
+local record/count/placement matrices retain their own edition boundaries;
+[the sixteen hosted configurations](listening-publication.md) exercise the
+current edition. The [focused cancellation recheck](listening-audit/startup-queue.json)
+uses one qualifying lock snapshot, preserving both original client owners.
 [Final build identities](listening-audit/build.json) record all retained files.
 They are local real-origin fault tests, not an outage of the public host.
 Hosted bytes, public browser operation, remote synchronization and CI execution
@@ -186,6 +211,7 @@ npm run test:listening-save
 npm run test:attachment
 npm run verify:attachment-audio
 npm run test:record-open
+npm run test:startup
 npm run test:interactions
 npm run test:cold-save
 npm run test:network

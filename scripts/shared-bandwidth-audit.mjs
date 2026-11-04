@@ -178,15 +178,16 @@ const runs = await Promise.allSettled(
                 holders.push(page);
                 await page.goto(s.base, { waitUntil: "domcontentloaded" });
               }
-              await holders[0].waitForFunction(
-                async () =>
-                  (await navigator.locks.query()).held.filter((l) =>
+              // Capture the qualifying snapshot itself: a second query after
+              // waitForFunction can observe a different grant/release turn.
+              const owners = await (
+                await holders[0].waitForFunction(async () => {
+                  const held = (await navigator.locks.query()).held.filter((l) =>
                     l.name.startsWith("grama-retained-transfer-"),
-                  ).length === 2,
-              );
-              const owners = (await holders[0].evaluate(() => navigator.locks.query())).held
-                .map((l) => l.clientId)
-                .sort();
+                  );
+                  return held.length === 2 && held.map((l) => l.clientId).sort();
+                })
+              ).jsonValue();
               const page = await context.newPage();
               await page.goto(`${s.base}tuning.html`, { waitUntil: "domcontentloaded" });
               await page.locator("#save-reading").click();
@@ -214,7 +215,13 @@ const runs = await Promise.allSettled(
                 after.pending.filter((l) => l.name.startsWith("grama-retained-transfer-")).length,
                 1,
               );
-              assert.deepEqual(after.held.map((l) => l.clientId).sort(), owners);
+              assert.deepEqual(
+                after.held
+                  .filter((l) => l.name.startsWith("grama-retained-transfer-"))
+                  .map((l) => l.clientId)
+                  .sort(),
+                owners,
+              );
               const cancellationMs = Date.now() - cancelStart;
               assert(cancellationMs < 3000);
               await page.close();

@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-11-04T23:42:35.943Z",
+  "scope": "One shared byte budget per local HTTP/1.1 origin, fair across every retained image/font response. Bootstrap HTML/JS/CSS is fast. Cancellation isolates queue behavior with fast fonts and two one-byte/s source bodies. Real native files, workers and locks; no public bandwidth or outage claim.",
+  "workerSha256": "97a634fa813c0cde4c994d0c73b0d0829c75dc08f231db99389dc1bea159bccc",
+  "cases": [
+    {
+      "browser": "chromium",
+      "kind": "queue",
+      "queuedExportCancelledMs": 78,
+      "otherWindowsKeptPermits": true,
+      "noQueuedExportRequestsLeft": true
+    },
+    {
+      "browser": "firefox",
+      "kind": "queue",
+      "queuedExportCancelledMs": 70,
+      "otherWindowsKeptPermits": true,
+      "noQueuedExportRequestsLeft": true
+    }
+  ],
+  "failures": []
+}

@@ -87,7 +87,8 @@ Run locally, then open `http://127.0.0.1:4394/grama/tuning.html#listening`.
 The example is an automated verification record, not a human listening result.
 Decompress its HTML before opening it; the app saves ordinary HTML.
 The hosted exercise and the count-placement diagnostic are published;
-[current audit](docs/listening-audit.md) records their source and local behavior.
+[current audit](docs/listening-audit.md) records their source and local behavior;
+[publication evidence](docs/listening-publication.md) records the hosted edition.
 
 ## Build another tuning
 
