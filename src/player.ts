@@ -5,8 +5,10 @@ export class ListeningPlayer {
   private context: AudioContext | null = null;
   private source: AudioBufferSourceNode | null = null;
   private revision = 0;
+  private output: HTMLElement;
 
   constructor(private readonly status: HTMLElement) {
+    this.output = status;
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) this.stop();
     });
@@ -30,11 +32,18 @@ export class ListeningPlayer {
         source.disconnect();
       }
     }
-    this.status.textContent = message;
+    this.output.textContent = message;
   }
 
-  async play(events: SoundEvent[], message: string, finished: string): Promise<void> {
+  async play(
+    events: SoundEvent[],
+    message: string,
+    finished: string,
+    onComplete?: () => void,
+    output: HTMLElement = this.status,
+  ): Promise<void> {
     this.stop();
+    this.output = output;
     const revision = this.revision;
     const captured = events.map((event) => ({ ...event }));
     if (document.hidden) return;
@@ -60,7 +69,8 @@ export class ListeningPlayer {
         source.disconnect();
         if (this.source !== source) return;
         this.source = null;
-        this.status.textContent = finished;
+        this.output.textContent = finished;
+        onComplete?.();
       };
       try {
         source.start();
@@ -71,7 +81,7 @@ export class ListeningPlayer {
         source.disconnect();
         throw error;
       }
-      this.status.textContent = message;
+      this.output.textContent = message;
     } catch {
       // A rejected old resume must not stop or relabel a newer successful sound.
       if (revision === this.revision)

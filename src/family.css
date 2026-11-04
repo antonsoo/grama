@@ -273,3 +273,134 @@
     print-color-adjust: exact;
   }
 }
+
+/* Three keys on the existing bench: actions, not a decorative waveform. */
+.listening-setup,
+.listening-answers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  margin: 24px 0 14px;
+}
+.listening-setup label {
+  display: grid;
+  gap: 6px;
+}
+.listening-explanation {
+  font-size: 15px;
+}
+.listening-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.listening-keys button {
+  border: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 22px;
+  background: var(--pale);
+  min-width: 0;
+}
+.listening-keys button:hover {
+  background: #ddebf0;
+}
+.listening-keys strong {
+  font-size: 58px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+.listening-keys span {
+  font-size: 17px;
+}
+.listening-keys small {
+  margin-top: 6px;
+  font-size: 13px;
+}
+.listening-keys #listening-x {
+  background: #f5edf4;
+  color: var(--plum);
+}
+#listening-status {
+  min-height: 3.2em;
+  margin: 20px 0;
+}
+#listening-result {
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+}
+#listening-result table {
+  min-width: 0;
+  font-size: 15px;
+}
+.listening-log {
+  margin: 36px 0;
+}
+#listening-history {
+  padding-left: 24px;
+  font-size: 16px;
+}
+#listening-history li {
+  margin: 8px 0;
+}
+@media (max-width: 760px) {
+  .listening-setup {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .listening-keys button {
+    padding: 16px 10px;
+  }
+  .listening-keys strong {
+    font-size: 44px;
+  }
+  .listening-keys span {
+    font-size: 14px;
+  }
+  #listening-result th,
+  #listening-result td {
+    padding: 8px 3px;
+    font-size: 12px;
+  }
+}
+@media print {
+  .listening-setup,
+  .listening-keys,
+  .listening-answers,
+  .listening-log .save-actions {
+    display: none;
+  }
+}
+
+.listening-keys legend {
+  font-size: 14px;
+  padding: 0 6px;
+}
+.listening-answers {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.listening-answers legend {
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 10px;
+}
+#listening-history button {
+  border: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-align: left;
+  background: none;
+  padding: 6px 0;
+}

@@ -7,7 +7,8 @@ export function readingSave(
   prepare: (options: ReadOptions) => Promise<string>,
   name: string,
   success: string,
-): void {
+  eligible: () => boolean = () => true,
+): () => boolean {
   const cancel = document.createElement("button");
   cancel.type = "button";
   cancel.textContent = "Cancel reading save";
@@ -17,7 +18,7 @@ export function readingSave(
   cancel.addEventListener("click", () => active?.abort());
   window.addEventListener("pagehide", () => active?.abort());
   button.addEventListener("click", async () => {
-    if (active) return;
+    if (active || !eligible()) return;
     const controller = new AbortController();
     active = controller;
     button.disabled = true;
@@ -41,8 +42,9 @@ export function readingSave(
           : "The reading could not be saved. Try again.";
     } finally {
       active = undefined;
-      button.disabled = false;
+      button.disabled = !eligible();
       cancel.hidden = true;
     }
   });
+  return () => active !== undefined;
 }

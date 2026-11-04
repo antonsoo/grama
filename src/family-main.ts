@@ -1,3 +1,4 @@
+import { listeningExercise } from "./listening-ui";
 import { readingSave } from "./reading-save";
 import { SourcePlate } from "./source-plate";
 import "./style.css";
@@ -102,11 +103,14 @@ function render() {
   figures();
 }
 function update(next: FamilyState) {
-  state = parseFamily(next);
+  const parsed = parseFamily(next);
   stop("Sound stopped because the tuning changed.");
+  exercise.invalidate();
+  state = parsed;
   history.replaceState(null, "", familyHash(state));
   render();
 }
+const exercise = listeningExercise(player, () => state, update);
 for (const [input, key] of [
   [four, "four"],
   [two, "two"],
@@ -157,9 +161,10 @@ const setBase = () => {
     status.textContent = error instanceof Error ? error.message : "Sa could not be set.";
   }
 };
-base.addEventListener("input", () =>
-  stop("Sound stopped while you edit Sa. Choose Set Sa to apply it."),
-);
+base.addEventListener("input", () => {
+  stop("Sound stopped while you edit Sa. Choose Set Sa to apply it.");
+  exercise.invalidate();
+});
 base.addEventListener("keydown", (event) => {
   if (event.key === "Enter") setBase();
 });

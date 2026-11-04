@@ -41,7 +41,9 @@
     "test:interactions": "node scripts/interaction-audit.mjs",
     "test:network": "node scripts/network-audit.mjs",
     "test:cold-save": "node scripts/cold-save-audit.mjs",
-    "test:upgrade": "node scripts/upgrade-audit.mjs"
+    "test:upgrade": "node scripts/upgrade-audit.mjs",
+    "test:listening": "node scripts/listening-browser.mjs",
+    "verify:listening-audio": "python3 scripts/listening-audio-oracle.py"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
