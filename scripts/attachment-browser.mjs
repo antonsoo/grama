@@ -176,7 +176,7 @@ for (const [name, engine] of [
           const deadline = Date.now() + 10000;
           while (
             !server.requests.some(
-              (r) => r.url.endsWith("grosset-28.jpg") && r.bytes === 128 && !r.finished,
+              (r) => r.pathname.endsWith("grosset-28.jpg") && r.bytes === 128 && !r.finished,
             )
           ) {
             assert(Date.now() < deadline);

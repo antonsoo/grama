@@ -30,7 +30,9 @@ const results = await Promise.all(
         .waitFor({ timeout: 160000 });
       const elapsedMs = Date.now() - start;
       assert(elapsedMs > 100000);
-      const transfers = server.requests.filter((r) => r.url.endsWith("sources/grosset-28.jpg"));
+      const transfers = server.requests.filter((r) =>
+        r.pathname.endsWith("sources/grosset-28.jpg"),
+      );
       assert(transfers.length >= 2);
       assert(transfers.every((r) => r.finished && r.bytes === 431366));
       await page.locator("#scan").waitFor({ state: "visible" });
@@ -89,7 +91,7 @@ const results = await Promise.all(
         name,
         await page.locator("#scan-caption").textContent(),
         await page.locator("#offline-status").textContent(),
-        server.requests.filter((r) => r.url.endsWith("sources/grosset-28.jpg")),
+        server.requests.filter((r) => r.pathname.endsWith("sources/grosset-28.jpg")),
       );
       throw error;
     } finally {

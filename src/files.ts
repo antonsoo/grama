@@ -39,17 +39,19 @@ export async function asset(
   const worker = "serviceWorker" in navigator ? navigator.serviceWorker.controller : null;
   const stopAcknowledging = worker ? keepSaveAlive(worker) : () => {};
   try {
-    // Firefox can serialize revalidating reads of the same URL behind an active
-    // source plate. These bytes have their own immutable identity and worker
-    // cache, so bypass the HTTP cache rather than spending the header deadline
-    // waiting for its revalidation lock.
+    // Firefox serializes HTTP revalidation of the same URL, but no-store reads
+    // fail offline before reaching its worker. Give each identified read its own
+    // HTTP cache key; the worker still resolves the canonical pathname and the
+    // bytes must match this edition's length and SHA-256.
+    const url = new URL(`${import.meta.env.BASE_URL}${file}`, location.href);
+    url.searchParams.set("grama-read", crypto.randomUUID());
     return await verifiedFetch(
-      `${import.meta.env.BASE_URL}${file}`,
+      url.href,
       {
         sha256: __ASSET_HASHES__[file] ?? "",
         bytes: __ASSET_BYTES__[file] ?? -1,
       },
-      { ...options, cache: "no-store", headers: { "X-Grama-Edition": __GRAMA_EDITION__ } },
+      { ...options, cache: "no-cache", headers: { "X-Grama-Edition": __GRAMA_EDITION__ } },
     );
   } catch (error) {
     if (error instanceof Error && error.name === "IntegrityError")

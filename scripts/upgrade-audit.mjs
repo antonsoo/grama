@@ -58,7 +58,7 @@ for (const [name, type] of [
       attempt < 100 &&
       !server.requests.some(
         (request) =>
-          request.url.endsWith("sources/grosset-28.jpg") &&
+          request.pathname.endsWith("sources/grosset-28.jpg") &&
           request.bytes === 128 &&
           !request.finished,
       );
@@ -68,7 +68,7 @@ for (const [name, type] of [
     assert(
       server.requests.some(
         (request) =>
-          request.url.endsWith("sources/grosset-28.jpg") &&
+          request.pathname.endsWith("sources/grosset-28.jpg") &&
           request.bytes === 128 &&
           !request.finished,
       ),

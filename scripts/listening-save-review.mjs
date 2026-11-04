@@ -39,7 +39,7 @@ for (const [name, engine] of [
       while (
         !server.requests
           .slice(offset)
-          .some((r) => r.url.endsWith("grosset-28.jpg") && r.bytes === 128)
+          .some((r) => r.pathname.endsWith("grosset-28.jpg") && r.bytes === 128)
       ) {
         assert(Date.now() < deadline, "foreground source request must reach the stalled body");
         await new Promise((r) => setTimeout(r, 25));

@@ -59,7 +59,7 @@ const results = await Promise.all(
       await page.locator("#offline-status").filter({ hasText: /KiB/ }).waitFor();
       await ready(page, 160000);
       const elapsedMs = Date.now() - started,
-        transfer = server.requests.filter((r) => r.url.endsWith(source)).at(-1);
+        transfer = server.requests.filter((r) => r.pathname.endsWith(source)).at(-1);
       assert(elapsedMs > 100000);
       assert(transfer.finished);
       assert.equal(transfer.bytes, 431366);

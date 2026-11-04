@@ -23,6 +23,7 @@ export async function reviewServer(directory = "dist") {
   const server = createServer(async (request, response) => {
     const record = {
       url: request.url,
+      pathname: new URL(request.url, "http://local").pathname,
       bytes: 0,
       finished: false,
       started: Date.now(),
