@@ -50,7 +50,7 @@ try {
     printBackground: true,
   });
   const json = JSON.parse(await readFile(path.join(output, "grama-comparison.json"), "utf8"));
-  assert.equal(json.format, "grama-comparison-v2");
+  assert.equal(json.format, "grama-comparison-v3");
   assert.match(json.notice, /PolyForm/);
   await writeFile(
     path.join(output, "review.json"),

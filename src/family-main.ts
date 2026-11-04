@@ -1,5 +1,6 @@
 import { listeningExercise } from "./listening-ui";
 import { readingSave } from "./reading-save";
+import { recordOpen } from "./record-open";
 import { SourcePlate } from "./source-plate";
 import "./style.css";
 import "./family.css";
@@ -102,7 +103,9 @@ function render() {
   element("family-table").innerHTML = familyTable(state);
   figures();
 }
+let editRevision = 0;
 function update(next: FamilyState) {
+  editRevision++;
   const parsed = parseFamily(next);
   stop("Sound stopped because the tuning changed.");
   exercise.invalidate();
@@ -162,6 +165,7 @@ const setBase = () => {
   }
 };
 base.addEventListener("input", () => {
+  editRevision++;
   stop("Sound stopped while you edit Sa. Choose Set Sa to apply it.");
   exercise.invalidate();
 });
@@ -190,20 +194,12 @@ readingSave(
   "grama-tuning-family-reading.html",
   "Saved both witnesses at the settings chosen when you clicked Save, with sound, source pages and their identities.",
 );
-element<HTMLInputElement>("open-json").addEventListener("change", async (event) => {
-  const input = event.target as HTMLInputElement,
-    file = input.files?.[0];
-  if (!file) return;
-  stop();
-  try {
-    if (file.size > 65536) throw new Error("Tuning JSON must be under 64 KB.");
-    update(parseFamilyJSON(await file.text()));
-    status.textContent = "Reopened both witnesses and their tuning settings.";
-  } catch (error) {
-    status.textContent = `${error instanceof Error ? error.message : "Could not read this file."} Your current experiment was kept.`;
-  } finally {
-    input.value = "";
-  }
+recordOpen(element<HTMLInputElement>("open-json"), status, {
+  fingerprint: () => JSON.stringify({ state, baseDraft: base.value, editRevision }),
+  parse: parseFamilyJSON,
+  apply: update,
+  success: "Reopened both witnesses and their tuning settings.",
+  kept: "Your current experiment was kept.",
 });
 element("share").addEventListener("click", async () => {
   const link = new URL(familyHash(state), location.href).href;

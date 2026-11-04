@@ -184,6 +184,11 @@ export function listeningExercise(
         `Attempt 1 · ${STIMULI[active.stimulus]} · Sa ${active.state.base} Hz · frozen until reveal.`;
     controls();
   });
+  const fingerprint = () =>
+    JSON.stringify({
+      record: session(),
+      baseDraft: (document.getElementById("base") as HTMLInputElement).value,
+    });
   const session = () => ({ state: getState(), stimulus: stimulus.value as Stimulus, results });
   button("json").addEventListener("click", () =>
     download("grama-listening-record.json", listeningJSON(session()), "application/json"),
@@ -195,17 +200,13 @@ export function listeningExercise(
     if (!file) return;
     el("open-status").textContent = "Opening listening record…";
     const request = ++openRevision,
-      before = JSON.stringify(session()),
+      before = fingerprint(),
       trialRevision = revision;
     try {
       if (file.size > LISTENING_RECORD_LIMIT)
         throw new Error("A listening record must be under 64 KB.");
       const raw = await file.text();
-      if (
-        request !== openRevision ||
-        trialRevision !== revision ||
-        before !== JSON.stringify(session())
-      )
+      if (request !== openRevision || trialRevision !== revision || before !== fingerprint())
         throw new Error(
           "The experiment changed while the file was opening. Select the file again to replace the current record.",
         );

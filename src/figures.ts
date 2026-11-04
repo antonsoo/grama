@@ -1,5 +1,6 @@
+import { type Attachment, attachmentCounts } from "./core/attachment";
 import { NOTICE } from "./core/notice";
-import { cents, incoming, NOTES, noteFactors, outgoing, type Pose } from "./core/tuning";
+import { cents, incoming, NOTES, noteFactors, type Pose } from "./core/tuning";
 export const htmlEscape = (text: string): string =>
   text.replace(
     /[&<>"']/g,
@@ -10,7 +11,7 @@ const f = (n: number) => n.toFixed(2);
 export function readingFigure(svg: string, label: string): string {
   return `<section class="figure-scroll" tabindex="0" aria-label="${htmlEscape(label)}; scroll horizontally if needed">${svg}</section>`;
 }
-export function countFigure(pose: Pose, width = 920): string {
+export function countFigure(pose: Pose, width = 920, attachment: Attachment = "arriving"): string {
   const w = Math.max(320, width);
   const left = 16;
   const span = w - 32;
@@ -20,7 +21,7 @@ export function countFigure(pose: Pose, width = 920): string {
     let n = 0;
     return [
       0,
-      ...outgoing(g).map((c) => {
+      ...attachmentCounts(g, attachment).map((c) => {
         n += c;
         return n;
       }),
@@ -28,23 +29,24 @@ export function countFigure(pose: Pose, width = 920): string {
   };
   const before = positions("sadja");
   const after = positions("madhyama");
-  let body = `<title>One retuned note exchanges two adjacent counts</title><desc>Counts arriving at Pa change from four to three; counts arriving at Dha change from three to four. Sa, Re, Ga, Ma, Dha and Ni keep their positions. Equal cell widths show ordinal counts, not equal pitch distances.</desc>`;
+  const moved = attachment === "arriving" ? 4 : 5;
+  let body = `<title>${attachment === "arriving" ? "Pa moves under incoming count placement" : "Deliberate misreading: following count placement moves Dha"}</title><desc>${attachment === "arriving" ? "The named counts belong to preceding intervals; Pa alone moves." : "The named counts are deliberately attached to following intervals; Dha moves and Pa stays fixed, contradicting the printed instruction."} Equal cell widths show ordinal counts, not equal pitch distances.</desc>`;
   for (let i = 0; i <= 7; i++) {
     const p = before[i] ?? 0;
     const q = after[i] ?? 0;
     body +=
-      i === 4
+      i === moved
         ? `<path d="M${f(x(p))} 100 L${f(x(q))} 178" stroke="#843e77" stroke-width="2" fill="none"/><path d="M${f(x(q) - 4)} 170 L${f(x(q))} 178 L${f(x(q) + 5)} 172" stroke="#843e77" stroke-width="2" fill="none"/>`
         : `<path d="M${f(x(p))} 100 V194" stroke="#a7bdc8" stroke-dasharray="2 6"/>`;
   }
   for (const [row, g] of (["sadja", "madhyama"] as const).entries()) {
     const pos = g === "sadja" ? before : after;
     const y = 72 + row * 142;
-    body += `<text x="16" y="${y - 54}" font-size="16" fill="#173d50">${g === "sadja" ? "Ṣaḍja-grāma" : "Madhyama-grāma"}${pose.grama === g ? " · selected" : ""}</text>`;
+    body += `<text x="16" y="${y - 54}" font-size="16" fill="#173d50">${g === "sadja" ? "Ṣaḍja-grāma" : "Madhyama-grāma"}${attachment === "leaving" ? " · misreading" : pose.grama === g ? " · selected" : ""}</text>`;
     for (let i = 0; i < 7; i++) {
       const from = pos[i] ?? 0;
       const to = pos[i + 1] ?? 0;
-      const changed = i === 3 || i === 4;
+      const changed = i === moved - 1 || i === moved;
       for (let j = from; j < to; j++)
         body += `<rect x="${f(x(j))}" y="${y + 9}" width="${f(unit)}" height="18" fill="${changed ? "#eee0eb" : "#e2eef2"}" stroke="white" stroke-width="2"/>`;
       body += `<text x="${f(x((from + to) / 2))}" y="${y + 47}" text-anchor="middle" fill="${changed ? "#843e77" : "#173d50"}" font-size="14">${to - from}</text>`;
@@ -52,7 +54,7 @@ export function countFigure(pose: Pose, width = 920): string {
     body += `<path d="M${left} ${y} H${w - left}" stroke="#176477" stroke-width="1.5"/>`;
     for (let i = 0; i <= 7; i++) {
       const px = x(pos[i] ?? 0);
-      const pa = i === 4;
+      const pa = i === moved;
       body += `<circle cx="${f(px)}" cy="${y}" r="${pa ? 5 : 3}" fill="${pa ? "#843e77" : "#176477"}"/><text x="${f(px)}" y="${y - 15}" text-anchor="middle" font-size="14" fill="${pa ? "#843e77" : "#173d50"}">${i === 7 ? "Sa′" : NOTES[i]?.short}</text>`;
     }
   }

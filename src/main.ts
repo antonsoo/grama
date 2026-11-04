@@ -1,4 +1,7 @@
+import { attachmentDiagnostic } from "./attachment-ui";
+import { parseComparisonRecord } from "./core/record";
 import { readingSave } from "./reading-save";
+import { recordOpen } from "./record-open";
 import { SourcePlate } from "./source-plate";
 import "./style.css";
 import manifest from "virtual:grama-sources";
@@ -18,7 +21,7 @@ import {
   sequence,
 } from "./core/tuning";
 import { comparisonTable, countFigure, htmlEscape, pitchFigure } from "./figures";
-import { comparisonJSON, download, illustratedReading, parseComparison } from "./files";
+import { comparisonJSON, download, illustratedReading } from "./files";
 import { offline } from "./offline";
 import { ListeningPlayer } from "./player";
 
@@ -40,6 +43,7 @@ try {
     "This link has invalid comparison settings. The initial comparison is shown.";
 }
 let passageIndex = 2;
+let editRevision = 0;
 const player = new ListeningPlayer(soundStatus);
 function stopSound(message = "Sound stopped.") {
   player.stop(message);
@@ -100,6 +104,20 @@ function figures() {
   element("count-figure").innerHTML = countFigure(pose, width);
   element("pitch-figure").innerHTML = pitchFigure(pose, width);
 }
+const diagnostic = attachmentDiagnostic(
+  player,
+  () => pose,
+  (id) => {
+    const index = READINGS.findIndex((reading) => reading.id === id);
+    if (index < 0) return;
+    passageIndex = index;
+    showPassage();
+    element("reading").scrollIntoView({ block: "start" });
+  },
+  () => {
+    editRevision++;
+  },
+);
 function render() {
   start.value = String(pose.start);
   model.value = pose.model;
@@ -122,8 +140,10 @@ function render() {
     `One counted śruti lowers Pa by ${lowering(pose.model).toFixed(3)} cents here. The ${pose.model === "ratios" ? "equal-division counterexample gives 54.545" : "ratio example gives 21.506"} cents for the same count change.`;
   element("comparison").innerHTML = comparisonTable(pose);
   figures();
+  diagnostic.refresh();
 }
 function update(next: Pose) {
+  editRevision++;
   stopSound("Sound stopped because the comparison changed.");
   pose = next;
   history.replaceState(null, "", poseHash(pose));
@@ -148,9 +168,10 @@ element("apply-base").addEventListener("click", applyBase);
 base.addEventListener("keydown", (e) => {
   if (e.key === "Enter") applyBase();
 });
-base.addEventListener("input", () =>
-  stopSound("Sound stopped while you edit Sa. Choose Set Sa to apply it."),
-);
+base.addEventListener("input", () => {
+  editRevision++;
+  stopSound("Sound stopped while you edit Sa. Choose Set Sa to apply it.");
+});
 for (const kind of ["scale", "pa", "context"] as const)
   element(`hear-${kind}`).addEventListener("click", () => {
     void listen(kind);
@@ -182,7 +203,11 @@ element("passage-text").addEventListener("click", (e) => {
   }
 });
 element("save-json").addEventListener("click", () =>
-  download("grama-comparison.json", comparisonJSON(pose), "application/json"),
+  download(
+    "grama-comparison.json",
+    comparisonJSON(pose, diagnostic.selected()),
+    "application/json",
+  ),
 );
 element("save-csv").addEventListener("click", () =>
   download("grama-pitch-comparison.csv", csv(pose), "text/csv;charset=utf-8"),
@@ -196,28 +221,27 @@ element("save-wav").addEventListener("click", () =>
 readingSave(
   element<HTMLButtonElement>("save-reading"),
   fileStatus,
-  (options) => illustratedReading({ ...pose }, options),
+  (options) => illustratedReading({ ...pose }, options, diagnostic.selected()),
   "grama-illustrated-reading.html",
   "Saved the illustrated reading, including all eleven source pages and the listening comparison, at the settings chosen when you clicked Save.",
 );
-element<HTMLInputElement>("open-json").addEventListener("change", async (e) => {
-  const input = e.target as HTMLInputElement;
-  const file = input.files?.[0];
-  if (!file) return;
-  try {
-    if (file.size > 65536) throw new Error("Comparison JSON must be under 64 KB.");
-    const next = parseComparison(await file.text());
-    update(next);
-    fileStatus.textContent =
-      "Reopened the comparison. Sa, starting note, tuning and modern pitch assumption are restored.";
-  } catch (e) {
-    fileStatus.textContent = `The current comparison was kept. ${e instanceof Error ? e.message : "Could not open that file."}`;
-  } finally {
-    input.value = "";
-  }
+recordOpen(element<HTMLInputElement>("open-json"), fileStatus, {
+  fingerprint: () =>
+    JSON.stringify({ pose, placement: diagnostic.selected(), baseDraft: base.value, editRevision }),
+  parse: parseComparisonRecord,
+  apply: (record) => {
+    diagnostic.select(record.attachment);
+    update(record.pose);
+  },
+  success:
+    "Reopened the comparison. Sa, starting note, tuning and modern pitch assumption are restored.",
+  kept: "Your current comparison was kept.",
 });
 element("share").addEventListener("click", async () => {
-  const link = `${location.origin}${location.pathname}${poseHash(pose)}`;
+  const url = new URL(location.href);
+  url.hash = poseHash(pose);
+  url.searchParams.set("attachment", diagnostic.selected());
+  const link = url.href;
   try {
     await navigator.clipboard.writeText(link);
     fileStatus.textContent = "Copied the comparison link.";

@@ -621,3 +621,15 @@ section#comparison {
   padding: 0;
   border: 0;
 }
+
+#attachment-select {
+  display: block;
+  margin: 8px 0 22px;
+}
+#attachment-figure {
+  margin: 24px 0;
+}
+#attachment-table {
+  padding: 0;
+  border: 0;
+}

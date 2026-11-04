@@ -45,7 +45,10 @@
     "test:listening": "node scripts/listening-browser.mjs",
     "verify:listening-audio": "python3 scripts/listening-audio-oracle.py",
     "test:listening-record": "node scripts/listening-record-browser.mjs",
-    "test:listening-save": "node scripts/listening-save-review.mjs"
+    "test:listening-save": "node scripts/listening-save-review.mjs",
+    "test:attachment": "node scripts/attachment-browser.mjs",
+    "test:record-open": "node scripts/record-open-browser.mjs",
+    "verify:attachment-audio": "python3 scripts/attachment-audio-oracle.py"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

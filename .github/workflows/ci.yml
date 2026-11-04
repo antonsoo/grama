@@ -29,3 +29,6 @@ jobs:
       - run: npm run test:listening-record
       - run: npm run test:listening-save
       - run: npm run test:interactions
+      - run: npm run test:attachment
+      - run: npm run verify:attachment-audio
+      - run: npm run test:record-open

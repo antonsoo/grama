@@ -8,12 +8,15 @@ import { chromium, firefox } from "playwright";
 import { reviewServer } from "./review-server.mjs";
 
 const out = path.resolve(process.argv[2] ?? "/tmp/claude-1000/grama-listening");
+const hosted = process.argv[3];
+if (hosted) assert.match(hosted, /^https:\/\/.+\/$/);
 await mkdir(out, { recursive: true });
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const report = {
   checkedAt: new Date().toISOString(),
-  scope:
-    "Local production; real native AudioBuffers, completion events, actual downloads reopened from disk, and origin refused for offline use. No physical-speaker or public delivery claim.",
+  scope: hosted
+    ? "Hosted HTTPS production; actual native AudioBuffers and downloaded studies; browser networking disabled after worker takeover. No origin-outage or physical-speaker claim."
+    : "Local production; real native AudioBuffers, completion events, actual downloads reopened from disk, and origin refused for offline use. No physical-speaker or public delivery claim.",
   configurations: [],
 };
 for (const [name, engine] of [
@@ -75,12 +78,13 @@ for (const [name, engine] of [
         return readFile(file);
       }
       try {
-        await page.goto(`${server.base}tuning.html`);
+        const base = hosted ?? server.base;
+        await page.goto(`${base}tuning.html`);
         await page
           .locator("#offline-status")
           .filter({ hasText: /Ready offline/ })
           .waitFor({ timeout: 60000 });
-        await page.goto(server.base);
+        await page.goto(base);
         await page.locator('a[href="tuning.html#listening"]').click();
         await node("example").click();
         await node("start").focus();
@@ -246,7 +250,7 @@ for (const [name, engine] of [
         assert(await node("start").isEnabled());
         assert(await node("csv").isDisabled());
         // Shut down the actual local origin, then operate and save from its worker.
-        server.offline();
+        if (!hosted) server.offline();
         await context.setOffline(true);
         await page.reload();
         await node("example").click();
@@ -257,6 +261,19 @@ for (const [name, engine] of [
         await node("reveal").click();
         await save("reading", path.join(folder, "offline-study.html"));
         assert.deepEqual(errors, []);
+        if (hosted) {
+          await context.setOffline(false);
+          const response = await fetch(hosted, {
+            cache: "no-store",
+            signal: AbortSignal.timeout(20000),
+          });
+          assert.equal(response.status, 200);
+          assert.equal(
+            digest(Buffer.from(await response.arrayBuffer())),
+            digest(await readFile("dist/index.html")),
+            "canonical entry remains current after hosted workflow",
+          );
+        }
         report.configurations.push({
           browser: name,
           width,
@@ -267,7 +284,8 @@ for (const [name, engine] of [
           matchedAndMissedAnswers: true,
           recordFrozenAcrossEdits: true,
           recordLimit: 12,
-          offlineOriginRefused: true,
+          offlineOriginRefused: !hosted,
+          browserNetworkDisabledForOffline: true,
           standaloneStudy: {
             images: 11,
             trialAudio: 6,
