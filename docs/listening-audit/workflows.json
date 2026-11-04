@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-04T23:24:02.154303+00:00",
+  "scope": "Read-only workflow job inspection. Neither workflow executed any steps; branch-based Pages deployment is separate.",
+  "sourceRevision": "cb8b44b21af1490530e9223abcfb9b4dce6eaa54",
+  "runs": [
+    {
+      "id": 41932933155,
+      "name": "Pages",
+      "conclusion": "failure",
+      "steps": []
+    },
+    {
+      "id": 41932933195,
+      "name": "CI",
+      "conclusion": "failure",
+      "steps": []
+    }
+  ]
+}

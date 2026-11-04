@@ -1,0 +1,112 @@
+{
+  "checkedAt": "2026-11-04T23:19:26.661Z",
+  "scope": "Local production browser operations, native files and offline use with the origin disabled. No deployment claim.",
+  "base": null,
+  "workerSha256": "02a32d1128ec8b242163e4e29b6ea312ae68696def5df85c1929ef88b6903306",
+  "configurations": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "startsExercised": 7,
+      "passagesRead": 8,
+      "sourceHashesVerified": 11,
+      "keyboardWordNotes": true,
+      "nativeReopenAndRejection": true,
+      "saveCapturesClickPose": true,
+      "liveAudioPcmMatchesWav": true,
+      "liveAudio": {
+        "rate": 44100,
+        "frames": 203742,
+        "sha256": "430c4604bc23f897f131f1ecde21ad1bd1ee4f0a7dc34562638d7d2171c96996"
+      },
+      "ratioWavSha256": "0b30a77af99c78eb976cbaa63501f8e4bfa4661c68809acf6bfe43e3fde03933",
+      "equalWavSha256": "a7839d2f659a6564d0ca013825159f2d54fff22b6404e251f060c4ebddcb8a31",
+      "readingSha256": "92a17142cd82eb3168905a5369882cee2af7ed78df097d08420f8deb74c4083e",
+      "axeViolations": 0,
+      "offlineOriginDisabled": true,
+      "offlineNativeReading": true,
+      "portableRemoteRequests": [],
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "startsExercised": 7,
+      "passagesRead": 8,
+      "sourceHashesVerified": 11,
+      "keyboardWordNotes": true,
+      "nativeReopenAndRejection": true,
+      "saveCapturesClickPose": true,
+      "liveAudioPcmMatchesWav": true,
+      "liveAudio": {
+        "rate": 44100,
+        "frames": 203742,
+        "sha256": "430c4604bc23f897f131f1ecde21ad1bd1ee4f0a7dc34562638d7d2171c96996"
+      },
+      "ratioWavSha256": "0b30a77af99c78eb976cbaa63501f8e4bfa4661c68809acf6bfe43e3fde03933",
+      "equalWavSha256": "a7839d2f659a6564d0ca013825159f2d54fff22b6404e251f060c4ebddcb8a31",
+      "readingSha256": "92a17142cd82eb3168905a5369882cee2af7ed78df097d08420f8deb74c4083e",
+      "axeViolations": 0,
+      "offlineOriginDisabled": true,
+      "offlineNativeReading": true,
+      "portableRemoteRequests": [],
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "startsExercised": 7,
+      "passagesRead": 8,
+      "sourceHashesVerified": 11,
+      "keyboardWordNotes": true,
+      "nativeReopenAndRejection": true,
+      "saveCapturesClickPose": true,
+      "liveAudioPcmMatchesWav": true,
+      "liveAudio": {
+        "rate": 44100,
+        "frames": 203742,
+        "sha256": "430c4604bc23f897f131f1ecde21ad1bd1ee4f0a7dc34562638d7d2171c96996"
+      },
+      "ratioWavSha256": "0b30a77af99c78eb976cbaa63501f8e4bfa4661c68809acf6bfe43e3fde03933",
+      "equalWavSha256": "a7839d2f659a6564d0ca013825159f2d54fff22b6404e251f060c4ebddcb8a31",
+      "readingSha256": "92a17142cd82eb3168905a5369882cee2af7ed78df097d08420f8deb74c4083e",
+      "axeViolations": 0,
+      "offlineOriginDisabled": true,
+      "offlineNativeReading": true,
+      "portableRemoteRequests": [],
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "startsExercised": 7,
+      "passagesRead": 8,
+      "sourceHashesVerified": 11,
+      "keyboardWordNotes": true,
+      "nativeReopenAndRejection": true,
+      "saveCapturesClickPose": true,
+      "liveAudioPcmMatchesWav": true,
+      "liveAudio": {
+        "rate": 44100,
+        "frames": 203742,
+        "sha256": "430c4604bc23f897f131f1ecde21ad1bd1ee4f0a7dc34562638d7d2171c96996"
+      },
+      "ratioWavSha256": "0b30a77af99c78eb976cbaa63501f8e4bfa4661c68809acf6bfe43e3fde03933",
+      "equalWavSha256": "a7839d2f659a6564d0ca013825159f2d54fff22b6404e251f060c4ebddcb8a31",
+      "readingSha256": "92a17142cd82eb3168905a5369882cee2af7ed78df097d08420f8deb74c4083e",
+      "axeViolations": 0,
+      "offlineOriginDisabled": true,
+      "offlineNativeReading": true,
+      "portableRemoteRequests": [],
+      "pageErrors": [],
+      "externalRequests": []
+    }
+  ]
+}

@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+- Bound study-asset reads and coordinate two identified transfers across windows
+  and workers, preventing healthy shared-bandwidth queues from consuming the
+  network-header deadline. Keep queued cancellation and actual inactivity checks.
+  Isolate foreground HTTP cache keys while retaining Firefox worker reads offline.
+- Give each embedded listening example a distinct accessible name.
+
+- Reopen revealed listening records and frozen audio, with imported playback and
+  answer claims labeled separately from new listening in this tab.
+- Preserve newer applied edits, drafts and file selections when an older JSON read
+  finishes late; cancel pending reads on navigation.
+- Operate a deliberately misplaced count row: octave, fourth and fifth can agree
+  while Dha moves instead of Pa. Preserve the diagnosis in v3 comparisons,
+  shared links, CSV, SVG, WAV and complete source readings; retain v1/v2 import.
+- Add the listening, record recovery, count placement, independent WAV and
+  stale-file journeys to CI.
+
 - Freeze two tuning witnesses for concealed A/B/X practice, with stable X replay,
   completed-playback gating, an identical-Ma control and revealed pitch evidence.
 - Retain and replay earlier frozen attempts; export descriptive CSV or a complete

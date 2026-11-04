@@ -1,0 +1,89 @@
+{
+  "checkedAt": "2026-11-04T23:20:52.523Z",
+  "workerSha256": "02a32d1128ec8b242163e4e29b6ea312ae68696def5df85c1929ef88b6903306",
+  "scope": "Real local HTTP fault injection and native service workers; isolated immutable build; not hosted evidence",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "checks": [
+        {
+          "check": "continuous 4000 bytes/s repair",
+          "elapsedMs": 112979,
+          "transfer": {
+            "url": "/grama/sources/grosset-28.jpg",
+            "pathname": "/grama/sources/grosset-28.jpg",
+            "bytes": 431366,
+            "finished": true,
+            "started": 1793834186896,
+            "ended": 1793834298721
+          },
+          "settingsKept": true
+        },
+        {
+          "check": "body inactivity deadline and repair retry",
+          "stallElapsedMs": 15812
+        },
+        {
+          "check": "HTTP 503 navigation uses verified saved document",
+          "settingsKept": true
+        },
+        {
+          "check": "substituted source hidden and export blocked; retry displays exact source",
+          "shownSha256": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3"
+        },
+        {
+          "check": "foreground verified source streams for more than 100 seconds",
+          "elapsedMs": 111940
+        },
+        {
+          "check": "reading cancellation preserves settings and next native save succeeds"
+        },
+        {
+          "check": "cache damage and repair propagate to two tabs; origin-disabled reload succeeds"
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "checks": [
+        {
+          "check": "continuous 4000 bytes/s repair",
+          "elapsedMs": 117768,
+          "transfer": {
+            "url": "/grama/sources/grosset-28.jpg",
+            "pathname": "/grama/sources/grosset-28.jpg",
+            "bytes": 431366,
+            "finished": true,
+            "started": 1793834200533,
+            "ended": 1793834312105
+          },
+          "settingsKept": true
+        },
+        {
+          "check": "body inactivity deadline and repair retry",
+          "stallElapsedMs": 15849
+        },
+        {
+          "check": "HTTP 503 navigation uses verified saved document",
+          "settingsKept": true
+        },
+        {
+          "check": "substituted source hidden and export blocked; retry displays exact source",
+          "shownSha256": "a91b49178abfeea7daa478843f6d385ff4d0136d2733abdb95bd2bdca66bafe3"
+        },
+        {
+          "check": "foreground verified source streams for more than 100 seconds",
+          "elapsedMs": 111177
+        },
+        {
+          "check": "reading cancellation preserves settings and next native save succeeds"
+        },
+        {
+          "check": "cache damage and repair propagate to two tabs; origin-disabled reload succeeds"
+        }
+      ]
+    }
+  ]
+}

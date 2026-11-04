@@ -1,0 +1,87 @@
+{
+  "scope": "Local production; one shared 64 KiB/s budget across all source and font response bodies. Runtime bootstrap fast. Service workers blocked to isolate foreground export.",
+  "elapsedMs": 17279,
+  "status": "The retained file did not send its headers. Retry when the connection responds.",
+  "totalBytesTransferred": 1126280,
+  "activeResponsesAtFailure": 3,
+  "requests": [
+    {
+      "url": "/grama/",
+      "start": 1793832564100,
+      "bytes": 11932,
+      "finished": true
+    },
+    {
+      "url": "/grama/assets/main-Bi3UJ0fK.js",
+      "start": 1793832564116,
+      "bytes": 8897,
+      "finished": true
+    },
+    {
+      "url": "/grama/assets/player-B3uckT-V.css",
+      "start": 1793832564117,
+      "bytes": 7413,
+      "finished": true
+    },
+    {
+      "url": "/grama/assets/player-BmuLX57a.js",
+      "start": 1793832564117,
+      "bytes": 52710,
+      "finished": true
+    },
+    {
+      "url": "/grama/sources/grosset-28.jpg",
+      "start": 1793832564196,
+      "bytes": 195788,
+      "finished": false
+    },
+    {
+      "url": "/grama/fonts/IBMPlexSans-Regular.woff2",
+      "start": 1793832564201,
+      "bytes": 63020,
+      "finished": true
+    },
+    {
+      "url": "/grama/fonts/IBMPlexSans-SemiBold.woff2",
+      "start": 1793832564202,
+      "bytes": 67060,
+      "finished": true
+    },
+    {
+      "url": "/grama/fonts/NotoSerifDevanagari.ttf",
+      "start": 1793832564204,
+      "bytes": 195788,
+      "finished": false
+    },
+    {
+      "url": "/grama/fonts/NotoSerif-Regular.ttf",
+      "start": 1793832564204,
+      "bytes": 195788,
+      "finished": false
+    },
+    {
+      "url": "/grama/sources/grosset-title.jpg",
+      "start": 1793832566097,
+      "bytes": 100346,
+      "finished": true
+    },
+    {
+      "url": "/grama/sources/grosset-21.jpg",
+      "start": 1793832569612,
+      "bytes": 125034,
+      "finished": false
+    },
+    {
+      "url": "/grama/sources/grosset-28.jpg",
+      "start": 1793832570014,
+      "bytes": 120666,
+      "finished": false
+    },
+    {
+      "url": "/grama/sources/grosset-29.jpg",
+      "start": 1793832575329,
+      "bytes": 62790,
+      "finished": false
+    }
+  ]
+}

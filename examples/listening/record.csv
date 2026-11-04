@@ -1,6 +1,4 @@
 # Grama listening practice. Copyright (c) 2026 Anthony Mercer. PolyForm-Noncommercial-1.0.0.
 # Descriptive attempts only; no hearing threshold or ancient tuning is established. No unfinished trial is exported.
-trial,stimulus,Sa_hz,A_four_cents,A_two_cents,B_four_cents,B_two_cents,B_lock,B_ordered_gaps,B_Pa_lowers,X,answer,outcome,A_completed,B_completed,X_completed,max_pitch_difference_cents
-1,pa,220,203.91000173077484,111.73128526977774,203.91000173077484,121.73128526977774,true,true,true,A,A,matched,1,1,2,10.000000000
-2,pa,220,203.91000173077484,111.73128526977774,203.91000173077484,121.73128526977774,true,true,true,A,B,missed,1,1,1,10.000000000
-3,ma,220,203.91000173077484,111.73128526977774,203.91000173077484,121.73128526977774,true,true,true,B,revealed,identical_unscored,1,1,1,0.000000000
+trial,stimulus,Sa_hz,A_four_cents,A_two_cents,B_four_cents,B_two_cents,B_lock,B_ordered_gaps,B_Pa_lowers,X,answer,outcome,A_completed,B_completed,X_completed,max_pitch_difference_cents,record_origin
+1,pa,220,203.91000173077484,111.73128526977774,203.91000173077484,121.73128526977774,true,true,true,A,A,matched,1,1,1,10.000000000,reopened

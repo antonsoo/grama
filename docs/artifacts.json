@@ -1,35 +1,70 @@
 {
-  "note": "Native browser outputs from the local production review. The illustrated reading captures madhyama/Re/equal/220 at Save; controls change immediately afterward. PDF is Chromium print output, not physically printed.",
+  "note": "Native application downloads from the production build; automated listening verification, not human hearing results. The reopened study labels imported claims. PDF is Chromium print output. Full printed source pages and font notices remain embedded.",
   "files": [
     {
       "file": "examples/grama-comparison.json",
-      "bytes": 134,
-      "sha256": "a577ff4cd30a06a75b070b2dea09f23f6459098680fcb29227be26385d08c7ae"
+      "bytes": 273,
+      "sha256": "7eb01a1831d93ed7ff956ba3e6caa870cd017f348300bacf3a01a1cdd999acc9"
     },
     {
       "file": "examples/grama-counts.svg",
-      "bytes": 9074,
-      "sha256": "e37fa6a8d54711aef8d68e943b26bae0b24da96141439f37ab7a96c6da13d88d"
+      "bytes": 9102,
+      "sha256": "f8f12ce72efbc5a97ec41b498cb969b94ee92cf2a7e3eed04dc6eb1013b7bc23"
     },
     {
       "file": "examples/grama-illustrated-reading.html",
-      "bytes": 7920894,
-      "sha256": "203d22bbd790ba341a1ece4efe89cb152dfa014abca413e227c36cde267149f7"
+      "bytes": 9020039,
+      "sha256": "3bc974f0b3a76371f631342aca9cce3819a35f387832110fe0f81e6120c0eca3"
     },
     {
       "file": "examples/grama-illustrated-reading.pdf",
-      "bytes": 4483496,
-      "sha256": "7e03d55be4492307db56757e5938f6c00cb4df3807bb7ba4730a6f98b77f4e90"
+      "bytes": 5007198,
+      "sha256": "1431035bae707943b70ce410ddfed34158f298e4ad51de2a7621d33f739818ec"
     },
     {
       "file": "examples/grama-modern-comparison.wav",
-      "bytes": 407528,
-      "sha256": "ad7c9d6eab24d1b5f3011705f7adcdd088971b6da5a8ffb038d020f74ec7fb56"
+      "bytes": 407648,
+      "sha256": "0b30a77af99c78eb976cbaa63501f8e4bfa4661c68809acf6bfe43e3fde03933"
     },
     {
       "file": "examples/grama-pitch-comparison.csv",
-      "bytes": 760,
-      "sha256": "1f11fe1fad237996c43fc7663c8299ddecccbede337d8f49b49ecf90d7af2ff8"
+      "bytes": 913,
+      "sha256": "6767e6192532b020f17300fe7a5e8dfe95ed63f246c87ccfa8ea406d68496619"
+    },
+    {
+      "file": "examples/tuning-family.csv",
+      "bytes": 3564,
+      "sha256": "5d6679533e8857c145c403cfbad372e30299e31425fabac40e29a9d01dedffc7"
+    },
+    {
+      "file": "examples/tuning-family.json",
+      "bytes": 393,
+      "sha256": "31c5738436f0e937208051500f4aeba7da028c12c492cda636ad7dba91204782"
+    },
+    {
+      "file": "examples/tuning-family.wav",
+      "bytes": 865438,
+      "sha256": "f424b695ce18762c8e89317e10514be6cc2142e99c22aa821c30c488cb64faf9"
+    },
+    {
+      "file": "examples/listening/record.csv",
+      "bytes": 549,
+      "sha256": "bbbfaff810af6d8fd4cf3c9caac776c473b838b7a06f45e6673d62f7555a4f5f"
+    },
+    {
+      "file": "examples/listening/record.json",
+      "bytes": 867,
+      "sha256": "34aa1278e4f95060e57ddb7ec0cbb90269cc427afa1a0384b9dc06f4abbc76cc"
+    },
+    {
+      "file": "examples/listening/study.html.gz",
+      "bytes": 5021583,
+      "sha256": "3ce9e937d7a4582f5695747d98fbbf8a69fc1d9cff538b8b1a5558d16b766079"
+    },
+    {
+      "file": "examples/listening/study.pdf",
+      "bytes": 5236303,
+      "sha256": "f824ac66ad04a066ae32a3406a20944d4b176bb553dd7aad54d27c052393d829"
     }
   ]
 }

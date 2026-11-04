@@ -1,0 +1,65 @@
+{
+  "scope": "Local production count-placement diagnostic; native audio, physical source hashes and actual downloaded files; origin refused for offline reload. Source response is deliberately stalled for snapshot verification.",
+  "cases": [
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "modernModels": 2,
+      "placements": 2,
+      "nativeSounds": 4,
+      "source28And29Verified": true,
+      "JSONAndLinksRetainPlacement": true,
+      "scriptFreeStudySnapshotKept": true,
+      "tableKeyboardAccessible": true,
+      "sourcePages": 11,
+      "offlineReopenAndExport": true,
+      "accessibilityViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "width": 375,
+      "modernModels": 2,
+      "placements": 2,
+      "nativeSounds": 4,
+      "source28And29Verified": true,
+      "JSONAndLinksRetainPlacement": true,
+      "scriptFreeStudySnapshotKept": true,
+      "tableKeyboardAccessible": true,
+      "sourcePages": 11,
+      "offlineReopenAndExport": true,
+      "accessibilityViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 1440,
+      "modernModels": 2,
+      "placements": 2,
+      "nativeSounds": 4,
+      "source28And29Verified": true,
+      "JSONAndLinksRetainPlacement": true,
+      "scriptFreeStudySnapshotKept": true,
+      "tableKeyboardAccessible": true,
+      "sourcePages": 11,
+      "offlineReopenAndExport": true,
+      "accessibilityViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 375,
+      "modernModels": 2,
+      "placements": 2,
+      "nativeSounds": 4,
+      "source28And29Verified": true,
+      "JSONAndLinksRetainPlacement": true,
+      "scriptFreeStudySnapshotKept": true,
+      "tableKeyboardAccessible": true,
+      "sourcePages": 11,
+      "offlineReopenAndExport": true,
+      "accessibilityViolations": 0,
+      "pageErrors": []
+    }
+  ]
+}

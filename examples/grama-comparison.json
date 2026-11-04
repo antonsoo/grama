@@ -1,10 +1,11 @@
 {
-  "format": "grama-comparison-v2",
+  "format": "grama-comparison-v3",
   "notice": "Copyright (c) 2026 Anthony Mercer. PolyForm Noncommercial 1.0.0. https://github.com/antonsoo/grama",
   "pose": {
     "grama": "sadja",
     "start": 0,
     "model": "ratios",
     "base": 220
-  }
+  },
+  "attachment": "leaving"
 }

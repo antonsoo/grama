@@ -1,0 +1,109 @@
+{
+  "scope": "Original count and tuning JSON importers, actual native files; File.text completion and pagehide are deliberately delayed/dispatched to exercise races. Local production, service workers blocked.",
+  "cases": [
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "room": "count",
+      "newAppliedEditKept": true,
+      "unsubmittedDraftKept": true,
+      "laterFileWins": true,
+      "malformedFilesKeptState": true,
+      "navigationCancelsPendingRead": true,
+      "legacyComparisonRecordsAccepted": true,
+      "placementEditKept": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "room": "family",
+      "newAppliedEditKept": true,
+      "unsubmittedDraftKept": true,
+      "laterFileWins": true,
+      "malformedFilesKeptState": true,
+      "navigationCancelsPendingRead": true,
+      "legacyComparisonRecordsAccepted": false,
+      "placementEditKept": false,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "width": 375,
+      "room": "count",
+      "newAppliedEditKept": true,
+      "unsubmittedDraftKept": true,
+      "laterFileWins": true,
+      "malformedFilesKeptState": true,
+      "navigationCancelsPendingRead": true,
+      "legacyComparisonRecordsAccepted": true,
+      "placementEditKept": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "chromium",
+      "width": 375,
+      "room": "family",
+      "newAppliedEditKept": true,
+      "unsubmittedDraftKept": true,
+      "laterFileWins": true,
+      "malformedFilesKeptState": true,
+      "navigationCancelsPendingRead": true,
+      "legacyComparisonRecordsAccepted": false,
+      "placementEditKept": false,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 1440,
+      "room": "count",
+      "newAppliedEditKept": true,
+      "unsubmittedDraftKept": true,
+      "laterFileWins": true,
+      "malformedFilesKeptState": true,
+      "navigationCancelsPendingRead": true,
+      "legacyComparisonRecordsAccepted": true,
+      "placementEditKept": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 1440,
+      "room": "family",
+      "newAppliedEditKept": true,
+      "unsubmittedDraftKept": true,
+      "laterFileWins": true,
+      "malformedFilesKeptState": true,
+      "navigationCancelsPendingRead": true,
+      "legacyComparisonRecordsAccepted": false,
+      "placementEditKept": false,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 375,
+      "room": "count",
+      "newAppliedEditKept": true,
+      "unsubmittedDraftKept": true,
+      "laterFileWins": true,
+      "malformedFilesKeptState": true,
+      "navigationCancelsPendingRead": true,
+      "legacyComparisonRecordsAccepted": true,
+      "placementEditKept": true,
+      "pageErrors": []
+    },
+    {
+      "browser": "firefox",
+      "width": 375,
+      "room": "family",
+      "newAppliedEditKept": true,
+      "unsubmittedDraftKept": true,
+      "laterFileWins": true,
+      "malformedFilesKeptState": true,
+      "navigationCancelsPendingRead": true,
+      "legacyComparisonRecordsAccepted": false,
+      "placementEditKept": false,
+      "pageErrors": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "Reproduced in original count and family JSON importers; delayed native File.text resolution after a later applied Sa edit",
+  "rows": [
+    {
+      "room": "count",
+      "explicitNewSa": 220.5,
+      "actualAfterLateFile": 330,
+      "newEditOverwritten": true
+    },
+    {
+      "room": "family",
+      "explicitNewSa": 220.5,
+      "actualAfterLateFile": 330,
+      "newEditOverwritten": true
+    }
+  ]
+}

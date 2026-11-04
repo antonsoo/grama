@@ -8,6 +8,10 @@ ask a separate question: can I identify a concealed repeat of these sounds?
 This is an addition to `tuning.html`, reached from **Can you hear which tuning?**
 on the count bench, or **Listening** in the tuning bench's navigation.
 
+The [follow-up audit](listening-audit.md) adds reopenable records, identifies and
+repairs stale-file overwrites in the original rooms, and makes a count-placement
+misreading operable. The initial verification below predates that follow-up.
+
 ## An actual exercise
 
 1. Choose **Set up a 10-cent comparison**, then **Freeze tunings & begin**.
@@ -89,7 +93,7 @@ they establish neither a hearing threshold nor ancient pitch sizes. Native audio
 completion verifies digital delivery only, not a listener's speakers or ears.
 No population, significance or historical-performance claim is made.
 
-## Verification results
+## Initial verification results
 
 - `npm ci`, lint, strict application/worker typechecks, all 21 tests and the
   production build passed. The original exact-ratio oracle checked 28 cases

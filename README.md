@@ -52,27 +52,42 @@ Madhyama-grama        o---3-----o------4-------o
 Diagram spacing counts ordinal groups, not equal pitch steps or string lengths.
 The app has a separate logarithmic pitch ruler.
 
+## The octave closes. The wrong note moves.
+
+**Check the counts** in the count bench deliberately attaches each named count
+to the following interval. The ratio model still closes at 2:1 and retains its
+4:3 fourth and 3:2 fifth. Yet Dha moves while Pa stays fixed. Switch to the
+preceding-interval reading and the retuning moves Pa, as the Sanskrit instructs.
+
+Hear both rows, inspect the complete printed pages 28–29, and save the diagram,
+CSV or WAV. Comparison JSON v3 and the illustrated reading preserve this choice;
+older comparisons still reopen. [Source, model and audit](docs/listening-audit.md).
+
+![A deliberate misreading closes the octave but moves Dha rather than Pa](docs/assets/attachment-desktop.png)
+
 ## Can you hear which tuning?
 
-The local tuning bench now has a **Listening** exercise. Set up two witnesses ten cents apart
+The tuning bench has a **[Listening](https://antonsoo.github.io/grama/tuning.html#listening)** exercise. Set up two witnesses ten cents apart
 at lowered Pa, freeze them as A and B, then identify a concealed repeat X.
 Replays keep the same X. Reveal your answer to inspect the actual frequencies;
 try the unchanged-Ma control to hear a pair that produces identical samples.
 
 ![The frozen A/B/X listening keys](docs/assets/listening-desktop.png)
 
-Earlier attempts retain their own sounds after the live bench changes. Save the
-revealed record as CSV or a complete script-free study with sound, Sanskrit and
+Earlier attempts retain their own sounds after the live bench changes. Save a
+reopenable JSON record, or keep the revealed record as CSV or a complete script-free study with sound, Sanskrit and
 all eleven source pages. This is self-guided listening practice, not a hearing
 threshold measurement or a reconstruction of ancient performance.
 
 Run locally, then open `http://127.0.0.1:4394/grama/tuning.html#listening`.
 [Exercise, model and local verification](docs/listening-review.md) ·
 [Example study, gzip](examples/listening/study.html.gz) ·
-[Printable study](examples/listening/study.pdf) · [Attempt CSV](examples/listening/record.csv).
+[Printable study](examples/listening/study.pdf) · [Attempt CSV](examples/listening/record.csv) ·
+[Reopenable example record](examples/listening/record.json).
 The example is an automated verification record, not a human listening result.
 Decompress its HTML before opening it; the app saves ordinary HTML.
-This addition has not been published to the hosted demo.
+The hosted exercise and the count-placement diagnostic are published;
+[current audit](docs/listening-audit.md) records their source and local behavior.
 
 ## Build another tuning
 

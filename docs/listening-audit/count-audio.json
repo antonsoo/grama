@@ -1,0 +1,92 @@
+{
+  "method": "Linear-interpolated positive zero crossings in actual downloaded 16-bit PCM; independent literal frequency tables",
+  "referenceSaHz": 220,
+  "results": [
+    {
+      "file": "ratio-comparison.wav",
+      "frames": 203742,
+      "sampleRate": 44100,
+      "tones": [
+        {
+          "tone": 1,
+          "expectedHz": 293.3333333333333,
+          "measuredHz": 293.33336123647183,
+          "absoluteErrorHz": 2.7903138516194304e-5
+        },
+        {
+          "tone": 2,
+          "expectedHz": 330,
+          "measuredHz": 329.99999999999994,
+          "absoluteErrorHz": 5.684341886080802e-14
+        },
+        {
+          "tone": 3,
+          "expectedHz": 366.6666666666667,
+          "measuredHz": 366.666638722739,
+          "absoluteErrorHz": 2.7943927705109672e-5
+        },
+        {
+          "tone": 4,
+          "expectedHz": 293.3333333333333,
+          "measuredHz": 293.3333612364717,
+          "absoluteErrorHz": 2.7903138402507466e-5
+        },
+        {
+          "tone": 5,
+          "expectedHz": 325.9259259259259,
+          "measuredHz": 325.9258756701838,
+          "absoluteErrorHz": 5.0255742110039137e-5
+        },
+        {
+          "tone": 6,
+          "expectedHz": 366.6666666666667,
+          "measuredHz": 366.666638722739,
+          "absoluteErrorHz": 2.7943927705109672e-5
+        }
+      ]
+    },
+    {
+      "file": "equal-comparison.wav",
+      "frames": 203742,
+      "sampleRate": 44100,
+      "tones": [
+        {
+          "tone": 1,
+          "expectedHz": 292.12674215760336,
+          "measuredHz": 292.12671636830135,
+          "absoluteErrorHz": 2.578930201480034e-5
+        },
+        {
+          "tone": 2,
+          "expectedHz": 331.3630216975346,
+          "measuredHz": 331.36301914821456,
+          "absoluteErrorHz": 2.5493200155324303e-6
+        },
+        {
+          "tone": 3,
+          "expectedHz": 364.2114431493167,
+          "measuredHz": 364.2114837301005,
+          "absoluteErrorHz": 4.058078377511265e-5
+        },
+        {
+          "tone": 4,
+          "expectedHz": 292.12674215760336,
+          "measuredHz": 292.1267163683013,
+          "absoluteErrorHz": 2.578930207164376e-5
+        },
+        {
+          "tone": 5,
+          "expectedHz": 321.08562324991817,
+          "measuredHz": 321.0856359190287,
+          "absoluteErrorHz": 1.266911050379349e-5
+        },
+        {
+          "tone": 6,
+          "expectedHz": 364.2114431493167,
+          "measuredHz": 364.2114837301005,
+          "absoluteErrorHz": 4.058078377511265e-5
+        }
+      ]
+    }
+  ]
+}
