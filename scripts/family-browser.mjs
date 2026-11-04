@@ -344,7 +344,7 @@ for (const [name, type] of [
             .evaluateAll((images) => images.every((i) => i.complete && i.naturalWidth > 0)),
         );
         assert.equal(await portable.locator("article").count(), 8);
-        const embeddedWave = await portable.locator("audio").getAttribute("src");
+        const embeddedWave = await portable.locator("#family-comparison-audio").getAttribute("src");
         assert.equal(hash(Buffer.from(embeddedWave.split(",")[1], "base64")), hash(wave));
         await fits(portable);
         await portable.screenshot({ path: path.join(folder, "portable.png") });

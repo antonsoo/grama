@@ -310,10 +310,10 @@ for (const [name, type] of [
         );
         assert.equal(await portable.locator("article").count(), 8);
         await fits(portable);
-        const embeddedWav = await portable.locator("audio").getAttribute("src");
+        const embeddedWav = await portable.locator("#comparison-audio").getAttribute("src");
         assert.equal(hash(Buffer.from(embeddedWav.split(",")[1], "base64")), hash(equalWave));
         const portableSVG = await portable.locator("svg").count();
-        assert.equal(portableSVG, 2);
+        assert.equal(portableSVG, 3);
         await portable.screenshot({ path: path.join(directory, "portable.png") });
         if (name === "chromium" && width === 1440)
           await portable.pdf({

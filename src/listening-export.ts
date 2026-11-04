@@ -40,7 +40,7 @@ export async function listeningReading(
       const sounds = (["A", "B"] as const)
         .map((key) => {
           const uri = `data:audio/wav;base64,${base64(wav(listeningScore(r, key), FAMILY_NOTICE))}`;
-          return `<p><strong>${key}</strong> (${key === "A" ? "saved witness" : "candidate"})</p><audio controls preload="none" src="${uri}"></audio><p><a download="grama-trial-${i + 1}-${key}.wav" href="${uri}">Download ${key} WAV</a></p>`;
+          return `<p><strong>${key}</strong> (${key === "A" ? "saved witness" : "candidate"})</p><audio aria-label="Attempt ${i + 1}: ${key}, ${htmlEscape(STIMULI[r.stimulus])}" controls preload="none" src="${uri}"></audio><p><a download="grama-trial-${i + 1}-${key}.wav" href="${uri}">Download ${key} WAV</a></p>`;
         })
         .join("");
       return `<article><h3>Attempt ${i + 1}: ${htmlEscape(resultText(r))}</h3>${resultEvidence(r)}<p>A whole gaps: four = ${r.state.reference.four}, two = ${r.state.reference.two} cents. B whole gaps: four = ${r.state.current.four}, two = ${r.state.current.two} cents. B fourth/fifth lock: ${r.state.locked ? "on" : "off"}. Each three-count gap = (1,200 − 3 × four − 2 × two)/2. Completed playbacks: A ${r.completed.A}, B ${r.completed.B}, X ${r.completed.X}. X uses exactly ${r.x}'s sound.</p><p><a href="https://antonsoo.github.io/grama/tuning.html${htmlEscape(familyHash(r.state))}">Reopen this frozen tuning pair</a></p>${sounds}</article>`;
