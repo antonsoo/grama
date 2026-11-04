@@ -52,6 +52,28 @@ Madhyama-grama        o---3-----o------4-------o
 Diagram spacing counts ordinal groups, not equal pitch steps or string lengths.
 The app has a separate logarithmic pitch ruler.
 
+## Can you hear which tuning?
+
+The local tuning bench now has a **Listening** exercise. Set up two witnesses ten cents apart
+at lowered Pa, freeze them as A and B, then identify a concealed repeat X.
+Replays keep the same X. Reveal your answer to inspect the actual frequencies;
+try the unchanged-Ma control to hear a pair that produces identical samples.
+
+![The frozen A/B/X listening keys](docs/assets/listening-desktop.png)
+
+Earlier attempts retain their own sounds after the live bench changes. Save the
+revealed record as CSV or a complete script-free study with sound, Sanskrit and
+all eleven source pages. This is self-guided listening practice, not a hearing
+threshold measurement or a reconstruction of ancient performance.
+
+Run locally, then open `http://127.0.0.1:4394/grama/tuning.html#listening`.
+[Exercise, model and local verification](docs/listening-review.md) ·
+[Example study, gzip](examples/listening/study.html.gz) ·
+[Printable study](examples/listening/study.pdf) · [Attempt CSV](examples/listening/record.csv).
+The example is an automated verification record, not a human listening result.
+Decompress its HTML before opening it; the app saves ordinary HTML.
+This addition has not been published to the hosted demo.
+
 ## Build another tuning
 
 **[Twenty-two counts. Find another tuning.](https://antonsoo.github.io/grama/tuning.html)**

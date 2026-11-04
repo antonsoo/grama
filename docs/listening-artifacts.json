@@ -1,0 +1,17 @@
+[
+  {
+    "path": "examples/listening/record.csv",
+    "bytes": 804,
+    "sha256": "8cf5eff6bfbc37b4b0054736b16881cdd721c44e2df406a4d54be06507cbc7d1"
+  },
+  {
+    "path": "examples/listening/study.html.gz",
+    "bytes": 5204554,
+    "sha256": "8035fed21f2e69eb832c948b6f6b1bb0f4330a376a7adc1038acd1455b0636f9"
+  },
+  {
+    "path": "examples/listening/study.pdf",
+    "bytes": 5579002,
+    "sha256": "db3b97de858fbf2a4bdb803f6c6a4e98d1029e18b17ed42b5c43acdee56d88f8"
+  }
+]

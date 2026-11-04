@@ -1,0 +1,197 @@
+{
+  "method": "Independent closed forms and per-sample Python sine/envelope; first trial's exported PCM also compared to captured native AudioBuffers",
+  "waves": [
+    {
+      "configuration": "chromium-1440",
+      "attempt": 1,
+      "lane": "A",
+      "frequencies_hz": [325.9259259259259],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.4999950078454276
+    },
+    {
+      "configuration": "chromium-1440",
+      "attempt": 1,
+      "lane": "B",
+      "frequencies_hz": [324.0487307257191],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.5002154504454666
+    },
+    {
+      "configuration": "chromium-1440",
+      "attempt": 2,
+      "lane": "A",
+      "frequencies_hz": [325.9259259259259],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.4999950078454276
+    },
+    {
+      "configuration": "chromium-1440",
+      "attempt": 2,
+      "lane": "B",
+      "frequencies_hz": [324.0487307257191],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.5002154504454666
+    },
+    {
+      "configuration": "chromium-1440",
+      "attempt": 3,
+      "lane": "A",
+      "frequencies_hz": [293.3333333333333],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.49988816069162567
+    },
+    {
+      "configuration": "chromium-1440",
+      "attempt": 3,
+      "lane": "B",
+      "frequencies_hz": [293.3333333333333],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.49988816069162567
+    },
+    {
+      "configuration": "chromium-375",
+      "attempt": 1,
+      "lane": "A",
+      "frequencies_hz": [325.9259259259259],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.4999950078454276
+    },
+    {
+      "configuration": "chromium-375",
+      "attempt": 1,
+      "lane": "B",
+      "frequencies_hz": [324.0487307257191],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.5002154504454666
+    },
+    {
+      "configuration": "chromium-375",
+      "attempt": 2,
+      "lane": "A",
+      "frequencies_hz": [325.9259259259259],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.4999950078454276
+    },
+    {
+      "configuration": "chromium-375",
+      "attempt": 2,
+      "lane": "B",
+      "frequencies_hz": [324.0487307257191],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.5002154504454666
+    },
+    {
+      "configuration": "chromium-375",
+      "attempt": 3,
+      "lane": "A",
+      "frequencies_hz": [293.3333333333333],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.49988816069162567
+    },
+    {
+      "configuration": "chromium-375",
+      "attempt": 3,
+      "lane": "B",
+      "frequencies_hz": [293.3333333333333],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.49988816069162567
+    },
+    {
+      "configuration": "firefox-1440",
+      "attempt": 1,
+      "lane": "A",
+      "frequencies_hz": [325.9259259259259],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.4999950078454276
+    },
+    {
+      "configuration": "firefox-1440",
+      "attempt": 1,
+      "lane": "B",
+      "frequencies_hz": [324.0487307257191],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.5002154504454666
+    },
+    {
+      "configuration": "firefox-1440",
+      "attempt": 2,
+      "lane": "A",
+      "frequencies_hz": [325.9259259259259],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.4999950078454276
+    },
+    {
+      "configuration": "firefox-1440",
+      "attempt": 2,
+      "lane": "B",
+      "frequencies_hz": [324.0487307257191],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.5002154504454666
+    },
+    {
+      "configuration": "firefox-1440",
+      "attempt": 3,
+      "lane": "A",
+      "frequencies_hz": [293.3333333333333],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.49988816069162567
+    },
+    {
+      "configuration": "firefox-1440",
+      "attempt": 3,
+      "lane": "B",
+      "frequencies_hz": [293.3333333333333],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.49988816069162567
+    },
+    {
+      "configuration": "firefox-375",
+      "attempt": 1,
+      "lane": "A",
+      "frequencies_hz": [325.9259259259259],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.4999950078454276
+    },
+    {
+      "configuration": "firefox-375",
+      "attempt": 1,
+      "lane": "B",
+      "frequencies_hz": [324.0487307257191],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.5002154504454666
+    },
+    {
+      "configuration": "firefox-375",
+      "attempt": 2,
+      "lane": "A",
+      "frequencies_hz": [325.9259259259259],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.4999950078454276
+    },
+    {
+      "configuration": "firefox-375",
+      "attempt": 2,
+      "lane": "B",
+      "frequencies_hz": [324.0487307257191],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.5002154504454666
+    },
+    {
+      "configuration": "firefox-375",
+      "attempt": 3,
+      "lane": "A",
+      "frequencies_hz": [293.3333333333333],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.49988816069162567
+    },
+    {
+      "configuration": "firefox-375",
+      "attempt": 3,
+      "lane": "B",
+      "frequencies_hz": [293.3333333333333],
+      "samples": 31752,
+      "max_pcm_unit_error": 0.49988816069162567
+    }
+  ]
+}

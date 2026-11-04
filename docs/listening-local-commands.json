@@ -1,0 +1,19 @@
+{
+  "scope": "Actual documented development and production preview commands, local only",
+  "cases": [
+    {
+      "command": "npm run dev",
+      "sourceLinkToExercise": true,
+      "MaControlUnscored": true,
+      "retainedSourceDisplayed": true,
+      "pageErrors": []
+    },
+    {
+      "command": "npm run preview",
+      "sourceLinkToExercise": true,
+      "MaControlUnscored": true,
+      "retainedSourceDisplayed": true,
+      "pageErrors": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Local production with real response bodies deliberately stalled at 128 bytes; native downloads and cancellation. Service workers blocked to isolate the foreground reading save.",
+  "cases": [
+    {
+      "browser": "chromium",
+      "failedCandidateChecksVisible": true,
+      "capturePreservedAcrossClearAndNewResult": true,
+      "busyButtonStayedDisabled": true,
+      "cancellationWithoutDownload": true,
+      "emptyRecordExportRemainedDisabledAfterSave": true,
+      "capturedBytes": 9483691
+    },
+    {
+      "browser": "firefox",
+      "failedCandidateChecksVisible": true,
+      "capturePreservedAcrossClearAndNewResult": true,
+      "busyButtonStayedDisabled": true,
+      "cancellationWithoutDownload": true,
+      "emptyRecordExportRemainedDisabledAfterSave": true,
+      "capturedBytes": 9483691
+    }
+  ]
+}
