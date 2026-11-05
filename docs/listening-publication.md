@@ -21,7 +21,12 @@ printed evidence, modern assumptions and reproduced defects.
 [Record recovery](listening-publication/record-recovery.json) ·
 [Count placement](listening-publication/attachment.json) ·
 [Original count bench](listening-publication/count-bench.json) ·
-[Post-workflow entry and worker rechecks](listening-publication/entry-rechecks.json).
+[Post-workflow entry and worker rechecks](listening-publication/entry-rechecks.json) ·
+[Eight shared-budget cases on the final worker](listening-publication/shared-bandwidth.json) ·
+[Twenty-five pinned source artifacts](listening-publication/source.json) ·
+[Inspected workflow steps](listening-publication/workflows.json) ·
+[Twenty-four independent listening WAV checks](listening-publication/listening-audio.json) ·
+[Sixteen independent diagnostic WAV checks](listening-publication/attachment-audio.json).
 
 Listening verifies actual X sample identity, stable replays, stopped and stale
 resume requests, an intentionally matched and missed answer, and an identical
@@ -60,3 +65,29 @@ The present repository description remains suitable: "Change a starting note,
 lower one string, and read the Sanskrit behind the two ancient Indian gramas."
 Its seven topics are `education`, `music-theory`, `offline`, `sanskrit`, `tuning`,
 `web-audio`, and `history-of-music`.
+
+The [separate Officina discovery record](https://github.com/antonsoo/officina/blob/9991237d690e93b550e5f3363559428f22b155f4/docs/grama-discovery-2026-11-04.md)
+verifies all 122 catalogue files and four public journeys through both workshop
+rows, their immutable review, actual native sounds, JSON reopening, the printed
+source and complete study download. This discovery audit also exercises the
+cold entry that originally lost its first setup click.
+
+## Reviewed source history
+
+The reviewed history through `cdf94ce`; the final evidence addition changes no
+production inputs:
+
+```text
+cdf94ce docs: verify cold-start recovery and sixteen hosted instrument workflows
+cb42526 fix: preserve first actions while the instrument loads
+d97eaa8 docs: retain source audit, repaired workflows and current native studies
+cb8b44b test: distinguish transfer queue cancellation from body expiry
+7477b0f fix: keep Firefox source reads independent and available offline
+341441f fix: bound retained transfers and bypass serialized HTTP revalidation
+3294182 fix: distinguish saved audio comparisons for accessible playback and verification
+a7ff8f4 feat: diagnose misplaced counts and preserve newer work during imports
+1b27b23 feat: reopen listening records without granting new playback credit
+7b5fc8c docs: retain listening studies and native browser verification
+5082b35 feat: add frozen tuning comparisons with concealed listening and portable records
+83e589a docs: verify public workshop, source evidence and Pages publication
+```

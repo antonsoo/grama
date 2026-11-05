@@ -1,0 +1,2016 @@
+{
+  "checkedAt": "2026-11-04T23:42:36.802Z",
+  "scope": "One shared byte budget per local HTTP/1.1 origin, fair across every retained image/font response. Bootstrap HTML/JS/CSS is fast. Cancellation isolates queue behavior with fast fonts and two one-byte/s source bodies. Real native files, workers and locks; no public bandwidth or outage claim.",
+  "workerSha256": "97a634fa813c0cde4c994d0c73b0d0829c75dc08f231db99389dc1bea159bccc",
+  "cases": [
+    {
+      "browser": "chromium",
+      "kind": "foreground",
+      "elapsedMs": 106430,
+      "files": [
+        {
+          "file": "chromium-foreground-0.html",
+          "bytes": 9020039,
+          "sha256": "3bc974f0b3a76371f631342aca9cce3819a35f387832110fe0f81e6120c0eca3"
+        }
+      ],
+      "rateBytesPerSecond": 65536,
+      "transferred": 6847214,
+      "peakIdentifiedBodies": 2,
+      "requests": [
+        {
+          "file": "index.html",
+          "identified": false,
+          "started": 1793835757046,
+          "bytes": 12742,
+          "finished": true,
+          "ended": 1793835757048
+        },
+        {
+          "file": "assets/main-DvueUPPs.js",
+          "identified": false,
+          "started": 1793835757065,
+          "bytes": 8910,
+          "finished": true,
+          "ended": 1793835757066
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835757067,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835757069
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835757069,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835757070
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": false,
+          "started": 1793835757211,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835762564
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": false,
+          "started": 1793835757211,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835762866
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": false,
+          "started": 1793835757212,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835800429
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835757213,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835785207
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": false,
+          "started": 1793835757214,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835785960
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835759811,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835766987
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835766992,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835791584
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835785215,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793835801993
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793835791591,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793835807810
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793835801999,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793835810720
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793835807819,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793835815343
+        },
+        {
+          "file": "sources/grosset-85.jpg",
+          "identified": true,
+          "started": 1793835810729,
+          "bytes": 436186,
+          "finished": true,
+          "ended": 1793835824121
+        },
+        {
+          "file": "sources/grosset-86.jpg",
+          "identified": true,
+          "started": 1793835815356,
+          "bytes": 443621,
+          "finished": true,
+          "ended": 1793835828942
+        },
+        {
+          "file": "sources/natya-title.jpg",
+          "identified": true,
+          "started": 1793835824128,
+          "bytes": 122885,
+          "finished": true,
+          "ended": 1793835827938
+        },
+        {
+          "file": "sources/natya-301.jpg",
+          "identified": true,
+          "started": 1793835827944,
+          "bytes": 469463,
+          "finished": true,
+          "ended": 1793835842342
+        },
+        {
+          "file": "sources/natya-302.jpg",
+          "identified": true,
+          "started": 1793835828951,
+          "bytes": 410056,
+          "finished": true,
+          "ended": 1793835841536
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": true,
+          "started": 1793835841541,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835843497
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": true,
+          "started": 1793835842347,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835844402
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": true,
+          "started": 1793835843502,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835857152
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": true,
+          "started": 1793835844408,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835862423
+        },
+        {
+          "file": "fonts/IBMPlex-OFL.txt",
+          "identified": false,
+          "started": 1793835857157,
+          "bytes": 4456,
+          "finished": true,
+          "ended": 1793835857158
+        },
+        {
+          "file": "fonts/NotoSerif-OFL.txt",
+          "identified": false,
+          "started": 1793835857163,
+          "bytes": 4396,
+          "finished": true,
+          "ended": 1793835857163
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari-OFL.txt",
+          "identified": false,
+          "started": 1793835857168,
+          "bytes": 4386,
+          "finished": true,
+          "ended": 1793835857169
+        }
+      ],
+      "allSourcesRetained": true,
+      "workerReady": false,
+      "locksReleased": true
+    },
+    {
+      "browser": "firefox",
+      "kind": "foreground",
+      "elapsedMs": 107656,
+      "files": [
+        {
+          "file": "firefox-foreground-0.html",
+          "bytes": 9020039,
+          "sha256": "3bc974f0b3a76371f631342aca9cce3819a35f387832110fe0f81e6120c0eca3"
+        }
+      ],
+      "rateBytesPerSecond": 65536,
+      "transferred": 6847214,
+      "peakIdentifiedBodies": 2,
+      "requests": [
+        {
+          "file": "index.html",
+          "identified": false,
+          "started": 1793835759105,
+          "bytes": 12742,
+          "finished": true,
+          "ended": 1793835759106
+        },
+        {
+          "file": "assets/main-DvueUPPs.js",
+          "identified": false,
+          "started": 1793835759546,
+          "bytes": 8910,
+          "finished": true,
+          "ended": 1793835759546
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835759546,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835759547
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835759605,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835759605
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": false,
+          "started": 1793835759676,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835764978
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": false,
+          "started": 1793835759719,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835765530
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": false,
+          "started": 1793835759719,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835803138
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": false,
+          "started": 1793835759923,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835788918
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835759972,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835788164
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835760400,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835768245
+        },
+        {
+          "file": "favicon.svg",
+          "identified": false,
+          "started": 1793835764980,
+          "bytes": 352,
+          "finished": true,
+          "ended": 1793835764980
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835768254,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835793290
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835788172,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793835804897
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793835793297,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793835809866
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793835804916,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793835813631
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793835809876,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793835817398
+        },
+        {
+          "file": "sources/grosset-85.jpg",
+          "identified": true,
+          "started": 1793835813639,
+          "bytes": 436186,
+          "finished": true,
+          "ended": 1793835827033
+        },
+        {
+          "file": "sources/grosset-86.jpg",
+          "identified": true,
+          "started": 1793835817408,
+          "bytes": 443621,
+          "finished": true,
+          "ended": 1793835830997
+        },
+        {
+          "file": "sources/natya-title.jpg",
+          "identified": true,
+          "started": 1793835827040,
+          "bytes": 122885,
+          "finished": true,
+          "ended": 1793835830845
+        },
+        {
+          "file": "sources/natya-301.jpg",
+          "identified": true,
+          "started": 1793835830854,
+          "bytes": 469463,
+          "finished": true,
+          "ended": 1793835845257
+        },
+        {
+          "file": "sources/natya-302.jpg",
+          "identified": true,
+          "started": 1793835831007,
+          "bytes": 410056,
+          "finished": true,
+          "ended": 1793835843597
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": true,
+          "started": 1793835843605,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835845556
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": true,
+          "started": 1793835845263,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835847316
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": true,
+          "started": 1793835845562,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835859208
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": true,
+          "started": 1793835847322,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835864877
+        },
+        {
+          "file": "fonts/IBMPlex-OFL.txt",
+          "identified": false,
+          "started": 1793835859215,
+          "bytes": 4456,
+          "finished": true,
+          "ended": 1793835859215
+        },
+        {
+          "file": "fonts/NotoSerif-OFL.txt",
+          "identified": false,
+          "started": 1793835859221,
+          "bytes": 4396,
+          "finished": true,
+          "ended": 1793835859221
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari-OFL.txt",
+          "identified": false,
+          "started": 1793835859225,
+          "bytes": 4386,
+          "finished": true,
+          "ended": 1793835859225
+        }
+      ],
+      "allSourcesRetained": true,
+      "workerReady": false,
+      "locksReleased": true
+    },
+    {
+      "browser": "chromium",
+      "kind": "multi",
+      "elapsedMs": 102440,
+      "files": [
+        {
+          "file": "chromium-multi-1.html",
+          "bytes": 9140909,
+          "sha256": "516e9ede071d3a24496c91c125fd76e76d94f7018d8bb7f4537919b84c870b7a"
+        },
+        {
+          "file": "chromium-multi-0.html",
+          "bytes": 9020039,
+          "sha256": "3bc974f0b3a76371f631342aca9cce3819a35f387832110fe0f81e6120c0eca3"
+        }
+      ],
+      "rateBytesPerSecond": 131072,
+      "transferred": 13230153,
+      "peakIdentifiedBodies": 2,
+      "requests": [
+        {
+          "file": "index.html",
+          "identified": false,
+          "started": 1793835863495,
+          "bytes": 12742,
+          "finished": true,
+          "ended": 1793835863495
+        },
+        {
+          "file": "assets/main-DvueUPPs.js",
+          "identified": false,
+          "started": 1793835863507,
+          "bytes": 8910,
+          "finished": true,
+          "ended": 1793835863507
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835863507,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835863507
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835863508,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835863508
+        },
+        {
+          "file": "sw.js",
+          "identified": false,
+          "started": 1793835863567,
+          "bytes": 20840,
+          "finished": true,
+          "ended": 1793835863568
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": false,
+          "started": 1793835863572,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835866457
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": false,
+          "started": 1793835863572,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835866661
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": false,
+          "started": 1793835863572,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835894585
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": false,
+          "started": 1793835863573,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835883993
+        },
+        {
+          "file": "assets/main-DvueUPPs.js",
+          "identified": false,
+          "started": 1793835863584,
+          "bytes": 8910,
+          "finished": true,
+          "ended": 1793835863584
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835863586,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835883391
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835863594,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835863594
+        },
+        {
+          "file": "tuning.html",
+          "identified": false,
+          "started": 1793835863603,
+          "bytes": 14843,
+          "finished": true,
+          "ended": 1793835863603
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835863610,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835863611
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835863613,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835863614
+        },
+        {
+          "file": "assets/tuning-C2r19Xzz.css",
+          "identified": false,
+          "started": 1793835863616,
+          "bytes": 5411,
+          "finished": true,
+          "ended": 1793835863616
+        },
+        {
+          "file": "assets/tuning-CfhZSqF3.js",
+          "identified": false,
+          "started": 1793835863619,
+          "bytes": 36768,
+          "finished": true,
+          "ended": 1793835863619
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835863622,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835863623
+        },
+        {
+          "file": "assets/tuning-C2r19Xzz.css",
+          "identified": false,
+          "started": 1793835863627,
+          "bytes": 5411,
+          "finished": true,
+          "ended": 1793835863627
+        },
+        {
+          "file": "assets/tuning-CfhZSqF3.js",
+          "identified": false,
+          "started": 1793835863634,
+          "bytes": 36768,
+          "finished": true,
+          "ended": 1793835863634
+        },
+        {
+          "file": "favicon.svg",
+          "identified": false,
+          "started": 1793835863642,
+          "bytes": 352,
+          "finished": true,
+          "ended": 1793835863642
+        },
+        {
+          "file": "fonts/IBMPlex-OFL.txt",
+          "identified": false,
+          "started": 1793835863649,
+          "bytes": 4456,
+          "finished": true,
+          "ended": 1793835863649
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": true,
+          "started": 1793835863657,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835866558
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": false,
+          "started": 1793835866468,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835869573
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": false,
+          "started": 1793835866561,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835869472
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": false,
+          "started": 1793835866669,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835896191
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": false,
+          "started": 1793835869474,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835888960
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": true,
+          "started": 1793835869579,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835872683
+        },
+        {
+          "file": "fonts/NotoSerif-OFL.txt",
+          "identified": false,
+          "started": 1793835872693,
+          "bytes": 4396,
+          "finished": true,
+          "ended": 1793835872693
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": true,
+          "started": 1793835872701,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835891070
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835883397,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835896743
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari-OFL.txt",
+          "identified": false,
+          "started": 1793835891083,
+          "bytes": 4386,
+          "finished": true,
+          "ended": 1793835891083
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": true,
+          "started": 1793835891092,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835904986
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835896750,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835898301
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835898306,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793835904134
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835904139,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835905691
+        },
+        {
+          "file": "index.html",
+          "identified": false,
+          "started": 1793835905002,
+          "bytes": 12742,
+          "finished": true,
+          "ended": 1793835905003
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835905014,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793835910810
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835905696,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793835911517
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835910822,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835917447
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835911522,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835918152
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793835917469,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793835924071
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793835918157,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793835924773
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793835924082,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793835928435
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835924780,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835931394
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793835928445,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793835932198
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793835931398,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793835938018
+        },
+        {
+          "file": "sources/grosset-85.jpg",
+          "identified": true,
+          "started": 1793835932208,
+          "bytes": 436186,
+          "finished": true,
+          "ended": 1793835938920
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793835938023,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793835942380
+        },
+        {
+          "file": "sources/grosset-86.jpg",
+          "identified": true,
+          "started": 1793835938931,
+          "bytes": 443621,
+          "finished": true,
+          "ended": 1793835945737
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793835942383,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793835946139
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835945747,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835947291
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793835946142,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793835950501
+        },
+        {
+          "file": "sources/manifest.json",
+          "identified": false,
+          "started": 1793835947299,
+          "bytes": 4507,
+          "finished": true,
+          "ended": 1793835947299
+        },
+        {
+          "file": "sources/natya-301.jpg",
+          "identified": true,
+          "started": 1793835947311,
+          "bytes": 469463,
+          "finished": true,
+          "ended": 1793835954510
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793835950505,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793835954260
+        },
+        {
+          "file": "sources/grosset-85.jpg",
+          "identified": true,
+          "started": 1793835954264,
+          "bytes": 436186,
+          "finished": true,
+          "ended": 1793835960977
+        },
+        {
+          "file": "sources/natya-302.jpg",
+          "identified": true,
+          "started": 1793835954523,
+          "bytes": 410056,
+          "finished": true,
+          "ended": 1793835960828
+        },
+        {
+          "file": "sources/natya-title.jpg",
+          "identified": true,
+          "started": 1793835960836,
+          "bytes": 122885,
+          "finished": true,
+          "ended": 1793835962733
+        },
+        {
+          "file": "sources/grosset-86.jpg",
+          "identified": true,
+          "started": 1793835960982,
+          "bytes": 443621,
+          "finished": true,
+          "ended": 1793835965309
+        },
+        {
+          "file": "tuning.html",
+          "identified": false,
+          "started": 1793835962741,
+          "bytes": 14843,
+          "finished": true,
+          "ended": 1793835962741
+        }
+      ],
+      "allSourcesRetained": true,
+      "workerReady": true,
+      "locksReleased": true
+    },
+    {
+      "browser": "firefox",
+      "kind": "multi",
+      "elapsedMs": 103524,
+      "files": [
+        {
+          "file": "firefox-multi-0.html",
+          "bytes": 9020039,
+          "sha256": "3bc974f0b3a76371f631342aca9cce3819a35f387832110fe0f81e6120c0eca3"
+        },
+        {
+          "file": "firefox-multi-1.html",
+          "bytes": 9140909,
+          "sha256": "516e9ede071d3a24496c91c125fd76e76d94f7018d8bb7f4537919b84c870b7a"
+        }
+      ],
+      "rateBytesPerSecond": 131072,
+      "transferred": 13230153,
+      "peakIdentifiedBodies": 2,
+      "requests": [
+        {
+          "file": "index.html",
+          "identified": false,
+          "started": 1793835866035,
+          "bytes": 12742,
+          "finished": true,
+          "ended": 1793835866035
+        },
+        {
+          "file": "assets/main-DvueUPPs.js",
+          "identified": false,
+          "started": 1793835866078,
+          "bytes": 8910,
+          "finished": true,
+          "ended": 1793835866078
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835866081,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835866081
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835866081,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835866081
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": false,
+          "started": 1793835866097,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835868805
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": false,
+          "started": 1793835866114,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835869005
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": false,
+          "started": 1793835866117,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835892215
+        },
+        {
+          "file": "sw.js",
+          "identified": false,
+          "started": 1793835866142,
+          "bytes": 20840,
+          "finished": true,
+          "ended": 1793835866142
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": false,
+          "started": 1793835866142,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835881623
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835866164,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835881223
+        },
+        {
+          "file": "assets/main-DvueUPPs.js",
+          "identified": false,
+          "started": 1793835866620,
+          "bytes": 8910,
+          "finished": true,
+          "ended": 1793835866620
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835866637,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835866637
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835866689,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835866689
+        },
+        {
+          "file": "tuning.html",
+          "identified": false,
+          "started": 1793835866694,
+          "bytes": 14843,
+          "finished": true,
+          "ended": 1793835866694
+        },
+        {
+          "file": "favicon.svg",
+          "identified": false,
+          "started": 1793835866696,
+          "bytes": 352,
+          "finished": true,
+          "ended": 1793835866696
+        },
+        {
+          "file": "assets/tuning-C2r19Xzz.css",
+          "identified": false,
+          "started": 1793835866730,
+          "bytes": 5411,
+          "finished": true,
+          "ended": 1793835866730
+        },
+        {
+          "file": "assets/tuning-CfhZSqF3.js",
+          "identified": false,
+          "started": 1793835866775,
+          "bytes": 36768,
+          "finished": true,
+          "ended": 1793835866776
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835866778,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835866778
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835866787,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835866787
+        },
+        {
+          "file": "assets/tuning-C2r19Xzz.css",
+          "identified": false,
+          "started": 1793835866789,
+          "bytes": 5411,
+          "finished": true,
+          "ended": 1793835866789
+        },
+        {
+          "file": "assets/tuning-CfhZSqF3.js",
+          "identified": false,
+          "started": 1793835866794,
+          "bytes": 36768,
+          "finished": true,
+          "ended": 1793835866794
+        },
+        {
+          "file": "favicon.svg",
+          "identified": false,
+          "started": 1793835866819,
+          "bytes": 352,
+          "finished": true,
+          "ended": 1793835866819
+        },
+        {
+          "file": "fonts/IBMPlex-OFL.txt",
+          "identified": false,
+          "started": 1793835866849,
+          "bytes": 4456,
+          "finished": true,
+          "ended": 1793835866849
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": true,
+          "started": 1793835866891,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835869755
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": false,
+          "started": 1793835868808,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835871719
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": false,
+          "started": 1793835869008,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835872070
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": true,
+          "started": 1793835869773,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835872576
+        },
+        {
+          "file": "fonts/NotoSerif-OFL.txt",
+          "identified": false,
+          "started": 1793835872589,
+          "bytes": 4396,
+          "finished": true,
+          "ended": 1793835872589
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": true,
+          "started": 1793835872601,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835886242
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835881233,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835895523
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": false,
+          "started": 1793835881628,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793835896332
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari-OFL.txt",
+          "identified": false,
+          "started": 1793835886288,
+          "bytes": 4386,
+          "finished": true,
+          "ended": 1793835886289
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": true,
+          "started": 1793835886302,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835907020
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": false,
+          "started": 1793835886852,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793835907421
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835895533,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835898040
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835898048,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793835906719
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835906725,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835908478
+        },
+        {
+          "file": "index.html",
+          "identified": false,
+          "started": 1793835907063,
+          "bytes": 12742,
+          "finished": true,
+          "ended": 1793835907063
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835907076,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793835913002
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835908484,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793835914305
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835913038,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835919624
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835914312,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835920927
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793835919666,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793835926244
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793835920934,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793835927545
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793835926282,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793835930608
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835927553,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793835934165
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793835930642,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793835934366
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793835934172,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793835940782
+        },
+        {
+          "file": "sources/grosset-85.jpg",
+          "identified": true,
+          "started": 1793835934400,
+          "bytes": 436186,
+          "finished": true,
+          "ended": 1793835941085
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793835940789,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793835945150
+        },
+        {
+          "file": "sources/grosset-86.jpg",
+          "identified": true,
+          "started": 1793835941117,
+          "bytes": 443621,
+          "finished": true,
+          "ended": 1793835947911
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793835945157,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793835948915
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835947946,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835949466
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793835948921,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793835953222
+        },
+        {
+          "file": "sources/manifest.json",
+          "identified": false,
+          "started": 1793835949503,
+          "bytes": 4507,
+          "finished": true,
+          "ended": 1793835949503
+        },
+        {
+          "file": "sources/natya-301.jpg",
+          "identified": true,
+          "started": 1793835949516,
+          "bytes": 469463,
+          "finished": true,
+          "ended": 1793835956728
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793835953227,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793835956980
+        },
+        {
+          "file": "sources/natya-302.jpg",
+          "identified": true,
+          "started": 1793835956769,
+          "bytes": 410056,
+          "finished": true,
+          "ended": 1793835963052
+        },
+        {
+          "file": "sources/grosset-85.jpg",
+          "identified": true,
+          "started": 1793835956986,
+          "bytes": 436186,
+          "finished": true,
+          "ended": 1793835963702
+        },
+        {
+          "file": "sources/natya-title.jpg",
+          "identified": true,
+          "started": 1793835963082,
+          "bytes": 122885,
+          "finished": true,
+          "ended": 1793835964958
+        },
+        {
+          "file": "sources/grosset-86.jpg",
+          "identified": true,
+          "started": 1793835963709,
+          "bytes": 443621,
+          "finished": true,
+          "ended": 1793835967790
+        },
+        {
+          "file": "tuning.html",
+          "identified": false,
+          "started": 1793835964988,
+          "bytes": 14843,
+          "finished": true,
+          "ended": 1793835964988
+        }
+      ],
+      "allSourcesRetained": true,
+      "workerReady": true,
+      "locksReleased": true
+    },
+    {
+      "browser": "chromium",
+      "kind": "fallback",
+      "elapsedMs": 106123,
+      "files": [
+        {
+          "file": "chromium-fallback-0.html",
+          "bytes": 9020039,
+          "sha256": "3bc974f0b3a76371f631342aca9cce3819a35f387832110fe0f81e6120c0eca3"
+        }
+      ],
+      "rateBytesPerSecond": 65536,
+      "transferred": 6847214,
+      "peakIdentifiedBodies": 3,
+      "requests": [
+        {
+          "file": "index.html",
+          "identified": false,
+          "started": 1793835966069,
+          "bytes": 12742,
+          "finished": true,
+          "ended": 1793835966069
+        },
+        {
+          "file": "assets/main-DvueUPPs.js",
+          "identified": false,
+          "started": 1793835966080,
+          "bytes": 8910,
+          "finished": true,
+          "ended": 1793835966080
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835966081,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835966081
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835966081,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835966081
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": false,
+          "started": 1793835966174,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835971921
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": false,
+          "started": 1793835966174,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835972274
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": false,
+          "started": 1793835966174,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793836015448
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835966192,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793836000268
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": false,
+          "started": 1793835966204,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793836001073
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835966255,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835974986
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835971924,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793836000772
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835974990,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793836005141
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793836000777,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793836019012
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793836005148,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793836017305
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793836017313,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793836024832
+        },
+        {
+          "file": "sources/grosset-85.jpg",
+          "identified": true,
+          "started": 1793836019018,
+          "bytes": 436186,
+          "finished": true,
+          "ended": 1793836032406
+        },
+        {
+          "file": "sources/grosset-86.jpg",
+          "identified": true,
+          "started": 1793836024839,
+          "bytes": 443621,
+          "finished": true,
+          "ended": 1793836038426
+        },
+        {
+          "file": "sources/natya-title.jpg",
+          "identified": true,
+          "started": 1793836032413,
+          "bytes": 122885,
+          "finished": true,
+          "ended": 1793836036215
+        },
+        {
+          "file": "sources/natya-301.jpg",
+          "identified": true,
+          "started": 1793836036222,
+          "bytes": 469463,
+          "finished": true,
+          "ended": 1793836050636
+        },
+        {
+          "file": "sources/natya-302.jpg",
+          "identified": true,
+          "started": 1793836038434,
+          "bytes": 410056,
+          "finished": true,
+          "ended": 1793836051036
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": true,
+          "started": 1793836050645,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793836052590
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": true,
+          "started": 1793836051043,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793836053091
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": true,
+          "started": 1793836052596,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793836066241
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": true,
+          "started": 1793836053097,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793836071311
+        },
+        {
+          "file": "fonts/IBMPlex-OFL.txt",
+          "identified": false,
+          "started": 1793836066246,
+          "bytes": 4456,
+          "finished": true,
+          "ended": 1793836066246
+        },
+        {
+          "file": "fonts/NotoSerif-OFL.txt",
+          "identified": false,
+          "started": 1793836066254,
+          "bytes": 4396,
+          "finished": true,
+          "ended": 1793836066254
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari-OFL.txt",
+          "identified": false,
+          "started": 1793836066259,
+          "bytes": 4386,
+          "finished": true,
+          "ended": 1793836066259
+        }
+      ],
+      "allSourcesRetained": true,
+      "workerReady": false,
+      "locksReleased": true
+    },
+    {
+      "browser": "chromium",
+      "kind": "queue",
+      "queuedExportCancelledMs": 99,
+      "otherWindowsKeptPermits": true,
+      "noQueuedExportRequestsLeft": true
+    },
+    {
+      "browser": "firefox",
+      "kind": "fallback",
+      "elapsedMs": 106255,
+      "files": [
+        {
+          "file": "firefox-fallback-0.html",
+          "bytes": 9020039,
+          "sha256": "3bc974f0b3a76371f631342aca9cce3819a35f387832110fe0f81e6120c0eca3"
+        }
+      ],
+      "rateBytesPerSecond": 65536,
+      "transferred": 6847214,
+      "peakIdentifiedBodies": 3,
+      "requests": [
+        {
+          "file": "index.html",
+          "identified": false,
+          "started": 1793835969693,
+          "bytes": 12742,
+          "finished": true,
+          "ended": 1793835969693
+        },
+        {
+          "file": "assets/main-DvueUPPs.js",
+          "identified": false,
+          "started": 1793835969715,
+          "bytes": 8910,
+          "finished": true,
+          "ended": 1793835969715
+        },
+        {
+          "file": "assets/player-BK9p2PC_.js",
+          "identified": false,
+          "started": 1793835969716,
+          "bytes": 53416,
+          "finished": true,
+          "ended": 1793835969716
+        },
+        {
+          "file": "assets/player-B3uckT-V.css",
+          "identified": false,
+          "started": 1793835969716,
+          "bytes": 7413,
+          "finished": true,
+          "ended": 1793835969716
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": false,
+          "started": 1793835969730,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793835976373
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": false,
+          "started": 1793835969748,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793835976775
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": false,
+          "started": 1793835969749,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793836019945
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835969756,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793836004787
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": false,
+          "started": 1793835969758,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793836005542
+        },
+        {
+          "file": "sources/grosset-title.jpg",
+          "identified": true,
+          "started": 1793835969850,
+          "bytes": 100346,
+          "finished": true,
+          "ended": 1793835979435
+        },
+        {
+          "file": "sources/grosset-21.jpg",
+          "identified": true,
+          "started": 1793835969852,
+          "bytes": 377148,
+          "finished": true,
+          "ended": 1793836000720
+        },
+        {
+          "file": "favicon.svg",
+          "identified": false,
+          "started": 1793835976776,
+          "bytes": 352,
+          "finished": true,
+          "ended": 1793835976776
+        },
+        {
+          "file": "sources/grosset-28.jpg",
+          "identified": true,
+          "started": 1793835979445,
+          "bytes": 431366,
+          "finished": true,
+          "ended": 1793836009611
+        },
+        {
+          "file": "sources/grosset-29.jpg",
+          "identified": true,
+          "started": 1793836000727,
+          "bytes": 432007,
+          "finished": true,
+          "ended": 1793836021598
+        },
+        {
+          "file": "sources/grosset-57.jpg",
+          "identified": true,
+          "started": 1793836009622,
+          "bytes": 284343,
+          "finished": true,
+          "ended": 1793836021797
+        },
+        {
+          "file": "sources/grosset-58.jpg",
+          "identified": true,
+          "started": 1793836021606,
+          "bytes": 244755,
+          "finished": true,
+          "ended": 1793836029120
+        },
+        {
+          "file": "sources/grosset-85.jpg",
+          "identified": true,
+          "started": 1793836021812,
+          "bytes": 436186,
+          "finished": true,
+          "ended": 1793836035190
+        },
+        {
+          "file": "sources/grosset-86.jpg",
+          "identified": true,
+          "started": 1793836029128,
+          "bytes": 443621,
+          "finished": true,
+          "ended": 1793836042721
+        },
+        {
+          "file": "sources/natya-title.jpg",
+          "identified": true,
+          "started": 1793836035196,
+          "bytes": 122885,
+          "finished": true,
+          "ended": 1793836039007
+        },
+        {
+          "file": "sources/natya-301.jpg",
+          "identified": true,
+          "started": 1793836039024,
+          "bytes": 469463,
+          "finished": true,
+          "ended": 1793836053409
+        },
+        {
+          "file": "sources/natya-302.jpg",
+          "identified": true,
+          "started": 1793836042728,
+          "bytes": 410056,
+          "finished": true,
+          "ended": 1793836055315
+        },
+        {
+          "file": "fonts/IBMPlexSans-Regular.woff2",
+          "identified": true,
+          "started": 1793836053415,
+          "bytes": 63020,
+          "finished": true,
+          "ended": 1793836055365
+        },
+        {
+          "file": "fonts/IBMPlexSans-SemiBold.woff2",
+          "identified": true,
+          "started": 1793836055322,
+          "bytes": 67060,
+          "finished": true,
+          "ended": 1793836057372
+        },
+        {
+          "file": "fonts/NotoSerif-Regular.ttf",
+          "identified": true,
+          "started": 1793836055372,
+          "bytes": 444064,
+          "finished": true,
+          "ended": 1793836069030
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari.ttf",
+          "identified": true,
+          "started": 1793836057380,
+          "bytes": 757692,
+          "finished": true,
+          "ended": 1793836074867
+        },
+        {
+          "file": "fonts/IBMPlex-OFL.txt",
+          "identified": false,
+          "started": 1793836069037,
+          "bytes": 4456,
+          "finished": true,
+          "ended": 1793836069037
+        },
+        {
+          "file": "fonts/NotoSerif-OFL.txt",
+          "identified": false,
+          "started": 1793836069044,
+          "bytes": 4396,
+          "finished": true,
+          "ended": 1793836069044
+        },
+        {
+          "file": "fonts/NotoSerifDevanagari-OFL.txt",
+          "identified": false,
+          "started": 1793836069052,
+          "bytes": 4386,
+          "finished": true,
+          "ended": 1793836069052
+        }
+      ],
+      "allSourcesRetained": true,
+      "workerReady": false,
+      "locksReleased": true
+    },
+    {
+      "browser": "firefox",
+      "kind": "queue",
+      "queuedExportCancelledMs": 84,
+      "otherWindowsKeptPermits": true,
+      "noQueuedExportRequestsLeft": true
+    }
+  ],
+  "failures": []
+}

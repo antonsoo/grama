@@ -1,0 +1,189 @@
+{
+  "method": "Independent literal Fraction note tables and literal equal-count positions; analytical sine/envelope for every sample, plus actual captured AudioBuffer quantization",
+  "waves": [
+    {
+      "configuration": "chromium-1440",
+      "attachment": "arriving",
+      "model": "ratios",
+      "base_hz": 220.5,
+      "frequencies_hz": [294.0, 330.75, 367.5, 294.0, 326.66666666666663, 367.5],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.500000257493781
+    },
+    {
+      "configuration": "chromium-1440",
+      "attachment": "arriving",
+      "model": "equal",
+      "base_hz": 220.5,
+      "frequencies_hz": [
+        292.7906665715979, 332.1161194741199, 365.0391964292015, 292.7906665715979,
+        321.8153633027589, 365.0391964292015
+      ],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5001193823900394
+    },
+    {
+      "configuration": "chromium-1440",
+      "attachment": "leaving",
+      "model": "ratios",
+      "base_hz": 220.5,
+      "frequencies_hz": [294.0, 330.75, 372.09375, 294.0, 330.75, 367.5],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5000000000263753
+    },
+    {
+      "configuration": "chromium-1440",
+      "attachment": "leaving",
+      "model": "equal",
+      "base_hz": 220.5,
+      "frequencies_hz": [
+        292.7906665715979, 332.1161194741199, 376.7234731424585, 292.7906665715979,
+        332.1161194741199, 365.0391964292015
+      ],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5001897025103972
+    },
+    {
+      "configuration": "chromium-375",
+      "attachment": "arriving",
+      "model": "ratios",
+      "base_hz": 220.5,
+      "frequencies_hz": [294.0, 330.75, 367.5, 294.0, 326.66666666666663, 367.5],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.500000257493781
+    },
+    {
+      "configuration": "chromium-375",
+      "attachment": "arriving",
+      "model": "equal",
+      "base_hz": 220.5,
+      "frequencies_hz": [
+        292.7906665715979, 332.1161194741199, 365.0391964292015, 292.7906665715979,
+        321.8153633027589, 365.0391964292015
+      ],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5001193823900394
+    },
+    {
+      "configuration": "chromium-375",
+      "attachment": "leaving",
+      "model": "ratios",
+      "base_hz": 220.5,
+      "frequencies_hz": [294.0, 330.75, 372.09375, 294.0, 330.75, 367.5],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5000000000263753
+    },
+    {
+      "configuration": "chromium-375",
+      "attachment": "leaving",
+      "model": "equal",
+      "base_hz": 220.5,
+      "frequencies_hz": [
+        292.7906665715979, 332.1161194741199, 376.7234731424585, 292.7906665715979,
+        332.1161194741199, 365.0391964292015
+      ],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5001897025103972
+    },
+    {
+      "configuration": "firefox-1440",
+      "attachment": "arriving",
+      "model": "ratios",
+      "base_hz": 220.5,
+      "frequencies_hz": [294.0, 330.75, 367.5, 294.0, 326.66666666666663, 367.5],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.500000257493781
+    },
+    {
+      "configuration": "firefox-1440",
+      "attachment": "arriving",
+      "model": "equal",
+      "base_hz": 220.5,
+      "frequencies_hz": [
+        292.7906665715979, 332.1161194741199, 365.0391964292015, 292.7906665715979,
+        321.8153633027589, 365.0391964292015
+      ],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5001193823900394
+    },
+    {
+      "configuration": "firefox-1440",
+      "attachment": "leaving",
+      "model": "ratios",
+      "base_hz": 220.5,
+      "frequencies_hz": [294.0, 330.75, 372.09375, 294.0, 330.75, 367.5],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5000000000263753
+    },
+    {
+      "configuration": "firefox-1440",
+      "attachment": "leaving",
+      "model": "equal",
+      "base_hz": 220.5,
+      "frequencies_hz": [
+        292.7906665715979, 332.1161194741199, 376.7234731424585, 292.7906665715979,
+        332.1161194741199, 365.0391964292015
+      ],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5001897025103972
+    },
+    {
+      "configuration": "firefox-375",
+      "attachment": "arriving",
+      "model": "ratios",
+      "base_hz": 220.5,
+      "frequencies_hz": [294.0, 330.75, 367.5, 294.0, 326.66666666666663, 367.5],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.500000257493781
+    },
+    {
+      "configuration": "firefox-375",
+      "attachment": "arriving",
+      "model": "equal",
+      "base_hz": 220.5,
+      "frequencies_hz": [
+        292.7906665715979, 332.1161194741199, 365.0391964292015, 292.7906665715979,
+        321.8153633027589, 365.0391964292015
+      ],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5001193823900394
+    },
+    {
+      "configuration": "firefox-375",
+      "attachment": "leaving",
+      "model": "ratios",
+      "base_hz": 220.5,
+      "frequencies_hz": [294.0, 330.75, 372.09375, 294.0, 330.75, 367.5],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5000000000263753
+    },
+    {
+      "configuration": "firefox-375",
+      "attachment": "leaving",
+      "model": "equal",
+      "base_hz": 220.5,
+      "frequencies_hz": [
+        292.7906665715979, 332.1161194741199, 376.7234731424585, 292.7906665715979,
+        332.1161194741199, 365.0391964292015
+      ],
+      "frames": 203301,
+      "native_quantization_matches": true,
+      "max_pcm_unit_error": 0.5001897025103972
+    }
+  ]
+}

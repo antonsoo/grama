@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-11-04T23:49:51.048796+00:00",
+  "scope": "Workflow job steps inspected separately from branch-based public delivery.",
+  "runs": [
+    {
+      "id": 41936153653,
+      "name": "CI",
+      "jobs": [
+        {
+          "conclusion": "failure",
+          "head_sha": "cdf94cece9811024263f6afadedf99d66a24886c",
+          "name": "check",
+          "status": "completed",
+          "steps": []
+        }
+      ]
+    },
+    {
+      "id": 41936154159,
+      "name": "Pages",
+      "jobs": [
+        {
+          "conclusion": "failure",
+          "head_sha": "cdf94cece9811024263f6afadedf99d66a24886c",
+          "name": "deploy",
+          "status": "completed",
+          "steps": []
+        }
+      ]
+    }
+  ]
+}

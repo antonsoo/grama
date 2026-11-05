@@ -1,0 +1,184 @@
+{
+  "checkedAt": "2026-11-04T23:45:19.699Z",
+  "scope": "Pinned public raw documents and declared JSON evidence byte-compared with a clean synchronized source tree. Production hosting, browser operation and CI are separate checks.",
+  "head": "cdf94cece9811024263f6afadedf99d66a24886c",
+  "remote": "cdf94cece9811024263f6afadedf99d66a24886c",
+  "cleanAtCheck": true,
+  "files": [
+    {
+      "file": "docs/listening-audit.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit.md",
+      "bytes": 13432,
+      "sha256": "0204f68850e7e9f64386b7a364aee1c4e2c01de0119f22772675a7465248fbf4",
+      "matches": true
+    },
+    {
+      "file": "docs/artifacts.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/artifacts.json",
+      "bytes": 2450,
+      "sha256": "8bcb6e1a89762fcc32734327c3d6f20ebd05ddc80f4f151abd47793cc5a76660",
+      "matches": true
+    },
+    {
+      "file": "examples/listening/record.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/examples/listening/record.json",
+      "bytes": 867,
+      "sha256": "34aa1278e4f95060e57ddb7ec0cbb90269cc427afa1a0384b9dc06f4abbc76cc",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/attachment-audio.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/attachment-audio.json",
+      "bytes": 6068,
+      "sha256": "e5bcc9b3c00f98229fa93b95593eb7b2bbf84961e6196244c4a43960a39ae90e",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/attachment.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/attachment.json",
+      "bytes": 1923,
+      "sha256": "8d0b4ac3fc12a5cd1559ebb8849e2e85f5d8e5705fe9a7d7451582af02ac7253",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/build.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/build.json",
+      "bytes": 4863,
+      "sha256": "f04d32915178ee0a2e7b438282cbcf0edc457939e212bab88a3b40ea0315b296",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/cold-transfer.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/cold-transfer.json",
+      "bytes": 1930,
+      "sha256": "ccde221e9bcbbdad13699057551324693527ae752174bd8f29bef06ac151c69c",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/count-audio.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/count-audio.json",
+      "bytes": 2561,
+      "sha256": "c0eb5721f3708958317fa0b977ffb10aba99a2cc851ab81802728e20045c778b",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/count-bench.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/count-bench.json",
+      "bytes": 4117,
+      "sha256": "f7eee19bdf3c46559a4924d453a3f54ecb49b756a5a4fc669900849559bfd7a5",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/interactions.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/interactions.json",
+      "bytes": 5681,
+      "sha256": "97c5557a7028a1266df76052c2121b7be234920da85ddebd34920b26252aa6a3",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/listening-audio.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/listening-audio.json",
+      "bytes": 5146,
+      "sha256": "0f006267adc94a9e9a93443799a4c256f9fb8d5ec494f5c1fee70bd1631ab5e6",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/listening.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/listening.json",
+      "bytes": 2708,
+      "sha256": "2edea7e8771d49da3bfab734a87bf4d363f11fd56dd8c0af4a8801363339da02",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/network.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/network.json",
+      "bytes": 2928,
+      "sha256": "019186e8b22ad27a9cbed1534a07038cdf4f4371ec7b7b40a0326e1f90b2655c",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/open-race-after.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/open-race-after.json",
+      "bytes": 3201,
+      "sha256": "9dfcb6dcec22999d89efdd37016989586b1513d28b8e2fabf635fd9dcae57b3a",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/open-race-before.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/open-race-before.json",
+      "bytes": 422,
+      "sha256": "12345167f6cc2ef47537f5c3d24679e6a12a2fc37f483870a3e7fa8e0dff5948",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/primary-pages.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/primary-pages.json",
+      "bytes": 4333,
+      "sha256": "5c591f3d9cc87887ba1bc0bfd3e5a3698ffab266f51fedb8607bf3aaf52c9f8b",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/record-recovery.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/record-recovery.json",
+      "bytes": 2602,
+      "sha256": "ae398d10561c93465758984c9f7c172cdcf8c053e56af3847696270b1d19d4b5",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/save.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/save.json",
+      "bytes": 836,
+      "sha256": "295a149bc875830c4de02577e7478304b90e3ca898cef3b525cce6db3fda26b2",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/shared-bandwidth-before.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/shared-bandwidth-before.json",
+      "bytes": 2162,
+      "sha256": "5e2a995febea417d7c79c4537db3d5848cb5ab97d6e7c5553ebebd594ec6bbe9",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/shared-bandwidth.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/shared-bandwidth.json",
+      "bytes": 60561,
+      "sha256": "9dda3592a36f050fe506f6243959734aaf93ed9a1b758572c9e28cff3182d2dd",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/startup-before.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/startup-before.json",
+      "bytes": 742,
+      "sha256": "412625b9405d837fb5931a0f11f7b783adc3d3ba71fa78fe8b2ef9eba964e7f9",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/startup-queue.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/startup-queue.json",
+      "bytes": 835,
+      "sha256": "4c023850f39f96f522e5c14c745107f85518f3998ac8c326a04c41e000c26f33",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/startup.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/startup.json",
+      "bytes": 2609,
+      "sha256": "9a1d98c631d78239b656c6f95861105f0bc2cff0895cfb67785d028df4a239e7",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/upgrade.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/upgrade.json",
+      "bytes": 782,
+      "sha256": "ebc0f5e43dcef8e89e7df335a9aaea73aee793031fa16ff5063c0bf4fc0171cb",
+      "matches": true
+    },
+    {
+      "file": "docs/listening-audit/workflows.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/grama/cdf94cece9811024263f6afadedf99d66a24886c/docs/listening-audit/workflows.json",
+      "bytes": 480,
+      "sha256": "084a6e81b2cbf6f5ba6786c2e211499b39a1d74177c98bb3c480cb3befa06135",
+      "matches": true
+    }
+  ]
+}
